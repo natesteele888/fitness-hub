@@ -184,6 +184,11 @@
     .asymnum{font-family:Oswald,sans-serif;font-size:34px;line-height:1.1;color:var(--volt);margin:2px 0 4px}
     .asym.warn .asymnum{color:var(--ember)}
     .asymnum span{font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:var(--muted);margin-left:8px}
+    .pump{background:linear-gradient(135deg,rgba(198,255,61,.14),rgba(255,107,61,.10));border:1px solid rgba(198,255,61,.35);border-radius:14px;padding:13px 15px;margin-bottom:14px;font-family:Oswald,sans-serif;font-size:17px;line-height:1.35;color:var(--text);letter-spacing:.01em}
+    .remind{display:flex;align-items:center;gap:10px;width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:13px 15px;color:var(--text);text-decoration:none;font-size:15px;margin-top:14px}
+    .remind b{font-family:Oswald,sans-serif;font-size:16px;display:block}
+    .remind span{display:block;color:var(--muted);font-size:12.5px;margin-top:1px}
+    .remind .bolt{font-size:20px;flex:0 0 auto}
 </style>
 </head>
 <body>
@@ -683,6 +688,51 @@
   })();
   var TOTAL_DAYS = SCHEDULE.length; // 63
 
+
+  // ---------- Morning pump-up ----------
+  // One line per day. Nobody is watching in the offseason — that's the point.
+  var PUMP = {
+    B:["Nobody's watching you jump at 7am. That's exactly why it counts.",
+       "Every soft landing today is an inch on your jump in March.",
+       "The kid who beats you out is asleep right now.",
+       "Land quiet. Quiet landings are loud results."],
+    A:["Nobody ever saw a plank and got impressed. Everybody sees what it builds.",
+       "Your core is the engine mount. Bolt it down.",
+       "Boring work, uncommon results. Ten minutes.",
+       "Brace, breathe, hold. This is the unglamorous stuff that wins."],
+    C:["Clean reps beat heavy reps. Every single time.",
+       "Light weight moved right turns into power later. Earn it.",
+       "Control the way down. That's where the strength is hiding.",
+       "Nobody's counting your reps but you. Count them honest."],
+    D:["First step wins the rep. Go get it.",
+       "Speed is a skill. Skills get practiced, not wished for.",
+       "Plant hard, stick it, reset. That plant is your whole kick.",
+       "Fast feet now, half a step ahead in the fall."],
+    E:["Power starts at the hips. Turn and let it rip.",
+       "This is bat speed being built. Right now. In your room.",
+       "Hips first, then the ball. Always that order.",
+       "Rotate from the middle, not the arms. That's the secret."],
+    F:["Everything together today. Show yourself what you've built.",
+       "This one's hard on purpose. Hard is the point.",
+       "Full body, full effort. Then go eat breakfast like a champion.",
+       "You've done every piece of this. Now stack them."],
+    REST:["Rest is not a day off. It's the day your body builds what you earned.",
+          "Muscles grow on rest days. Let them.",
+          "Stretch, sleep, eat. That's today's job and it matters.",
+          "Champions rest on purpose. Take it seriously."]
+  };
+  var PUMP_MILESTONE = {
+    1:"Day one. Nine weeks from now you'll be a different athlete. Let's go.",
+    22:"Week 4. The Build block starts now and nobody has quit. Check in your numbers.",
+    43:"Week 7. Power block. Everything gets faster from here.",
+    63:"Last day. Nine weeks, nobody watching, and you did every one. Go measure it."
+  };
+  function pumpFor(day, type){
+    if(PUMP_MILESTONE[day]) return PUMP_MILESTONE[day];
+    var pool = PUMP[type] || PUMP.B;
+    return pool[(day * 7 + day) % pool.length];
+  }
+
   // ---------- State ----------
 
   var STORE_KEY = "desmondPower_v1";
@@ -789,6 +839,7 @@
 
     if(entry.type === "REST"){
       var tip = RECOVERY_TIPS[(entry.week-1) % RECOVERY_TIPS.length];
+      html += '<div class="pump">' + pumpFor(day, "REST") + '</div>';
       html += '<div class="card rest-card">'
         + '<div class="daynav"><button data-nav="-1" ' + (day<=1?'disabled':'') + '>&larr; Prev</button><span class="phase-pill">' + phase.name + '</span><button data-nav="1" ' + (day>=TOTAL_DAYS?'disabled':'') + '>Next &rarr;</button></div>'
         + '<div class="daynum">Day ' + day + ' of ' + TOTAL_DAYS + ' &middot; Week ' + entry.week + '</div>'
@@ -802,6 +853,7 @@
     } else {
       var wk = entry.workout;
       var rounds = wk.roundsByWeek[entry.weekInPhase];
+      html += '<div class="pump">' + pumpFor(day, entry.type) + '</div>';
       html += '<div class="card">'
         + '<div class="daynav"><button data-nav="-1" ' + (day<=1?'disabled':'') + '>&larr; Prev</button><span class="phase-pill">' + phase.name + '</span><button data-nav="1" ' + (day>=TOTAL_DAYS?'disabled':'') + '>Next &rarr;</button></div>'
         + '<div class="daynum">Day ' + day + ' of ' + TOTAL_DAYS + ' &middot; Week ' + entry.week + '</div>'
@@ -877,6 +929,11 @@
       html += '</div></div>';
     }
     html += '<div class="resetwrap"><button id="resetBtn">Reset all progress</button></div>';
+    html += '<a class="remind" href="morning-reminders.ics">'
+      + '<span class="bolt">&#9889;</span>'
+      + '<span><b>Turn on morning reminders</b>'
+      + '<span>A 7am nudge every day for all 63 days. Adds to your phone\'s calendar.</span></span></a>';
+
     el.innerHTML = html;
 
     el.querySelectorAll("[data-day]").forEach(function(chip){

@@ -1,0 +1,918 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Desmond Power Program//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Desmond's Power Program
+X-WR-CALDESC:Morning reminders for the 9-week offseason program
+BEGIN:VEVENT
+UID:dpp-day1@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261102T070000
+DTEND:20261102T072000
+SUMMARY:Day 1 · Plyo & Power
+DESCRIPTION:Day one. Nine weeks from now you'll be a different athlete. Let
+ 's go.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day one. Nine weeks from now you'll be a different athlete. Let
+ 's go.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day2@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261103T070000
+DTEND:20261103T072000
+SUMMARY:Day 2 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day3@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261104T070000
+DTEND:20261104T072000
+SUMMARY:Day 3 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day4@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261105T070000
+DTEND:20261105T072000
+SUMMARY:Day 4 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day5@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261106T070000
+DTEND:20261106T072000
+SUMMARY:Day 5 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day6@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261107T070000
+DTEND:20261107T072000
+SUMMARY:Day 6 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day7@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261108T070000
+DTEND:20261108T072000
+SUMMARY:Day 7 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day8@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261109T070000
+DTEND:20261109T072000
+SUMMARY:Day 8 · Plyo & Power
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day9@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261110T070000
+DTEND:20261110T072000
+SUMMARY:Day 9 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day10@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261111T070000
+DTEND:20261111T072000
+SUMMARY:Day 10 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day11@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261112T070000
+DTEND:20261112T072000
+SUMMARY:Day 11 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day12@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261113T070000
+DTEND:20261113T072000
+SUMMARY:Day 12 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day13@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261114T070000
+DTEND:20261114T072000
+SUMMARY:Day 13 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day14@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261115T070000
+DTEND:20261115T072000
+SUMMARY:Day 14 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day15@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261116T070000
+DTEND:20261116T072000
+SUMMARY:Day 15 · Plyo & Power
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day16@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261117T070000
+DTEND:20261117T072000
+SUMMARY:Day 16 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day17@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261118T070000
+DTEND:20261118T072000
+SUMMARY:Day 17 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day18@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261119T070000
+DTEND:20261119T072000
+SUMMARY:Day 18 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day19@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261120T070000
+DTEND:20261120T072000
+SUMMARY:Day 19 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day20@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261121T070000
+DTEND:20261121T072000
+SUMMARY:Day 20 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day21@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261122T070000
+DTEND:20261122T072000
+SUMMARY:Day 21 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day22@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261123T070000
+DTEND:20261123T072000
+SUMMARY:Day 22 · Plyo & Power
+DESCRIPTION:Week 4. The Build block starts now and nobody has quit. Check i
+ n your numbers.\n\nOpen the app: https://natesteele888.github.io/fitness-h
+ ub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Week 4. The Build block starts now and nobody has quit. Check i
+ n your numbers.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day23@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261124T070000
+DTEND:20261124T072000
+SUMMARY:Day 23 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day24@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261125T070000
+DTEND:20261125T072000
+SUMMARY:Day 24 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day25@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261126T070000
+DTEND:20261126T072000
+SUMMARY:Day 25 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day26@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261127T070000
+DTEND:20261127T072000
+SUMMARY:Day 26 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day27@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261128T070000
+DTEND:20261128T072000
+SUMMARY:Day 27 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day28@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261129T070000
+DTEND:20261129T072000
+SUMMARY:Day 28 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day29@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261130T070000
+DTEND:20261130T072000
+SUMMARY:Day 29 · Plyo & Power
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day30@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261201T070000
+DTEND:20261201T072000
+SUMMARY:Day 30 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day31@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261202T070000
+DTEND:20261202T072000
+SUMMARY:Day 31 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day32@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261203T070000
+DTEND:20261203T072000
+SUMMARY:Day 32 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day33@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261204T070000
+DTEND:20261204T072000
+SUMMARY:Day 33 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day34@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261205T070000
+DTEND:20261205T072000
+SUMMARY:Day 34 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day35@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261206T070000
+DTEND:20261206T072000
+SUMMARY:Day 35 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day36@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261207T070000
+DTEND:20261207T072000
+SUMMARY:Day 36 · Plyo & Power
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day37@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261208T070000
+DTEND:20261208T072000
+SUMMARY:Day 37 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day38@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261209T070000
+DTEND:20261209T072000
+SUMMARY:Day 38 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day39@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261210T070000
+DTEND:20261210T072000
+SUMMARY:Day 39 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day40@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261211T070000
+DTEND:20261211T072000
+SUMMARY:Day 40 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day41@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261212T070000
+DTEND:20261212T072000
+SUMMARY:Day 41 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day42@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261213T070000
+DTEND:20261213T072000
+SUMMARY:Day 42 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day43@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261214T070000
+DTEND:20261214T072000
+SUMMARY:Day 43 · Plyo & Power
+DESCRIPTION:Week 7. Power block. Everything gets faster from here.\n\nOpen 
+ the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Week 7. Power block. Everything gets faster from here.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day44@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261215T070000
+DTEND:20261215T072000
+SUMMARY:Day 44 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day45@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261216T070000
+DTEND:20261216T072000
+SUMMARY:Day 45 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day46@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261217T070000
+DTEND:20261217T072000
+SUMMARY:Day 46 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day47@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261218T070000
+DTEND:20261218T072000
+SUMMARY:Day 47 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day48@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261219T070000
+DTEND:20261219T072000
+SUMMARY:Day 48 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day49@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261220T070000
+DTEND:20261220T072000
+SUMMARY:Day 49 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day50@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261221T070000
+DTEND:20261221T072000
+SUMMARY:Day 50 · Plyo & Power
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day51@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261222T070000
+DTEND:20261222T072000
+SUMMARY:Day 51 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day52@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261223T070000
+DTEND:20261223T072000
+SUMMARY:Day 52 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day53@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261224T070000
+DTEND:20261224T072000
+SUMMARY:Day 53 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day54@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261225T070000
+DTEND:20261225T072000
+SUMMARY:Day 54 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day55@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261226T070000
+DTEND:20261226T072000
+SUMMARY:Day 55 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day56@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261227T070000
+DTEND:20261227T072000
+SUMMARY:Day 56 · Rest & Recovery
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
+ arned.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day57@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261228T070000
+DTEND:20261228T072000
+SUMMARY:Day 57 · Plyo & Power
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
+ .
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day58@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261229T070000
+DTEND:20261229T072000
+SUMMARY:Day 58 · Core
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
+ it builds.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day59@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261230T070000
+DTEND:20261230T072000
+SUMMARY:Day 59 · Dumbbells
+DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Clean reps beat heavy reps. Every single time.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day60@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20261231T070000
+DTEND:20261231T072000
+SUMMARY:Day 60 · Speed & Agility
+DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+ testeele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:First step wins the rep. Go get it.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day61@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20270101T070000
+DTEND:20270101T072000
+SUMMARY:Day 61 · Rotational Core
+DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
+  https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Power starts at the hips. Turn and let it rip.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day62@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20270102T070000
+DTEND:20270102T072000
+SUMMARY:Day 62 · Full-Body
+DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
+ Open the app: https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Everything together today. Show yourself what you've built.
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-day63@natesteele888.github.io
+DTSTAMP:20261031T120000Z
+DTSTART:20270103T070000
+DTEND:20270103T072000
+SUMMARY:Day 63 · Rest & Recovery
+DESCRIPTION:Last day. Nine weeks\, nobody watching\, and you did every one.
+  Go measure it.\n\nOpen the app: https://natesteele888.github.io/fitness-h
+ ub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Last day. Nine weeks\, nobody watching\, and you did every one.
+  Go measure it.
+END:VALARM
+END:VEVENT
+END:VCALENDAR
