@@ -184,6 +184,45 @@
     .asymnum{font-family:Oswald,sans-serif;font-size:34px;line-height:1.1;color:var(--volt);margin:2px 0 4px}
     .asym.warn .asymnum{color:var(--ember)}
     .asymnum span{font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:var(--muted);margin-left:8px}
+
+  .ex-info{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:18px;height:18px;border-radius:50%;border:1.5px solid var(--volt);color:var(--volt);
+    background:none;font-family:Georgia,serif;font-style:italic;font-size:12px;font-weight:700;
+    cursor:pointer;vertical-align:2px;margin-left:5px;padding:0;line-height:1;flex:none;
+  }
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:flex-end;justify-content:center;
+    z-index:50;
+  }
+  .modal-overlay[hidden]{display:none}
+  .modal-card{
+    background:var(--surface);border-top:1px solid var(--line);border-radius:20px 20px 0 0;
+    padding:22px 20px calc(24px + env(safe-area-inset-bottom));max-width:520px;width:100%;
+    max-height:85vh;overflow-y:auto;position:relative;
+  }
+  .modal-close{
+    position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
+    border:1.5px solid var(--line);background:var(--surface2);color:var(--muted);font-size:18px;cursor:pointer;
+  }
+  .modal-icon{width:84px;height:84px;margin:0 auto 10px}
+  .modal-icon svg{width:100%;height:100%;display:block}
+  .modal-focus{
+    text-align:center;color:var(--volt);font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;
+    text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;
+  }
+  .modal-name{text-align:center;font-size:24px;margin-bottom:14px;text-transform:uppercase}
+  .modal-how{font-size:15.5px;line-height:1.5;margin-bottom:14px}
+  .modal-safety{
+    background:var(--surface2);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5;
+    color:var(--text);margin-bottom:16px;
+  }
+  .modal-safety b{display:block;color:var(--ember);font-family:'Oswald',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:3px}
+  .modal-video-btn{
+    display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:52px;
+    border-radius:14px;border:2px solid var(--volt);color:var(--volt);text-decoration:none;
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.02em;
+  }
 </style>
 </head>
 <body>
@@ -206,6 +245,18 @@
   <div id="view-program" hidden></div>
   <div id="view-progress" hidden></div>
 </main>
+<div class="modal-overlay" id="exOverlay" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="exName">
+    <button class="modal-close" id="exClose" aria-label="Close">&times;</button>
+    <div class="modal-icon" id="exIconWrap"></div>
+    <div class="modal-focus" id="exFocus"></div>
+    <h3 class="modal-name" id="exName"></h3>
+    <div class="modal-how" id="exHow"></div>
+    <div class="modal-safety"><b>Watch For</b><span id="exSafety"></span></div>
+    <a class="modal-video-btn" id="exVideo" target="_blank" rel="noopener noreferrer">Search a Video Demo &#8599;</a>
+  </div>
+</div>
+
 
 <script>
 (function(){
@@ -228,6 +279,236 @@
     if(cue) o.cue = cue;
     if(eq) o.eq = eq;
     return o;
+  }
+
+  // ---------- Exercise library (tap an exercise's "i" for how-to, focus area, safety cue, video) ----------
+
+var POSE_ICONS = {
+  "jump-vertical": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"22\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"30\" x2=\"50\" y2=\"52\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"33\" x2=\"34\" y2=\"16\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"33\" x2=\"66\" y2=\"16\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"52\" x2=\"41\" y2=\"66\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"41\" y1=\"66\" x2=\"40\" y2=\"76\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"52\" x2=\"59\" y2=\"66\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"59\" y1=\"66\" x2=\"60\" y2=\"76\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"84\" x2=\"42\" y2=\"80\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><line x1=\"58\" y1=\"80\" x2=\"70\" y2=\"84\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/></svg>",
+  "jump-horizontal": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"28\" cy=\"30\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"33\" y1=\"35\" x2=\"55\" y2=\"52\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"35\" y1=\"36\" x2=\"20\" y2=\"48\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"52\" x2=\"70\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"46\" x2=\"84\" y2=\"52\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"52\" x2=\"66\" y2=\"64\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"64\" x2=\"78\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"15\" y1=\"86\" x2=\"88\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/></svg>",
+  "squat": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"24\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"54\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"36\" x2=\"26\" y2=\"42\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"36\" x2=\"74\" y2=\"42\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"54\" x2=\"30\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"60\" x2=\"30\" y2=\"84\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"54\" x2=\"70\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"60\" x2=\"70\" y2=\"84\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "lunge": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"38\" cy=\"20\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"40\" y1=\"28\" x2=\"44\" y2=\"50\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"42\" y1=\"32\" x2=\"30\" y2=\"42\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"44\" y1=\"50\" x2=\"62\" y2=\"62\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"62\" x2=\"74\" y2=\"84\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"44\" y1=\"50\" x2=\"26\" y2=\"68\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"26\" y1=\"68\" x2=\"18\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "plank-front": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"10\" y1=\"80\" x2=\"90\" y2=\"80\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"16\" cy=\"50\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"22\" y1=\"51\" x2=\"76\" y2=\"56\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"26\" y1=\"51\" x2=\"22\" y2=\"66\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"66\" x2=\"26\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"56\" x2=\"86\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "plank-side": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"10\" y1=\"78\" x2=\"90\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"16\" cy=\"38\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"22\" y1=\"40\" x2=\"70\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"26\" y1=\"40\" x2=\"22\" y2=\"58\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"58\" x2=\"26\" y2=\"76\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"46\" x2=\"86\" y2=\"66\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"40\" x2=\"38\" y2=\"16\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "copenhagen": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"10\" y1=\"78\" x2=\"90\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"16\" cy=\"36\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"22\" y1=\"38\" x2=\"66\" y2=\"44\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"26\" y1=\"38\" x2=\"22\" y2=\"56\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"56\" x2=\"26\" y2=\"74\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"40\" x2=\"40\" y2=\"20\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"20\" x2=\"52\" y2=\"20\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"44\" x2=\"80\" y2=\"62\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "glute-bridge": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"12\" y1=\"74\" x2=\"88\" y2=\"74\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"18\" cy=\"72\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"24\" y1=\"72\" x2=\"52\" y2=\"58\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"52\" y1=\"58\" x2=\"58\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"58\" y1=\"72\" x2=\"68\" y2=\"74\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "dead-bug": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"12\" y1=\"62\" x2=\"88\" y2=\"62\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"20\" cy=\"56\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"26\" y1=\"57\" x2=\"58\" y2=\"57\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"55\" x2=\"12\" y2=\"30\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"59\" x2=\"26\" y2=\"70\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"26\" y1=\"70\" x2=\"30\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"58\" y1=\"57\" x2=\"84\" y2=\"38\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"58\" y1=\"59\" x2=\"54\" y2=\"44\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"54\" y1=\"44\" x2=\"62\" y2=\"32\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "hollow-hold": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"10\" y1=\"70\" x2=\"90\" y2=\"70\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"18\" cy=\"56\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"24\" y1=\"58\" x2=\"50\" y2=\"68\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"68\" x2=\"78\" y2=\"54\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"22\" y1=\"54\" x2=\"6\" y2=\"42\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "bird-dog": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"32\" y1=\"48\" x2=\"60\" y2=\"48\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><circle cx=\"28\" cy=\"45\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"36\" y1=\"48\" x2=\"36\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"58\" y1=\"48\" x2=\"58\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"48\" x2=\"14\" y2=\"38\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"48\" x2=\"82\" y2=\"42\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "bear-crawl": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"26\" cy=\"40\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"30\" y1=\"66\" x2=\"34\" y2=\"50\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"34\" y1=\"50\" x2=\"55\" y2=\"40\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"40\" x2=\"70\" y2=\"66\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"56\" x2=\"42\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"52\" x2=\"64\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "hinge": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"34\" cy=\"28\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"38\" y1=\"34\" x2=\"47\" y2=\"56\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"47\" y1=\"56\" x2=\"45\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"36\" x2=\"30\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "carry": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"20\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"28\" x2=\"50\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"40\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"62\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"33\" x2=\"44\" y2=\"54\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><rect x=\"37.5\" y=\"54.5\" width=\"9\" height=\"7\" rx=\"2\" fill=\"none\" stroke=\"#C6FF3D\" stroke-width=\"3.5\"/><line x1=\"50\" y1=\"33\" x2=\"60\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "press-overhead": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"26\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"34\" x2=\"50\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"42\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"58\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"36\" x2=\"39\" y2=\"26\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"39\" y1=\"26\" x2=\"41\" y2=\"10\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"36\" x2=\"61\" y2=\"26\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"61\" y1=\"26\" x2=\"59\" y2=\"10\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "press-floor": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"10\" y1=\"78\" x2=\"90\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"2\" stroke-dasharray=\"3,4\" opacity=\"0.4\"/><circle cx=\"16\" cy=\"64\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"22\" y1=\"66\" x2=\"52\" y2=\"70\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"52\" y1=\"70\" x2=\"58\" y2=\"54\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"58\" y1=\"54\" x2=\"68\" y2=\"70\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"28\" y1=\"65\" x2=\"28\" y2=\"36\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><rect x=\"21.0\" y=\"28.0\" width=\"14\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#C6FF3D\" stroke-width=\"3.5\"/></svg>",
+  "row": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"34\" cy=\"28\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"38\" y1=\"34\" x2=\"47\" y2=\"56\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"47\" y1=\"56\" x2=\"45\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"36\" x2=\"32\" y2=\"56\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"36\" x2=\"50\" y2=\"32\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"32\" x2=\"56\" y2=\"44\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "rotate": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"44\" cy=\"24\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"44\" y1=\"32\" x2=\"44\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"44\" y1=\"60\" x2=\"34\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"44\" y1=\"60\" x2=\"54\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"44\" y1=\"37\" x2=\"68\" y2=\"32\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"44\" y1=\"37\" x2=\"66\" y2=\"44\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><path d=\"M57.0,23.5 A26,26 0 1 1 48.5,71.6\" fill=\"none\" stroke=\"#C6FF3D\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#ah)\"/></svg>",
+  "speed": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"32\" cy=\"20\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"35\" y1=\"27\" x2=\"47\" y2=\"48\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"47\" y1=\"48\" x2=\"60\" y2=\"54\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"54\" x2=\"74\" y2=\"62\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"47\" y1=\"48\" x2=\"34\" y2=\"44\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"34\" y1=\"44\" x2=\"26\" y2=\"56\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"29\" x2=\"50\" y2=\"24\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"24\" x2=\"58\" y2=\"18\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"31\" x2=\"24\" y2=\"36\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"24\" y1=\"36\" x2=\"16\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "plant-stick": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"20\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"28\" x2=\"50\" y2=\"54\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"54\" x2=\"60\" y2=\"65\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"65\" x2=\"70\" y2=\"82\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"54\" x2=\"42\" y2=\"64\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"42\" y1=\"64\" x2=\"38\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"32\" x2=\"30\" y2=\"38\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"32\" x2=\"70\" y2=\"28\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "nordic": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><line x1=\"50\" y1=\"86\" x2=\"50\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><circle cx=\"32\" cy=\"37\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"78\" x2=\"36\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"52\" x2=\"26\" y2=\"68\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "mobility": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"24\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"60\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"42\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"58\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"60\" x2=\"42\" y2=\"78\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><path d=\"M57.5,25.0 A15,15 0 0 1 38.5,28.4\" fill=\"none\" stroke=\"#C6FF3D\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#ah)\"/></svg>",
+  "stretch": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"26\" cy=\"47\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"30\" y1=\"54\" x2=\"42\" y2=\"70\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"42\" y1=\"70\" x2=\"76\" y2=\"72\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"54\" x2=\"60\" y2=\"64\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "jumping-jack": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"20\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"28\" x2=\"50\" y2=\"55\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"30\" x2=\"24\" y2=\"10\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"30\" x2=\"76\" y2=\"10\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"55\" x2=\"28\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"55\" x2=\"72\" y2=\"86\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+  "shuttle-lateral": "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"ah\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#C6FF3D\"/></marker></defs><circle cx=\"50\" cy=\"26\" r=\"8\" fill=\"#C6FF3D\"/><line x1=\"50\" y1=\"33\" x2=\"50\" y2=\"55\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"55\" x2=\"34\" y2=\"80\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"55\" x2=\"66\" y2=\"80\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"36\" x2=\"30\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"36\" x2=\"70\" y2=\"46\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"90\" x2=\"82\" y2=\"90\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"90\" x2=\"26\" y2=\"84\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"90\" x2=\"26\" y2=\"96\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"82\" y1=\"90\" x2=\"74\" y2=\"84\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><line x1=\"82\" y1=\"90\" x2=\"74\" y2=\"96\" stroke=\"#C6FF3D\" stroke-width=\"5.5\" stroke-linecap=\"round\"/></svg>",
+};
+
+var EXLIB = {
+    "march-jog": { name:"Jog or March in Place", focus:"Warm-Up", icon:"speed", how:"Jog lightly in place or march with high-ish knees, swinging your arms naturally. This is just to get your heart rate up and blood flowing before anything harder.", safety:"Easy effort only \u2014 you should be able to talk normally the whole time.", video:"Jog or March in Place" },
+    "bw-squat": { name:"Bodyweight Squat", focus:"Lower Body Power", icon:"squat", how:"Stand with feet shoulder-width apart. Push your hips back and bend your knees like you're sitting into a chair, keeping your chest up and heels on the floor. Stand back up by pushing the floor away.", safety:"Knees track over your toes, not caving in. Go as low as you can with good form.", video:"Bodyweight Squat" },
+    "pogo-hop": { name:"Pogo Hop", focus:"Lower Body Power", icon:"jump-vertical", how:"Stand tall and hop in place using mostly your ankles, not your knees \u2014 think of a pogo stick. Keep hops small, quick, and light, barely leaving the ground each time.", safety:"Stay on the balls of your feet. If it's a single-leg version, hold a wall for balance at first.", video:"Pogo Hop" },
+    "squat-jump": { name:"Squat Jump", focus:"Lower Body Power", icon:"jump-vertical", how:"Drop into a quick squat, then explode straight up as high as you can, swinging your arms up for extra lift. Land soft with bent knees, like you're catching yourself.", safety:"Land quietly \u2014 if you hear a loud slap or thud, you're landing stiff. Bend your knees on landing every time.", video:"Squat Jump" },
+    "line-hop": { name:"Line Hop", focus:"Lower Body Power", icon:"jump-horizontal", how:"Put a shoe or piece of tape on the floor as your \"line.\" Hop side to side over it with both feet together, staying light and quick.", safety:"Small, fast hops \u2014 this is about quickness, not height.", video:"Line Hop" },
+    "broad-jump": { name:"Broad Jump", focus:"Lower Body Power", icon:"jump-horizontal", how:"Stand with feet hip-width apart, swing your arms back, bend your knees, then jump forward as far as you can, swinging your arms forward as you go. Land on both feet and stick it.", safety:"Land with bent knees and hold the landing for a second before you reset. Give yourself room to land safely.", video:"Broad Jump" },
+    "single-leg-broad-jump": { name:"Single-Leg Broad Jump", focus:"Lower Body Power", icon:"jump-horizontal", how:"Same idea as a broad jump, but you take off and land on one leg. Swing your arms, drive off one foot, and land on that same foot, sticking the landing before you reset.", safety:"This one's harder to balance \u2014 start with small jumps and only go for distance once you can stick the landing clean.", video:"Single-Leg Broad Jump" },
+    "cat-cow": { name:"Cat-Cow", focus:"Mobility & Warm-Up", icon:"mobility", how:"On hands and knees, alternate between arching your back up toward the ceiling (like a scared cat) and letting your belly drop while you look up (like a cow). Move slowly with your breathing.", safety:"Keep the movement slow and controlled through your whole spine.", video:"Cat-Cow" },
+    "hip-circle": { name:"Hip Circle", focus:"Mobility & Warm-Up", icon:"mobility", how:"Stand on one leg (hold something for balance if needed) and draw big slow circles with your other knee, like you're stirring a pot. Do a set of circles one way, then the other.", safety:"Keep the circles under control \u2014 this is about loosening up, not speed.", video:"Hip Circle" },
+    "glute-bridge": { name:"Glute Bridge", focus:"Core & Stability", icon:"glute-bridge", how:"Lie on your back with knees bent and feet flat on the floor. Squeeze your glutes and push your hips up toward the ceiling until your body is in a straight line from shoulders to knees, then lower back down.", safety:"Squeeze your glutes, not your lower back, to lift. Don't let your ribs flare up.", video:"Glute Bridge" },
+    "plank": { name:"Plank", focus:"Core & Stability", icon:"plank-front", how:"Prop yourself up on your forearms and toes, with your body in one straight line from head to heels \u2014 like a push-up position but resting on your forearms. Hold it there.", safety:"Don't let your hips sag down or stick up high. Squeeze your core and glutes the whole time.", video:"Plank" },
+    "dead-bug": { name:"Dead Bug", focus:"Core & Stability", icon:"dead-bug", how:"Lie on your back with arms reaching straight up and knees bent at 90 degrees above your hips. Slowly lower one arm overhead and the opposite leg straight out, just above the floor, then bring them back and switch sides.", safety:"Keep your lower back pressed flat into the floor the whole time \u2014 that's the whole point of the exercise.", video:"Dead Bug" },
+    "bird-dog": { name:"Bird Dog", focus:"Core & Stability", icon:"bird-dog", how:"Start on hands and knees. Reach one arm straight out in front while extending the opposite leg straight out behind you, keeping your hips and shoulders level. Hold, then switch sides.", safety:"Move slowly and don't let your hips twist or rock side to side.", video:"Bird Dog" },
+    "side-plank": { name:"Side Plank", focus:"Core & Stability", icon:"plank-side", how:"Lie on your side propped up on one forearm, elbow under your shoulder, and lift your hips so your body forms a straight line from head to feet. Hold it, with your top arm reaching straight up.", safety:"If it's too hard at first, keep your knees bent and stacked on the floor for support.", video:"Side Plank" },
+    "copenhagen": { name:"Copenhagen Plank", focus:"Injury Prevention", icon:"copenhagen", how:"Lie on your side with your top leg resting on a bench, couch, or chair seat, and your bottom leg hanging free underneath. Prop up on your forearm and lift your hips so your body is in a straight line, squeezing your inner thigh against the bench.", safety:"This one's unusual \u2014 start with your knee on the bench (easier) before trying it with a straight leg. It directly protects the groin muscles kickers rely on.", video:"Copenhagen Plank" },
+    "child-pose": { name:"Child's Pose", focus:"Cooldown & Recovery", icon:"stretch", how:"Kneel and sit back on your heels, then fold forward and reach your arms out on the floor in front of you, letting your forehead rest down. Breathe slowly.", safety:"This is a relaxed stretch \u2014 let your body sink into it, don't force anything.", video:"Child's Pose" },
+    "seated-fold": { name:"Seated Forward Fold", focus:"Cooldown & Recovery", icon:"stretch", how:"Sit with your legs out straight in front of you and reach forward toward your toes, letting your back round naturally.", safety:"Don't bounce \u2014 just ease into the stretch and hold it still.", video:"Seated Forward Fold" },
+    "arm-circle": { name:"Arm Circle", focus:"Mobility & Warm-Up", icon:"mobility", how:"Stick your arms straight out to your sides and make circles, starting small and getting bigger. Do a set one direction, then reverse.", safety:"Keep your arms at shoulder height and your core braced.", video:"Arm Circle" },
+    "good-morning": { name:"Bodyweight Good Morning", focus:"Dumbbell Strength", icon:"hinge", how:"Stand with hands behind your head or crossed on your chest. Keeping your back flat and knees soft, hinge forward at your hips until your torso is close to parallel with the floor, then stand back up.", safety:"This is a hip hinge, not a back round \u2014 push your hips back like you're closing a car door with them.", video:"Bodyweight Good Morning" },
+    "db-goblet-squat": { name:"DB Goblet Squat", focus:"Dumbbell Strength", icon:"squat", how:"Hold one dumbbell vertically against your chest with both hands, elbows pointing down. Squat down like a bodyweight squat, keeping the weight close to your chest, then stand back up.", safety:"Keep your chest tall and elbows tucked between your knees at the bottom.", video:"goblet squat" },
+    "db-suitcase-carry": { name:"DB Suitcase Carry", focus:"Dumbbell Strength", icon:"carry", how:"Hold one dumbbell down at your side like a suitcase and walk a set number of steps, standing as tall as you can the whole way. Switch hands and repeat.", safety:"Don't lean toward the weight \u2014 your shoulders and hips should stay level the whole walk.", video:"DB Suitcase Carry" },
+    "db-floor-press": { name:"DB Floor Press", focus:"Dumbbell Strength", icon:"press-floor", how:"Lie on your back with knees bent, holding a dumbbell in each hand at your chest, elbows resting on the floor. Press the weights straight up until your arms are extended, then lower back down with control.", safety:"Your upper arms touching the floor at the bottom is your natural stopping point \u2014 no need to force it further.", video:"DB Floor Press" },
+    "db-rdl": { name:"DB Romanian Deadlift", focus:"Dumbbell Strength", icon:"hinge", how:"Hold a dumbbell in each hand in front of your thighs. With soft knees and a flat back, push your hips back and lower the weights down your legs until you feel a stretch in your hamstrings, then drive your hips forward to stand back up.", safety:"This is a hip hinge, not a squat \u2014 your knees barely bend. Keep the weights close to your legs.", video:"Romanian deadlift" },
+    "plank-shoulder-tap": { name:"Plank Shoulder Tap", focus:"Core & Stability", icon:"plank-front", how:"From a plank position (on your hands this time, arms straight), tap one shoulder with the opposite hand, then the other shoulder with the other hand, alternating.", safety:"Keep your hips as still as possible \u2014 don't let them rock side to side with each tap.", video:"Plank Shoulder Tap" },
+    "nordic": { name:"Nordic Hamstring Lower", focus:"Injury Prevention", icon:"nordic", how:"Kneel on something soft with your feet anchored (a partner holding your ankles, or tucked under something sturdy). Keeping your hips straight and body in one line, slowly lean forward as far as you can control, then catch yourself with your hands on the floor.", safety:"Go only as far as you can control \u2014 the slow lowering is the whole point. This one builds real protection for your hamstrings.", video:"nordic hamstring curl" },
+    "quad-stretch": { name:"Quad Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Standing (hold something for balance if needed), grab one foot behind you and gently pull your heel toward your glutes, keeping your knees close together.", safety:"Keep your standing knee soft, not locked out.", video:"Quad Stretch" },
+    "calf-stretch": { name:"Calf Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Stand facing a wall, step one foot back, and press that back heel into the floor while leaning into the wall. You should feel it in your lower calf.", safety:"Keep the back leg straight and the heel down the whole time.", video:"Calf Stretch" },
+    "hamstring-stretch": { name:"Hamstring Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Sit or stand and extend one leg out, hinging forward from your hips (not rounding your back) until you feel a stretch down the back of your leg.", safety:"Ease into it slowly \u2014 don't bounce.", video:"Hamstring Stretch" },
+    "hip-flexor-stretch": { name:"Hip Flexor Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Kneel on one knee with your other foot planted in front, and gently push your hips forward until you feel a stretch in the front of your back hip.", safety:"Keep your torso upright rather than leaning forward.", video:"Hip Flexor Stretch" },
+    "chest-stretch": { name:"Doorway Chest Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Stand in a doorway, place your forearm on the frame at about shoulder height, and gently lean forward through the doorway until you feel a stretch across your chest.", safety:"A gentle stretch is enough \u2014 don't force it.", video:"Doorway Chest Stretch" },
+    "cobra-stretch": { name:"Cobra Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Lie on your stomach and press your hands into the floor to lift your chest up, keeping your hips on the ground.", safety:"Keep your shoulders relaxed, away from your ears.", video:"Cobra Stretch" },
+    "spinal-twist": { name:"Seated Spinal Twist", focus:"Cooldown & Recovery", icon:"stretch", how:"Sit with your legs out in front of you (or one bent over the other), and gently rotate your torso to look behind you, using your arm for a little extra pull.", safety:"Twist from your ribs and lower back, not by yanking with your arm.", video:"Seated Spinal Twist" },
+    "shoulder-stretch": { name:"Shoulder Stretch", focus:"Cooldown & Recovery", icon:"stretch", how:"Bring one arm straight across your chest and use your other arm to gently pull it closer in.", safety:"You should feel a light stretch in your shoulder, not pain.", video:"Shoulder Stretch" },
+    "full-stretch": { name:"Cool-Down Stretch Flow", focus:"Cooldown & Recovery", icon:"stretch", how:"Move through a few easy stretches for whatever you worked that day \u2014 quads, calves, hamstrings, hips, and chest are the usual suspects. Hold each one for about 20 seconds and breathe.", safety:"Nothing should ever hurt in a stretch \u2014 ease off if it does.", video:"post workout stretching routine" },
+    "dynamic-warmup": { name:"Dynamic Warm-Up", focus:"Mobility & Warm-Up", icon:"mobility", how:"A couple minutes of easy movement to wake your body up before training \u2014 jumping jacks, bodyweight squats, and lunges are a good mix.", safety:"Keep it light and controlled; you're waking your body up, not training yet.", video:"dynamic warm up routine" },
+    "easy-walk": { name:"Easy Walk or Shoot Around", focus:"Cooldown & Recovery", icon:"stretch", how:"Just move \u2014 a walk, shooting some hoops, anything low-key. The point is light blood flow on a rest day, not a workout.", safety:"Keep the effort easy \u2014 save anything hard for your next training day.", video:"active recovery day" },
+    "high-knees": { name:"High Knees", focus:"Speed & Agility", icon:"speed", how:"Jog in place or move forward, driving your knees up toward your waist as fast as you can, pumping your arms with you.", safety:"Stay on the balls of your feet and keep your chest up.", video:"High Knees" },
+    "butt-kicks": { name:"Butt Kicks", focus:"Speed & Agility", icon:"speed", how:"Jog in place or move forward, kicking your heels back to try to touch your glutes with each step.", safety:"Keep your knees pointing down, not kicking out to the sides.", video:"Butt Kicks" },
+    "lateral-shuffle": { name:"Lateral Shuffle", focus:"Speed & Agility", icon:"shuttle-lateral", how:"Get in a low athletic stance and shuffle sideways without crossing your feet, staying low and quick.", safety:"Keep your feet from touching together, and don't bounce up tall between steps.", video:"Lateral Shuffle" },
+    "quick-feet": { name:"Quick Feet", focus:"Speed & Agility", icon:"speed", how:"Run in place with very fast, very small steps, staying light on your toes like the ground is hot.", safety:"Quick and light, not big stomping steps.", video:"Quick Feet" },
+    "lateral-hop": { name:"Lateral Hop Over a Line", focus:"Speed & Agility", icon:"shuttle-lateral", how:"Same idea as a line hop, but with more purpose on speed \u2014 hop side to side over a line or shoe as fast as you can with both feet together.", safety:"Stay light and quick, minimal time on the ground.", video:"Lateral Hop Over a Line" },
+    "a-skip": { name:"A-Skip", focus:"Speed & Agility", icon:"speed", how:"A skipping motion where you drive one knee up high while popping off your other foot, pumping your arms opposite to your legs, moving forward.", safety:"Focus on driving the knee up and forward, not just hopping in place.", video:"A-Skip" },
+    "sprint-start": { name:"Sprint Start", focus:"Speed & Agility", icon:"speed", how:"From a standing or staggered stance, explode forward and sprint the given distance at full effort, then walk back to recover before the next one.", safety:"Full effort on the sprint, full recovery walking back \u2014 don't rush into the next one gassed.", video:"acceleration sprint drill" },
+    "plant-stick": { name:"Plant and Stick", focus:"Injury Prevention", icon:"plant-stick", how:"Take a few steps, then plant your front foot firmly out ahead of you and freeze there, balanced and braced, without kicking through. This trains the braking and stability your plant leg needs.", safety:"Freeze and hold \u2014 this drill is about control, not about following through with a kick.", video:"plant leg stability drill" },
+    "torso-twist": { name:"Torso Twist", focus:"Mobility & Warm-Up", icon:"mobility", how:"Stand with arms out and gently rotate your torso side to side, letting your arms swing naturally with the motion.", safety:"Keep it loose and controlled, not a forceful whip.", video:"Torso Twist" },
+    "arm-swing": { name:"Arm Swing", focus:"Mobility & Warm-Up", icon:"mobility", how:"Swing both arms forward and backward like big relaxed pendulums, then side to side across your chest.", safety:"Let your arms swing loose \u2014 don't force the range.", video:"Arm Swing" },
+    "trunk-rotation": { name:"Standing Trunk Rotation", focus:"Rotational Power", icon:"rotate", how:"Stand with arms held out in front of you and rotate your whole upper body \u2014 hips, ribs, and shoulders together \u2014 from side to side in a controlled motion.", safety:"Rotate your hips and ribs together, not just your arms swinging across your body.", video:"Standing Trunk Rotation" },
+    "bear-crawl": { name:"Bear Crawl Hold", focus:"Core & Stability", icon:"bear-crawl", how:"Get on hands and feet with your knees bent and hovering just above the floor, back flat like a tabletop. Hold that position.", safety:"Don't let your hips sag down or pike up high \u2014 keep that flat tabletop shape.", video:"Bear Crawl Hold" },
+    "jumping-jack": { name:"Jumping Jack", focus:"Warm-Up", icon:"jumping-jack", how:"Jump your feet out wide while raising your arms overhead, then jump back to standing with arms at your sides. Repeat at a steady rhythm.", safety:"Land soft on the balls of your feet each time.", video:"Jumping Jack" },
+    "mountain-climber": { name:"Mountain Climber", focus:"Core & Stability", icon:"plank-front", how:"From a plank position on your hands, drive one knee toward your chest and quickly switch legs, like you're running in place while holding a plank.", safety:"Keep your hips low and steady \u2014 don't let them pop up into the air.", video:"Mountain Climber" },
+    "walking-lunge": { name:"Walking Lunge", focus:"Dumbbell Strength", icon:"lunge", how:"Step forward into a lunge, lowering your back knee toward the floor, then push off your front foot to bring your back leg through into the next lunge, walking forward one step at a time.", safety:"Keep your front knee over your ankle, not drifting past your toes.", video:"Walking Lunge" },
+    "leg-swing": { name:"Leg Swing", focus:"Mobility & Warm-Up", icon:"mobility", how:"Hold onto something for balance and swing one leg forward and back like a pendulum, then switch to side-to-side swings.", safety:"Keep your core braced so your lower back doesn't arch with the swing.", video:"Leg Swing" },
+    "skater-hop": { name:"Skater Hop", focus:"Lower Body Power", icon:"jump-horizontal", how:"Push off one foot and bound sideways onto the other foot, like a speed skater, sticking the landing for a beat before bounding back the other way.", safety:"Stick each landing under control before the next bound \u2014 don't just bounce through them.", video:"Skater Hop" },
+    "hollow-hold": { name:"Hollow Body Hold", focus:"Core & Stability", icon:"hollow-hold", how:"Lie on your back, press your lower back into the floor, and lift your shoulders and legs slightly off the ground into a shallow banana shape, arms reaching overhead.", safety:"Keep your lower back glued to the floor the whole time \u2014 bend your knees if that's too hard at first.", video:"Hollow Body Hold" },
+    "superman": { name:"Superman Hold", focus:"Core & Stability", icon:"stretch", how:"Lie on your stomach and lift your arms, chest, and legs off the floor at the same time, like you're flying, squeezing your glutes and back.", safety:"A small lift is enough \u2014 this isn't about height, it's about squeezing your whole backside.", video:"Superman Hold" },
+    "reverse-lunge": { name:"Reverse Lunge", focus:"Dumbbell Strength", icon:"lunge", how:"Step one foot backward into a lunge, lowering your back knee toward the floor, then push off that back foot to return to standing. Switch legs.", safety:"Keep your front shin fairly vertical and your weight through your front heel.", video:"Reverse Lunge" },
+    "db-overhead-press": { name:"DB Overhead Press", focus:"Dumbbell Strength", icon:"press-overhead", how:"Hold a dumbbell in each hand at shoulder height and press them straight overhead until your arms are extended, then lower back to your shoulders with control.", safety:"Don't arch your lower back to get the weight up \u2014 brace your core and press straight up.", video:"DB Overhead Press" },
+    "lateral-bound": { name:"Lateral Bound", focus:"Lower Body Power", icon:"jump-horizontal", how:"A bigger, more explosive version of the skater hop \u2014 push off hard from one foot and bound as far sideways as you can onto the other foot, sticking the landing.", safety:"Really load up and push off hard, but only as big as you can still stick the landing under control.", video:"Lateral Bound" },
+    "shuttle": { name:"Shuttle Shuffle / Sprint", focus:"Speed & Agility", icon:"shuttle-lateral", how:"Sprint or shuffle a set number of steps one way, touch down or turn, then go back the other way, as fast as you can.", safety:"Stay low and under control on the direction changes so you don't slip.", video:"shuttle run drill" },
+    "tuck-jump": { name:"Tuck Jump", focus:"Lower Body Power", icon:"jump-vertical", how:"Jump straight up and pull both knees up toward your chest at the top, then land soft with bent knees.", safety:"Land quiet and balanced \u2014 don't rush straight into the next one until you've reset.", video:"Tuck Jump" },
+    "standing-db-rotation": { name:"Standing DB Rotation", focus:"Rotational Power", icon:"rotate", how:"Hold one dumbbell at your chest and rotate your hips and shoulders together to one side in a controlled motion, then back through center to the other side.", safety:"The power comes from your hips and ribs rotating together, not just your arms swinging the weight.", video:"rotational core exercise dumbbell" },
+    "plank-updown": { name:"Plank Up-Down", focus:"Core & Stability", icon:"plank-front", how:"Starting in a forearm plank, push up one arm at a time into a hands-and-arms-straight plank, then lower back down one arm at a time to forearms. Alternate which arm leads.", safety:"Keep your hips as still and level as possible through the whole movement.", video:"Plank Up-Down" },
+    "db-push-press": { name:"DB Push Press", focus:"Dumbbell Strength", icon:"press-overhead", how:"Hold dumbbells at your shoulders, dip your knees slightly, then drive up through your legs and press the weights overhead in one smooth motion.", safety:"Let your legs help \u2014 a small dip and drive makes this different from a strict press.", video:"DB Push Press" },
+    "db-row": { name:"DB Single-Arm Row", focus:"Dumbbell Strength", icon:"row", how:"Hinge forward at your hips with a flat back (resting your free hand on a bench or your knee for support), and pull a dumbbell up toward your hip, driving your elbow straight back.", safety:"Keep your torso steady \u2014 the pull should come from your back and arm, not from twisting your body.", video:"DB Single-Arm Row" },
+    "reactive-hop": { name:"Reactive Hop", focus:"Lower Body Power", icon:"jump-vertical", how:"Quick, small double-leg hops in place, barely touching the ground before popping right back up each time.", safety:"Think 'hot ground' \u2014 minimal time touching down between hops.", video:"Reactive Hop" },
+    "jump-180": { name:"180\u00b0 Jump", focus:"Lower Body Power", icon:"jump-vertical", how:"Jump straight up while spinning your body a half turn in the air, then land facing the opposite direction, balanced.", safety:"Spin under control \u2014 the goal is a clean, balanced landing, not a wild spin.", video:"180\u00b0 Jump" },
+    "pelvic-block": { name:"Pelvic Block Finish", focus:"Rotational Power", icon:"plant-stick", how:"Plant your front leg out long and firm while your opposite arm blocks across your body, finishing the motion strong and balanced \u2014 this mimics the finish position of a powerful kick.", safety:"Your plant leg should be straight and locked in place at the finish, not collapsing.", video:"Pelvic Block Finish" },
+    "db-woodchop": { name:"DB Woodchop", focus:"Rotational Power", icon:"rotate", how:"Hold a dumbbell with both hands and swing it diagonally from high on one side down to low on the other side, rotating your torso with the motion, then reverse.", safety:"Control the weight the whole way \u2014 this is a controlled rotation, not a wild swing.", video:"cable woodchop exercise" },
+  };
+
+  var EX_ALIASES = {
+    "Jog or march in place": "march-jog",
+    "Bodyweight squats": "bw-squat",
+    "Ankle pogo hops": "pogo-hop",
+    "Pogo hops": "pogo-hop",
+    "Single-leg pogo hops": "pogo-hop",
+    "Squat jumps": "squat-jump",
+    "Squat jumps (continuous)": "squat-jump",
+    "Continuous squat jumps": "squat-jump",
+    "Easy squat jumps to prime": "squat-jump",
+    "Line hops": "line-hop",
+    "Broad jump": "broad-jump",
+    "Repeated broad jumps": "broad-jump",
+    "Single-leg broad jump": "single-leg-broad-jump",
+    "Cat-cow": "cat-cow",
+    "Hip circles": "hip-circle",
+    "Glute bridges": "glute-bridge",
+    "Glute bridge": "glute-bridge",
+    "Plank hold": "plank",
+    "Dead bug": "dead-bug",
+    "Dead bug with rotation": "dead-bug",
+    "Bird dog": "bird-dog",
+    "Bird dog with 2-sec pause": "bird-dog",
+    "Side plank": "side-plank",
+    "Side plank with reach": "side-plank",
+    "Side plank reach-under": "side-plank",
+    "Side plank rotation": "side-plank",
+    "Side plank with rotation": "side-plank",
+    "Side plank with leg lift": "side-plank",
+    "Copenhagen plank (knee down)": "copenhagen",
+    "Copenhagen plank": "copenhagen",
+    "Child's pose breathing": "child-pose",
+    "Child's pose": "child-pose",
+    "Seated forward fold": "seated-fold",
+    "Arm circles": "arm-circle",
+    "Bodyweight good mornings": "good-morning",
+    "DB goblet squat": "db-goblet-squat",
+    "DB goblet squat w/ 2-sec pause": "db-goblet-squat",
+    "DB suitcase carry": "db-suitcase-carry",
+    "DB floor press": "db-floor-press",
+    "DB Romanian deadlift": "db-rdl",
+    "Plank shoulder taps": "plank-shoulder-tap",
+    "Nordic hamstring lower": "nordic",
+    "Doorway chest stretch": "chest-stretch",
+    "Hip flexor stretch": "hip-flexor-stretch",
+    "Standing quad/hip flexor stretch": "hip-flexor-stretch",
+    "High knees": "high-knees",
+    "Butt kicks": "butt-kicks",
+    "Lateral shuffles": "lateral-shuffle",
+    "Quick feet": "quick-feet",
+    "Lateral hops over a line": "lateral-hop",
+    "A-skips": "a-skip",
+    "5-yard sprint starts": "sprint-start",
+    "10-yard sprint starts": "sprint-start",
+    "10-15 yard sprint starts": "sprint-start",
+    "Build-up strides": "sprint-start",
+    "Plant and stick": "plant-stick",
+    "Plant-leg bound": "plant-stick",
+    "Standing hamstring stretch": "hamstring-stretch",
+    "Torso twists": "torso-twist",
+    "Arm swings": "arm-swing",
+    "Standing trunk rotations": "trunk-rotation",
+    "Bear crawl hold": "bear-crawl",
+    "Seated spinal twist": "spinal-twist",
+    "Jumping jacks": "jumping-jack",
+    "Mountain climbers": "mountain-climber",
+    "Full-body stretch flow": "full-stretch",
+    "Full stretch flow": "full-stretch",
+    "Walking lunges": "walking-lunge",
+    "Leg swings": "leg-swing",
+    "Skater hops": "skater-hop",
+    "Hollow body hold": "hollow-hold",
+    "Hollow body rocks": "hollow-hold",
+    "Superman hold": "superman",
+    "Superman hold with flutter": "superman",
+    "Cobra stretch": "cobra-stretch",
+    "Bodyweight reverse lunges": "reverse-lunge",
+    "DB reverse lunge": "reverse-lunge",
+    "DB overhead press": "db-overhead-press",
+    "Shoulder stretch": "shoulder-stretch",
+    "Lateral bounds": "lateral-bound",
+    "Shuttle shuffle": "shuttle",
+    "Tuck jumps": "tuck-jump",
+    "Hamstring/hip stretch": "hamstring-stretch",
+    "Standing DB rotation": "standing-db-rotation",
+    "Plank up-downs": "plank-updown",
+    "Full-body stretch": "full-stretch",
+    "Full lower-body stretch": "full-stretch",
+    "DB walking lunge": "walking-lunge",
+    "DB push press": "db-push-press",
+    "DB single-arm row": "db-row",
+    "Full stretch": "full-stretch",
+    "Reactive hops": "reactive-hop",
+    "180\u00b0 jumps": "jump-180",
+    "Shuttle sprints": "shuttle",
+    "Pelvic block finish": "pelvic-block",
+    "Standing DB rotational throw pattern": "standing-db-rotation",
+    "DB woodchop": "db-woodchop",
+    "Full dynamic warm-up": "dynamic-warmup",
+    "Full stretch + 5 deep breaths": "full-stretch",
+    "Hamstring stretch": "hamstring-stretch",
+    "Easy walk or shoot around": "easy-walk",
+    "Quad stretch": "quad-stretch",
+    "Calf stretch": "calf-stretch",
+  };
+
+  function exInfoFor(name){
+    var key = EX_ALIASES[name];
+    return key ? EXLIB[key] : null;
+  }
+
+  function openExerciseModal(name){
+    var info = exInfoFor(name);
+    if(!info) return;
+    document.getElementById("exIconWrap").innerHTML = POSE_ICONS[info.icon] || "";
+    document.getElementById("exFocus").textContent = info.focus;
+    document.getElementById("exName").textContent = info.name;
+    document.getElementById("exHow").textContent = info.how;
+    document.getElementById("exSafety").textContent = info.safety;
+    document.getElementById("exVideo").href = "https://www.youtube.com/results?search_query=" + encodeURIComponent(info.video + " exercise form");
+    document.getElementById("exOverlay").hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeExerciseModal(){
+    document.getElementById("exOverlay").hidden = true;
+    document.body.style.overflow = "";
   }
 
   var WORKOUTS = {
@@ -754,10 +1035,12 @@
       var key = exKey(day, section, idx);
       var checked = !!state.checks[key];
       var tag = ex.eq === "db" ? '<span class="tag">DB</span>' : "";
+      var info = exInfoFor(ex.name);
+      var infoBtn = info ? ' <button class="ex-info" data-exname="' + ex.name + '" aria-label="Learn about ' + ex.name + '">i</button>' : "";
       html += '<li>'
         + '<div class="exbox' + (checked?' checked':'') + '" data-exkey="' + key + '" role="checkbox" aria-checked="' + checked + '"></div>'
         + '<div class="exmeta">'
-        + '<div class="exname">' + ex.name + tag + '<span class="exreps">' + (ex.reps||"") + '</span></div>'
+        + '<div class="exname">' + ex.name + infoBtn + tag + '<span class="exreps">' + (ex.reps||"") + '</span></div>'
         + (ex.cue ? '<div class="excue">' + ex.cue + '</div>' : '')
         + '</div></li>';
     });
@@ -827,6 +1110,12 @@
         saveState();
         box.classList.toggle("checked", !!state.checks[key]);
         box.setAttribute("aria-checked", !!state.checks[key]);
+      });
+    });
+    el.querySelectorAll("[data-exname]").forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        e.stopPropagation();
+        openExerciseModal(btn.getAttribute("data-exname"));
       });
     });
     el.querySelectorAll("[data-nav]").forEach(function(btn){
@@ -920,6 +1209,14 @@
 
   document.querySelectorAll(".tab").forEach(function(btn){
     btn.addEventListener("click", function(){ setTab(btn.getAttribute("data-tab")); });
+  });
+
+  document.getElementById("exClose").addEventListener("click", closeExerciseModal);
+  document.getElementById("exOverlay").addEventListener("click", function(e){
+    if(e.target.id === "exOverlay") closeExerciseModal();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") closeExerciseModal();
   });
 
   // Insert the info strip once, above the tabs
