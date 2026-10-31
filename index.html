@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Desmond's Power Program</title>
+<meta name="description" content="A 9-week offseason plyometrics, core &amp; dumbbell program — built for mornings.">
+<meta name="theme-color" content="#0A0D12">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230A0D12'/%3E%3Cpath d='M13 2 3 14h7l-1 8 11-14h-7l1-6z' fill='%23C6FF3D'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0D12;
+    --surface:#151A22;
+    --surface2:#1C2430;
+    --line:#2A3340;
+    --text:#EEF2F8;
+    --muted:#8C98AC;
+    --volt:#C6FF3D;
+    --volt-ink:#0A0D12;
+    --ember:#FF6B3D;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.45;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  h1,h2,h3{font-family:'Oswald',sans-serif;margin:0}
+  main{max-width:520px;margin:0 auto;padding:0 14px 48px}
+  header.top{padding:26px 4px 10px;text-align:center}
+  header.top h1{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    font-weight:700;font-size:27px;color:var(--text);line-height:1.1;text-transform:uppercase;letter-spacing:.01em;
+  }
+  header.top h1 .bolt{color:var(--volt);flex:none}
+  header.top h1 .accent{color:var(--volt)}
+  header.top .sub{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .info-strip{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:10px 14px;margin:14px 0;font-size:13.5px;color:var(--muted);line-height:1.5;
+  }
+  .info-strip b{color:var(--volt)}
+  .progressbar{height:10px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);overflow:hidden;margin:4px 0 10px}
+  .progressbar .fill{height:100%;background:var(--volt);border-radius:999px;transition:width .3s}
+  .statline{font-size:14px;color:var(--muted);text-align:center;margin-bottom:14px;font-weight:600}
+  .statline b{color:var(--text)}
+  nav.tabs{display:flex;gap:8px;margin-bottom:16px}
+  .tab{
+    flex:1;border:2px solid var(--volt);background:var(--surface);color:var(--volt);
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:.02em;
+    border-radius:999px;padding:10px 0;cursor:pointer;
+  }
+  .tab[aria-pressed="true"]{background:var(--volt);color:var(--volt-ink)}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 18px}
+  .phase-pill{
+    display:inline-block;background:var(--surface2);color:var(--volt);font-family:'Oswald',sans-serif;
+    font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;
+    border-radius:999px;padding:5px 12px;margin-bottom:10px;
+  }
+  .daynum{color:var(--muted);font-size:14px;font-weight:600;margin-bottom:2px}
+  .daytitle{font-size:26px;font-weight:700;color:var(--text);line-height:1.1;margin-bottom:4px;text-transform:uppercase}
+  .daytime{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+  .daynav{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .daynav button{
+    border:0;background:none;color:var(--volt);font-family:'Oswald',sans-serif;
+    font-weight:600;font-size:15px;cursor:pointer;padding:6px 8px;text-transform:uppercase;
+  }
+  .daynav button:disabled{color:var(--line);cursor:default}
+
+  .section-head{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;color:var(--text);
+    text-transform:uppercase;letter-spacing:.03em;margin:18px 0 8px;display:flex;align-items:center;gap:8px;
+  }
+  .section-head .chip{
+    background:var(--surface2);color:var(--volt);border-radius:999px;padding:2px 10px;font-size:12.5px;
+    text-transform:none;letter-spacing:0;font-weight:700;font-family:'Inter',sans-serif;
+  }
+  ul.exlist{list-style:none;margin:0;padding:0}
+  ul.exlist li{
+    display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);
+  }
+  ul.exlist li:last-child{border-bottom:0}
+  .exbox{
+    flex:none;width:26px;height:26px;border-radius:8px;border:2.5px solid var(--volt);
+    background:transparent;margin-top:1px;cursor:pointer;display:grid;place-items:center;
+  }
+  .exbox.checked{background:var(--volt)}
+  .exbox.checked::after{content:"✓";color:var(--volt-ink);font-weight:800;font-size:16px}
+  .exmeta{flex:1}
+  .exname{font-weight:600;color:var(--text);font-size:16px}
+  .exname .tag{font-size:11px;color:var(--ember);font-weight:700;margin-left:4px;border:1px solid var(--ember);border-radius:5px;padding:1px 4px;vertical-align:1px}
+  .exreps{color:var(--volt);font-weight:700;font-size:14.5px;white-space:nowrap;margin-left:auto;padding-left:10px}
+  .excue{color:var(--muted);font-size:14px;margin-top:2px;line-height:1.35}
+
+  .note{
+    margin:18px 0 0;padding:12px 14px;border-radius:14px;background:var(--surface2);font-size:14.5px;line-height:1.5;color:var(--text);
+  }
+  .note b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:var(--volt);margin-bottom:3px;font-family:'Oswald',sans-serif}
+
+  .complete-btn{
+    width:100%;min-height:58px;border:0;border-radius:16px;cursor:pointer;margin-top:20px;
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;letter-spacing:.03em;text-transform:uppercase;
+    background:var(--volt);color:var(--volt-ink);
+  }
+  .complete-btn.done{background:var(--surface2);color:var(--volt);border:2px solid var(--volt)}
+
+  .rest-card .daytitle{color:var(--text)}
+  .tip{background:var(--surface2);border-radius:14px;padding:12px 14px;font-size:15px;margin-top:4px;color:var(--text)}
+
+  .celebrate{text-align:center;padding:30px 10px}
+  .celebrate .big{font-size:52px;margin-bottom:6px}
+  .celebrate h2{font-size:25px;color:var(--text);margin-bottom:8px;text-transform:uppercase}
+  .celebrate p{color:var(--muted);font-size:15px;max-width:34ch;margin:0 auto}
+
+  .weekblock{margin-bottom:22px}
+  .weekblock .wh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .weekblock .wh h3{font-size:19px;color:var(--text)}
+  .weekblock .wh span{font-size:12.5px;color:var(--volt);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-family:'Oswald',sans-serif}
+  .chipgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+  .daychip{
+    min-width:0;overflow:hidden;
+    aspect-ratio:1;border-radius:10px;border:2px solid var(--line);background:var(--surface2);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;
+    font-family:'Oswald',sans-serif;
+  }
+  .daychip .n{font-weight:700;font-size:15px;color:var(--text)}
+  .daychip .t{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+  .daychip.done{background:var(--volt);border-color:var(--volt)}
+  .daychip.done .n,.daychip.done .t{color:var(--volt-ink)}
+  .daychip.selected{border-color:var(--ember);box-shadow:0 0 0 2px var(--ember)}
+  .daychip.rest{background:var(--surface)}
+
+  .phase-divider{
+    margin:26px 0 14px;padding-top:14px;border-top:2px solid var(--line);
+  }
+  .phase-divider h2{font-size:20px;color:var(--text);text-transform:uppercase}
+  .phase-divider p{font-size:14px;color:var(--muted);margin-top:4px}
+
+  .resetwrap{text-align:center;margin-top:26px}
+  .resetwrap button{
+    border:0;background:none;color:var(--muted);text-decoration:underline;font-size:13.5px;cursor:pointer;font-family:inherit;
+  }
+
+  .phtitle{font-family:'Oswald',sans-serif;font-weight:700;font-size:21px;text-transform:uppercase;color:var(--text);margin-bottom:4px}
+  .phsub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .mrow{margin-bottom:16px}
+  .mrow label{display:block;font-weight:600;font-size:14.5px;color:var(--text);margin-bottom:4px}
+  .mrow .inputwrap{display:flex;align-items:center;gap:8px}
+  .mrow input{
+    flex:1;min-height:46px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface2);
+    color:var(--text);font-size:16px;padding:0 12px;font-family:inherit;
+  }
+  .mrow input::placeholder{color:var(--muted)}
+  .mrow input:focus{outline:none;border-color:var(--volt)}
+  .mrow .unit{color:var(--muted);font-size:13.5px;min-width:26px}
+  .mrow .hint{font-size:12.5px;color:var(--muted);margin-top:4px}
+  .metric-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+  .metric-card .mlabel{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;font-weight:700;font-family:'Oswald',sans-serif}
+  .metric-card .mvalue{font-family:'Oswald',sans-serif;font-size:27px;font-weight:700;color:var(--text);margin:2px 0 2px}
+  .metric-card .mdelta{font-size:13px;font-weight:600}
+  .metric-card .mdelta.good{color:var(--volt)}
+  .metric-card .mdelta.bad{color:var(--ember)}
+  .metric-card .mdelta.neutral{color:var(--muted)}
+  .metric-card .empty{font-size:13.5px;color:var(--muted);margin-top:2px}
+  .metric-card .spark{display:block;margin-top:8px}
+  .history{margin-top:4px}
+  .history summary{cursor:pointer;color:var(--volt);font-weight:700;font-size:14px;padding:10px 2px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+  .hrow{display:flex;align-items:center;gap:8px;padding:9px 2px;border-bottom:1px solid var(--line);font-size:13px}
+  .hrow .hdate{color:var(--text);font-weight:700;min-width:46px;font-family:'Oswald',sans-serif}
+  .hrow .hvals{color:var(--muted);flex:1}
+  .hrow .hdel{border:0;background:none;color:var(--muted);cursor:pointer;font-size:18px;padding:2px 6px;line-height:1}
+  .hrow .hdel:hover{color:var(--ember)}
+</style>
+</head>
+<body>
+<main id="app">
+  <header class="top">
+    <h1><svg class="bolt" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>Desmond's <span class="accent">Power</span> Program</h1>
+    <p class="sub">9 weeks of plyometrics, core &amp; light dumbbells — built for mornings.</p>
+  </header>
+
+  <div class="progressbar"><div class="fill" id="progFill" style="width:0%"></div></div>
+  <div class="statline" id="statLine"></div>
+
+  <nav class="tabs">
+    <button class="tab" data-tab="today" aria-pressed="true">Today</button>
+    <button class="tab" data-tab="program" aria-pressed="false">Program</button>
+    <button class="tab" data-tab="progress" aria-pressed="false">Progress</button>
+  </nav>
+
+  <div id="view-today"></div>
+  <div id="view-program" hidden></div>
+  <div id="view-progress" hidden></div>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- Content ----------
+
+  var PHASES = [
+    { name:"Foundation", blurb:"Learn to land soft, brace your core, and get comfortable with the dumbbells before anything gets fast or heavy." },
+    { name:"Build", blurb:"More rounds, more explosive, dumbbells step up to 8 lb. This is where the engine gets built." },
+    { name:"Power", blurb:"Full speed, full power. This is what shows up on the mound, at the plate, and on the field next fall." }
+  ];
+
+  var DAY_ORDER = ["B","A","C","D","E","F","REST"];
+  var TYPE_LABEL = { B:"Plyo & Power", A:"Core", C:"Dumbbells", D:"Speed & Agility", E:"Rotational Core", F:"Full-Body", REST:"Rest" };
+  var CHIP_LABEL = { B:"Plyo", A:"Core", C:"DB", D:"Speed", E:"Rotate", F:"Full", REST:"Rest" };
+
+  function w(name, reps, cue, eq){
+    var o = { name:name, reps:reps };
+    if(cue) o.cue = cue;
+    if(eq) o.eq = eq;
+    return o;
+  }
+
+  var WORKOUTS = {
+    0: {
+      B: {
+        title:"Lower Body Plyo & Power", time:"~10-12 min", roundsByWeek:[2,2,3],
+        warmup:[ w("Jog or march in place","30 sec"), w("Bodyweight squats","x10","Sit hips back, chest tall."), w("Ankle pogo hops","15 sec","Stay light on your toes.") ],
+        main:[
+          w("Squat jumps","x6","Land soft, bend your knees, hold the landing 2 sec."),
+          w("Line hops","x20 (10 each way)","Hop side to side over a shoe or line — quick feet."),
+          w("Broad jump","x4","Jump forward, stick the landing, walk back and reset each time."),
+          w("Pogo hops","x15","Small, fast hops — barely bend your knees.")
+        ],
+        cooldown:[ w("Quad stretch","20 sec/side"), w("Calf stretch","20 sec/side") ],
+        note:"Soft landings now build the spring you'll need to beat bigger kids to the ball — and to explode off the mound."
+      },
+      A: {
+        title:"Activation & Core", time:"~10 min", roundsByWeek:[2,2,3],
+        warmup:[ w("Cat-cow","x8"), w("Hip circles","x8 each way"), w("Glute bridges","x10") ],
+        main:[
+          w("Plank hold","20 sec","Straight line from shoulders to heels — don't let your hips sag."),
+          w("Dead bug","x8/side","Slow and controlled — keep your low back flat on the floor."),
+          w("Glute bridge","x12","Squeeze your glutes at the top."),
+          w("Bird dog","x8/side","Opposite arm and leg, stay steady — don't rock."),
+          w("Side plank","15 sec/side","Knee down is totally fine while you're building up."),
+          w("Copenhagen plank (knee down)","15 sec/side","Top knee on the bench, lift your hips into a straight line.")
+        ],
+        cooldown:[ w("Child's pose breathing","5 slow breaths"), w("Seated forward fold","20 sec") ],
+        note:"A strong core is the base everything else gets built on — pitching, hitting, blocking, all of it."
+      },
+      C: {
+        title:"Dumbbell Strength + Core", time:"~12 min", roundsByWeek:[2,2,3],
+        warmup:[ w("Arm circles","x10 each way"), w("Bodyweight good mornings","x10","Hinge at the hips, soft knees.") ],
+        main:[
+          w("DB goblet squat","x10","Hold one dumbbell at your chest, elbows in.","db"),
+          w("DB suitcase carry","20 steps/hand","Stand tall — don't lean toward the weight.","db"),
+          w("DB floor press","x10","Lying on your back, press straight up, control it down.","db"),
+          w("DB Romanian deadlift","x10","Soft knees, push hips back, flat back.","db"),
+          w("Plank shoulder taps","x10/side","Keep your hips still while you tap."),
+          w("Nordic hamstring lower","x2","Kneel with your feet held, lower as slow as you can, catch yourself with your hands.")
+        ],
+        cooldown:[ w("Doorway chest stretch","20 sec"), w("Hip flexor stretch","20 sec/side") ],
+        note:"5 lb is plenty for now — the goal is clean reps, not heavy weight. Use the 5s."
+      },
+      D: {
+        title:"Speed, Agility & Reactive Power", time:"~10 min", roundsByWeek:[2,2,3],
+        warmup:[ w("High knees","20 sec"), w("Butt kicks","20 sec"), w("Lateral shuffles","20 sec") ],
+        main:[
+          w("Quick feet","15 sec","Tiny, fast steps — like hopping on hot pavement."),
+          w("Lateral hops over a line","x16 (8 each way)","Stay low and light."),
+          w("A-skips","10/leg","Drive your knee up and forward."),
+          w("5-yard sprint starts","x4","Explode from a standing start, jog back to recover."),
+          w("Plant and stick","x3/side","Three steps, plant your plant foot out in front, freeze. Do not kick.")
+        ],
+        cooldown:[ w("Standing hamstring stretch","20 sec/side"), w("Hip flexor stretch","20 sec/side") ],
+        note:"This is first-step quickness — and the plant drill is where your kicking leg gets its power. The plant stops your body so the kicking leg can whip through."
+      },
+      E: {
+        title:"Rotational Core & Anti-Rotation", time:"~10 min", roundsByWeek:[2,2,3],
+        warmup:[ w("Torso twists","x10 each way"), w("Arm swings","x10") ],
+        main:[
+          w("Standing trunk rotations","x12 each way","Arms out, rotate through your whole trunk, controlled."),
+          w("Dead bug with rotation","x8/side","Reach across your body as you extend."),
+          w("Side plank reach-under","x8/side","Thread your arm under your body, then back up."),
+          w("Bear crawl hold","20 sec","Knees just off the ground, don't let your hips sag or pike.")
+        ],
+        cooldown:[ w("Seated spinal twist","20 sec/side") ],
+        note:"This turns hip turn into bat speed and ball speed — strong hips and core let your arms move fast without your body falling apart."
+      },
+      F: {
+        title:"Full-Body Power Circuit", time:"~12-14 min", roundsByWeek:[2,2,3],
+        warmup:[ w("Jumping jacks","30 sec"), w("Bodyweight squats","x10"), w("Arm circles","x10") ],
+        main:[
+          w("Squat jumps","x8","Land soft every time."),
+          w("DB goblet squat","x10","", "db"),
+          w("Plank hold","25 sec"),
+          w("Broad jump","x4"),
+          w("Mountain climbers","x16 (8/side)","Keep your hips low and steady.")
+        ],
+        cooldown:[ w("Full-body stretch flow","20 sec each: quads, calves, hamstrings, chest") ],
+        note:"Rest about 60 sec between rounds — this one's meant to get your heart rate up."
+      }
+    },
+    1: {
+      B: {
+        title:"Lower Body Plyo & Power", time:"~12 min", roundsByWeek:[3,3,4],
+        warmup:[ w("Pogo hops","20 sec"), w("Walking lunges","x8/leg"), w("Leg swings","x10/leg") ],
+        main:[
+          w("Squat jumps (continuous)","x8","Minimal pause between landing and the next jump."),
+          w("Skater hops","x8/side","Bound sideways, stick the landing on one foot before the next hop."),
+          w("Broad jump","x5","Try to beat your distance each jump."),
+          w("Single-leg pogo hops","x10/leg","Small, quick hops on one foot — hold a wall if you need balance.")
+        ],
+        cooldown:[ w("Standing quad/hip flexor stretch","20 sec/side") ],
+        note:"Skater hops build the push-off power that beats a defender to the spot — or gets you off the rubber faster."
+      },
+      A: {
+        title:"Activation & Core", time:"~12 min", roundsByWeek:[3,3,4],
+        warmup:[ w("Cat-cow","x8"), w("Hip circles","x8"), w("Glute bridges","x10") ],
+        main:[
+          w("Plank hold","30 sec"),
+          w("Side plank with reach","x10/side","Reach your top arm to the sky, then thread it under."),
+          w("Hollow body hold","15 sec","Low back pressed down — tuck your knees if it's too much."),
+          w("Bird dog with 2-sec pause","x8/side"),
+          w("Superman hold","20 sec","Lift chest and legs together, squeeze your whole backside."),
+          w("Copenhagen plank","20 sec/side","Top foot on the bench now. Hips lifted, body in one straight line.")
+        ],
+        cooldown:[ w("Seated forward fold","20 sec"), w("Cobra stretch","20 sec") ],
+        note:"If hollow holds are tough, bend your knees — same tension, less leverage."
+      },
+      C: {
+        title:"Dumbbell Strength + Core", time:"~14 min", roundsByWeek:[3,3,4],
+        warmup:[ w("Arm circles","x10"), w("Bodyweight reverse lunges","x8/leg") ],
+        main:[
+          w("DB goblet squat","x10","","db"),
+          w("DB reverse lunge","x8/leg","Hold a dumbbell in each hand, step back, knee drops straight down.","db"),
+          w("DB overhead press","x10","Standing or seated, press straight up, don't arch your back.","db"),
+          w("DB Romanian deadlift","x10","","db"),
+          w("Side plank rotation","x8/side","Thread the needle under your body, then rotate open."),
+          w("Nordic hamstring lower","x3","Slower than last block. Knee to head in one line — no bending at the hips.")
+        ],
+        cooldown:[ w("Hip flexor stretch","20 sec/side"), w("Shoulder stretch","20 sec/side") ],
+        note:"Step up to the 8 lb pair this block — if form breaks down, drop back to 5 lb. Clean reps beat heavy reps."
+      },
+      D: {
+        title:"Speed, Agility & Reactive Power", time:"~12 min", roundsByWeek:[3,3,4],
+        warmup:[ w("High knees","20 sec"), w("Lateral shuffles","20 sec"), w("A-skips","10/leg") ],
+        main:[
+          w("Lateral bounds","x10/side","Bigger and faster than a skater hop — really push off."),
+          w("Shuttle shuffle","x4 (5 steps each way)"),
+          w("Tuck jumps","x6","Knees up toward your chest, land soft."),
+          w("10-yard sprint starts","x4"),
+          w("Plant-leg bound","x4/side","Two run-in steps, plant hard out in front of you, and stick it.")
+        ],
+        cooldown:[ w("Hamstring/hip stretch","20 sec/side") ],
+        note:"Full recovery between sprints — walk back slow, this is about speed, not cardio. On the plant-leg bound, land with the foot out in front of you, not underneath."
+      },
+      E: {
+        title:"Rotational Core & Anti-Rotation", time:"~12 min", roundsByWeek:[3,3,4],
+        warmup:[ w("Torso twists","x10"), w("Arm swings","x10"), w("Cat-cow","x8") ],
+        main:[
+          w("Standing DB rotation","x10 each way","Hold one dumbbell at your chest, rotate hips and shoulders together, controlled.","db"),
+          w("Side plank with rotation","x10/side"),
+          w("Mountain climbers","x20"),
+          w("Plank up-downs","x10","Forearm to hand and back, keep your hips still.")
+        ],
+        cooldown:[ w("Seated spinal twist","20 sec/side"), w("Child's pose","5 breaths") ],
+        note:"Rotate from your hips and ribs, not just your arms — that's where real power comes from."
+      },
+      F: {
+        title:"Full-Body Power Circuit", time:"~14 min", roundsByWeek:[3,3,4],
+        warmup:[ w("Jumping jacks","30 sec"), w("Bodyweight squats","x10"), w("Walking lunges","x8/leg") ],
+        main:[
+          w("Squat jumps","x10"),
+          w("DB reverse lunge","x8/leg","","db"),
+          w("Skater hops","x8/side"),
+          w("Plank hold","30 sec"),
+          w("Mountain climbers","x20")
+        ],
+        cooldown:[ w("Full-body stretch","20 sec each") ],
+        note:"This one's the hardest in the Build block — pace yourself through the rounds."
+      }
+    },
+    2: {
+      B: {
+        title:"Lower Body Plyo & Power", time:"~14 min", roundsByWeek:[3,4,4],
+        warmup:[ w("Pogo hops","20 sec"), w("Walking lunges","x8/leg"), w("Easy squat jumps to prime","x4") ],
+        main:[
+          w("Continuous squat jumps","x10","Minimal ground contact time — pop right back up."),
+          w("Single-leg broad jump","x4/leg","Hop forward on one leg, stick the landing before resetting."),
+          w("Lateral bounds","x10/side","Bigger and faster — really load and explode."),
+          w("Repeated broad jumps","x3 in a row","Chain 3 jumps together like a long jump — land and go again.")
+        ],
+        cooldown:[ w("Full lower-body stretch","20 sec each") ],
+        note:"This kind of explosiveness bursts you off the line in football and gets you to a ball a step quicker on defense."
+      },
+      A: {
+        title:"Activation & Core", time:"~14 min", roundsByWeek:[3,4,4],
+        warmup:[ w("Cat-cow","x8"), w("Hip circles","x8"), w("Glute bridges","x10") ],
+        main:[
+          w("Plank hold","40 sec"),
+          w("Hollow body rocks","x10","Hold the hollow shape and rock gently forward and back."),
+          w("Side plank with leg lift","x8/side"),
+          w("Bird dog","x10/side","Slow, controlled, no rocking."),
+          w("Superman hold with flutter","20 sec"),
+          w("Copenhagen plank","30 sec/side","Full length, top foot on the bench. Hips never sag.")
+        ],
+        cooldown:[ w("Full stretch flow","20 sec each") ],
+        note:"This is the strongest your core has been all program — it should feel like it."
+      },
+      C: {
+        title:"Dumbbell Strength + Core", time:"~15 min", roundsByWeek:[3,4,4],
+        warmup:[ w("Arm circles","x10"), w("Bodyweight reverse lunges","x8/leg") ],
+        main:[
+          w("DB goblet squat w/ 2-sec pause","x12","","db"),
+          w("DB walking lunge","x8/leg","Moving forward, controlled each step.","db"),
+          w("DB push press","x8","Small dip with the legs, then press overhead.","db"),
+          w("DB single-arm row","x10/arm","Hinge forward slightly, pull your elbow back.","db"),
+          w("Plank shoulder taps","x16"),
+          w("Nordic hamstring lower","x3","As slow as you can go. This is the one that protects your hamstring.")
+        ],
+        cooldown:[ w("Full stretch","20 sec each") ],
+        note:"If 10 lb breaks your form down, stick with 8 — moving well under a bit more load, not maxing out."
+      },
+      D: {
+        title:"Speed, Agility & Reactive Power", time:"~14 min", roundsByWeek:[3,4,4],
+        warmup:[ w("High knees","20 sec"), w("Lateral shuffles","20 sec"), w("Build-up strides","x3") ],
+        main:[
+          w("Reactive hops","15 sec","Quick double-leg hops, barely touch the ground."),
+          w("180° jumps","x6","Jump and spin a half turn, land balanced — controlled, not wild."),
+          w("Shuttle sprints","x5 (5 steps each way)"),
+          w("10-15 yard sprint starts","x5","Full effort, full recovery between each one."),
+          w("Pelvic block finish","x4/side","Plant leg long and locked, opposite arm blocks across. Feel the snap.")
+        ],
+        cooldown:[ w("Full stretch","20 sec each") ],
+        note:"Max effort on the sprints, real recovery between them. If you can get to a field or a net this block, add 20-30 kicks after this session — same approach every time, technique only."
+      },
+      E: {
+        title:"Rotational Core & Anti-Rotation", time:"~14 min", roundsByWeek:[3,4,4],
+        warmup:[ w("Torso twists","x10"), w("Arm swings","x10") ],
+        main:[
+          w("Standing DB rotational throw pattern","x8/side","Hold the dumbbell at your hip, rotate and extend like a throw — don't let go of it.","db"),
+          w("DB woodchop","x10/side","Diagonal chop, high to low, controlled the whole way.","db"),
+          w("Side plank with rotation","x10/side"),
+          w("Plank up-downs","x12")
+        ],
+        cooldown:[ w("Seated spinal twist","20 sec/side") ],
+        note:"This is the direct line to more pop in your swing and more zip on your fastball — power starts in your hips and core, not just your arm."
+      },
+      F: {
+        title:"Full-Body Power Circuit", time:"~15 min", roundsByWeek:[3,4,4],
+        warmup:[ w("Full dynamic warm-up","~2 min: jumping jacks, squats, lunges") ],
+        main:[
+          w("Squat jumps","x10"),
+          w("DB walking lunge","x8/leg","","db"),
+          w("Lateral bounds","x8/side"),
+          w("Plank hold","40 sec"),
+          w("Broad jump","x5","Try to beat your Week 1 distance — notice how far you've come.")
+        ],
+        cooldown:[ w("Full stretch + 5 deep breaths","") ],
+        note:"Nice work finishing the block — give yourself credit, this is the stuff that doesn't show up until game day."
+      }
+    }
+  };
+
+  var RECOVERY_TIPS = [
+    "Hydrate well today — water, not just at meals.",
+    "Protein at breakfast and lunch helps your muscles rebuild.",
+    "Aim for 9-10 hours of sleep tonight — that's when the real growth happens.",
+    "A few easy stretches today, nothing intense — let your body catch up.",
+    "Light walking or shooting around is fine; just skip anything max-effort today.",
+    "Rest days are part of the training, not a day off from getting better.",
+    "Stretch your legs out for a few minutes if you're sore.",
+    "Eat enough today — growing and training both take fuel.",
+    "Last rest day of the program — look back at Week 1 and notice what's gotten easier."
+  ];
+  var REST_STRETCHES = [
+    w("Quad stretch","20 sec/side"),
+    w("Hamstring stretch","20 sec/side"),
+    w("Hip flexor stretch","20 sec/side"),
+    w("Child's pose breathing","5 slow breaths"),
+    w("Easy walk or shoot around","10-15 min, just moving, nothing hard")
+  ];
+
+  // ---------- Measurements ----------
+
+  function fmtFeetIn(v){
+    if(v === null || v === undefined || isNaN(v)) return "—";
+    var ft = Math.floor(v/12);
+    var inch = Math.round((v - ft*12)*10)/10;
+    return ft + "'" + inch + '"';
+  }
+  function fmtLb(v){ return (v===null||v===undefined||isNaN(v)) ? "—" : v+" lb"; }
+  function fmtSec(v){ return (v===null||v===undefined||isNaN(v)) ? "—" : v+" sec"; }
+  function fmtYd(v){ return (v===null||v===undefined||isNaN(v)) ? "—" : v+" yd"; }
+
+  var METRICS = [
+    { key:"height", label:"Height", unit:"in", step:"0.5", ph:"e.g. 56", hint:"Barefoot against a wall, mark and measure.", fmt:fmtFeetIn, trend:null },
+    { key:"weight", label:"Weight", unit:"lb", step:"0.5", ph:"e.g. 78", hint:"Same time of day if you can.", fmt:fmtLb, trend:null },
+    { key:"broadJump", label:"Standing Broad Jump", unit:"in", step:"0.5", ph:"e.g. 54", hint:"Feet together, swing your arms, jump forward — measure heel to the start line.", fmt:fmtFeetIn, trend:"up" },
+    { key:"plank", label:"Plank Hold", unit:"sec", step:"1", ph:"e.g. 35", hint:"Max time in good plank form — stop when your hips sag.", fmt:fmtSec, trend:"up" },
+    { key:"sgBroadL", label:"Single-Leg Broad Jump — Left", unit:"in", step:"0.5", ph:"e.g. 38", hint:"Jump off the left leg and land on the left leg. Stick it or it does not count.", fmt:fmtFeetIn, trend:"up" },
+    { key:"sgBroadR", label:"Single-Leg Broad Jump — Right", unit:"in", step:"0.5", ph:"e.g. 38", hint:"Same on the right. The gap between your two legs is the number that matters.", fmt:fmtFeetIn, trend:"up" },
+    { key:"kickFG", label:"Longest Field Goal Made", unit:"yd", step:"1", ph:"e.g. 25", hint:"Made, not attempted. Off a block or a holder.", fmt:fmtYd, trend:"up" },
+    { key:"sprint10", label:"10-Yard Sprint", unit:"sec", step:"0.1", ph:"e.g. 2.3", hint:"Have someone time you with a phone — lower is faster.", fmt:fmtSec, trend:"down" }
+  ];
+
+  function parseNum(str){
+    if(str === undefined || str === null) return null;
+    var s = String(str).trim();
+    if(s === "") return null;
+    var n = parseFloat(s);
+    return isNaN(n) ? null : n;
+  }
+
+  function currentProgramDay(){
+    var next = getNextIncompleteDay();
+    return next ? next : TOTAL_DAYS;
+  }
+
+  function getMetricSeries(key){
+    return state.measurements
+      .filter(function(m){ return m[key] !== undefined && m[key] !== null; })
+      .map(function(m){ return { date:m.date, day:m.day, value:+m[key] }; });
+  }
+
+  function fmtDate(iso){
+    var d = new Date(iso + "T00:00:00");
+    return d.toLocaleDateString(undefined, { month:"short", day:"numeric" });
+  }
+
+  function sparkline(values){
+    if(values.length < 2) return "";
+    var w = 280, h = 46, pad = 6;
+    var min = Math.min.apply(null, values), max = Math.max.apply(null, values);
+    var range = (max - min) || 1;
+    var stepX = (w - pad*2) / (values.length - 1);
+    var pts = values.map(function(v, i){
+      var x = pad + i*stepX;
+      var y = pad + (h - pad*2) - ((v - min)/range)*(h - pad*2);
+      return [x,y];
+    });
+    var path = pts.map(function(p,i){ return (i===0?"M":"L") + p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ");
+    var dots = pts.map(function(p,i){
+      var isLast = i === pts.length - 1;
+      return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="' + (isLast?4:2.5) + '" fill="var(--volt)"' + (isLast?' stroke="var(--surface)" stroke-width="2"':'') + '/>';
+    }).join("");
+    return '<svg class="spark" viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="' + h + '" preserveAspectRatio="none">'
+      + '<path d="' + path + '" fill="none" stroke="var(--volt)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+      + dots
+      + '</svg>';
+  }
+
+  function saveMeasurement(){
+    var today = todayStr();
+    var idx = state.measurements.findIndex(function(m){ return m.date === today; });
+    var entry = idx >= 0 ? Object.assign({}, state.measurements[idx]) : { date:today };
+    METRICS.forEach(function(m){
+      var input = document.getElementById("m_" + m.key);
+      var v = parseNum(input ? input.value : null);
+      if(v !== null) entry[m.key] = v;
+    });
+    entry.day = currentProgramDay();
+    if(idx >= 0) state.measurements[idx] = entry; else state.measurements.push(entry);
+    state.measurements.sort(function(a,b){ return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    saveState();
+    renderProgressView();
+  }
+
+  function deleteMeasurement(date){
+    if(!window.confirm("Delete this check-in?")) return;
+    state.measurements = state.measurements.filter(function(m){ return m.date !== date; });
+    saveState();
+    renderProgressView();
+  }
+
+  function renderProgressView(){
+    var el = document.getElementById("view-progress");
+    var html = '';
+
+    html += '<div class="card">'
+      + '<div class="phtitle">Log a Check-In</div>'
+      + '<div class="phsub">Day ' + currentProgramDay() + ' &middot; ' + fmtDate(todayStr()) + '. Best times: Day 1, Day 22, Day 43, and Day 63 — or anytime. Leave any field blank to skip it.</div>';
+    METRICS.forEach(function(m){
+      html += '<div class="mrow">'
+        + '<label for="m_' + m.key + '">' + m.label + '</label>'
+        + '<div class="inputwrap"><input id="m_' + m.key + '" type="number" inputmode="decimal" step="' + m.step + '" placeholder="' + m.ph + '"><span class="unit">' + m.unit + '</span></div>'
+        + '<div class="hint">' + m.hint + '</div>'
+        + '</div>';
+    });
+    html += '<button class="complete-btn" id="saveMeasureBtn">Save Check-In</button>'
+      + '</div>';
+
+    METRICS.forEach(function(m){
+      var series = getMetricSeries(m.key);
+      html += '<div class="metric-card"><div class="mlabel">' + m.label + '</div>';
+      if(series.length === 0){
+        html += '<div class="empty">Not logged yet</div>';
+      } else {
+        var latest = series[series.length-1].value;
+        html += '<div class="mvalue">' + m.fmt(latest) + '</div>';
+        if(series.length > 1){
+          var first = series[0].value;
+          var delta = Math.round((latest-first)*10)/10;
+          var deltaClass = "neutral";
+          if(m.trend === "up") deltaClass = delta > 0 ? "good" : (delta < 0 ? "bad" : "neutral");
+          if(m.trend === "down") deltaClass = delta < 0 ? "good" : (delta > 0 ? "bad" : "neutral");
+          var sign = delta >= 0 ? "+" : "";
+          html += '<div class="mdelta ' + deltaClass + '">' + sign + delta + ' ' + m.unit + ' since Day ' + series[0].day + '</div>';
+          html += sparkline(series.map(function(s){ return s.value; }));
+        } else {
+          html += '<div class="empty">Log another check-in to see your trend</div>';
+        }
+      }
+      html += '</div>';
+    });
+
+    if(state.measurements.length > 0){
+      html += '<details class="history"><summary>All Check-Ins (' + state.measurements.length + ')</summary>';
+      state.measurements.slice().reverse().forEach(function(m){
+        var vals = METRICS.map(function(mt){
+          return (m[mt.key] !== undefined && m[mt.key] !== null) ? (mt.label + " " + mt.fmt(m[mt.key])) : null;
+        }).filter(Boolean).join(" &middot; ");
+        html += '<div class="hrow"><span class="hdate">' + fmtDate(m.date) + '</span><span class="hvals">' + (vals || "—") + '</span><button class="hdel" data-del="' + m.date + '" aria-label="Delete check-in">&times;</button></div>';
+      });
+      html += '</details>';
+    }
+
+    el.innerHTML = html;
+
+    var saveBtn = document.getElementById("saveMeasureBtn");
+    if(saveBtn) saveBtn.addEventListener("click", saveMeasurement);
+    el.querySelectorAll("[data-del]").forEach(function(btn){
+      btn.addEventListener("click", function(){ deleteMeasurement(btn.getAttribute("data-del")); });
+    });
+  }
+
+  // ---------- Build the 63-day schedule ----------
+
+  var SCHEDULE = [];
+  (function(){
+    for(var week=0; week<9; week++){
+      var phaseIdx = Math.floor(week/3);
+      var weekInPhase = week % 3;
+      for(var d=0; d<7; d++){
+        var type = DAY_ORDER[d];
+        var dayNum = week*7 + d + 1;
+        if(type === "REST"){
+          SCHEDULE.push({ day:dayNum, week:week+1, weekInPhase:weekInPhase, phase:phaseIdx, type:"REST" });
+        } else {
+          SCHEDULE.push({ day:dayNum, week:week+1, weekInPhase:weekInPhase, phase:phaseIdx, type:type, workout:WORKOUTS[phaseIdx][type] });
+        }
+      }
+    }
+  })();
+  var TOTAL_DAYS = SCHEDULE.length; // 63
+
+  // ---------- State ----------
+
+  var STORE_KEY = "desmondPower_v1";
+  function loadState(){
+    try{
+      var raw = localStorage.getItem(STORE_KEY);
+      if(raw) return JSON.parse(raw);
+    }catch(e){}
+    return { completed:{}, completionDates:[], selectedDay:1, checks:{}, measurements:[] };
+  }
+  function saveState(){
+    try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){}
+  }
+  var state = loadState();
+  if(!state.completed) state.completed = {};
+  if(!state.completionDates) state.completionDates = [];
+  if(!state.checks) state.checks = {};
+  if(!state.measurements) state.measurements = [];
+  if(!state.selectedDay) state.selectedDay = getNextIncompleteDay() || 1;
+
+  function getNextIncompleteDay(){
+    for(var i=1;i<=TOTAL_DAYS;i++){
+      if(!state.completed[i]) return i;
+    }
+    return null;
+  }
+  function todayStr(){
+    var d = new Date();
+    return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  }
+  function computeStreak(){
+    var set = {};
+    state.completionDates.forEach(function(ds){ set[ds] = true; });
+    var cursor = new Date();
+    if(!set[todayStrFrom(cursor)]) cursor.setDate(cursor.getDate()-1);
+    var streak = 0;
+    while(set[todayStrFrom(cursor)]){
+      streak++;
+      cursor.setDate(cursor.getDate()-1);
+    }
+    return streak;
+  }
+  function todayStrFrom(d){
+    return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  }
+  function completedCount(){
+    return Object.keys(state.completed).length;
+  }
+
+  // ---------- Rendering ----------
+
+  var currentTab = "today";
+
+  function renderStats(){
+    var done = completedCount();
+    document.getElementById("progFill").style.width = Math.round(done/TOTAL_DAYS*100) + "%";
+    var streak = computeStreak();
+    var sel = SCHEDULE[state.selectedDay-1];
+    var line = "Day " + state.selectedDay + " of " + TOTAL_DAYS + " &middot; Week " + sel.week + " &middot; <b>" + done + "/" + TOTAL_DAYS + "</b> done";
+    if(streak > 0) line += " &middot; 🔥 " + streak + "-day streak";
+    document.getElementById("statLine").innerHTML = line;
+  }
+
+  function exKey(day, section, idx){ return day+"_"+section+"_"+idx; }
+
+  function exerciseList(day, section, list){
+    var html = '<ul class="exlist">';
+    list.forEach(function(ex, idx){
+      var key = exKey(day, section, idx);
+      var checked = !!state.checks[key];
+      var tag = ex.eq === "db" ? '<span class="tag">DB</span>' : "";
+      html += '<li>'
+        + '<div class="exbox' + (checked?' checked':'') + '" data-exkey="' + key + '" role="checkbox" aria-checked="' + checked + '"></div>'
+        + '<div class="exmeta">'
+        + '<div class="exname">' + ex.name + tag + '<span class="exreps">' + (ex.reps||"") + '</span></div>'
+        + (ex.cue ? '<div class="excue">' + ex.cue + '</div>' : '')
+        + '</div></li>';
+    });
+    html += '</ul>';
+    return html;
+  }
+
+  function renderToday(){
+    var el = document.getElementById("view-today");
+    var day = state.selectedDay;
+    var entry = SCHEDULE[day-1];
+    var isDone = !!state.completed[day];
+
+    if(!entry){
+      el.innerHTML = '<div class="card celebrate"><div class="big">🏆</div><h2>Program complete!</h2><p>All 9 weeks done. That\'s a real offseason of work — baseball and next football season both get to feel it.</p></div>';
+      return;
+    }
+
+    var phase = PHASES[entry.phase];
+    var html = '';
+
+    if(completedCount() === TOTAL_DAYS){
+      html += '<div class="card celebrate" style="padding:18px;margin-bottom:14px">'
+        + '<div class="big" style="font-size:40px;margin-bottom:2px">🏆</div>'
+        + '<h2 style="font-size:21px;margin-bottom:6px">All 9 weeks complete!</h2>'
+        + '<p style="font-size:14px">That\'s a full offseason of work in the books — baseball and next football season both get to feel it. Browse any day below to look back or redo one.</p>'
+        + '</div>';
+    }
+
+    if(entry.type === "REST"){
+      var tip = RECOVERY_TIPS[(entry.week-1) % RECOVERY_TIPS.length];
+      html += '<div class="card rest-card">'
+        + '<div class="daynav"><button data-nav="-1" ' + (day<=1?'disabled':'') + '>&larr; Prev</button><span class="phase-pill">' + phase.name + '</span><button data-nav="1" ' + (day>=TOTAL_DAYS?'disabled':'') + '>Next &rarr;</button></div>'
+        + '<div class="daynum">Day ' + day + ' of ' + TOTAL_DAYS + ' &middot; Week ' + entry.week + '</div>'
+        + '<div class="daytitle">Rest &amp; Recovery</div>'
+        + '<div class="daytime">No workout today — recovery is part of the plan.</div>'
+        + '<div class="tip">' + tip + '</div>'
+        + '<div class="section-head">Optional &middot; Easy Stretch</div>'
+        + exerciseList(day, "rest", REST_STRETCHES)
+        + '<button class="complete-btn' + (isDone?' done':'') + '" id="completeBtn">' + (isDone ? "✅ Marked complete — tap to undo" : "Mark day complete") + '</button>'
+        + '</div>';
+    } else {
+      var wk = entry.workout;
+      var rounds = wk.roundsByWeek[entry.weekInPhase];
+      html += '<div class="card">'
+        + '<div class="daynav"><button data-nav="-1" ' + (day<=1?'disabled':'') + '>&larr; Prev</button><span class="phase-pill">' + phase.name + '</span><button data-nav="1" ' + (day>=TOTAL_DAYS?'disabled':'') + '>Next &rarr;</button></div>'
+        + '<div class="daynum">Day ' + day + ' of ' + TOTAL_DAYS + ' &middot; Week ' + entry.week + '</div>'
+        + '<div class="daytitle">' + wk.title + '</div>'
+        + '<div class="daytime">' + wk.time + ' &middot; great right after you wake up</div>'
+        + '<div class="section-head">Warm-Up</div>'
+        + exerciseList(day, "warmup", wk.warmup)
+        + '<div class="section-head">Main Set <span class="chip">' + rounds + ' rounds</span></div>'
+        + exerciseList(day, "main", wk.main)
+        + '<div class="section-head">Cooldown</div>'
+        + exerciseList(day, "cooldown", wk.cooldown)
+        + (wk.note ? '<div class="note"><b>Why it matters</b>' + wk.note + '</div>' : '')
+        + '<button class="complete-btn' + (isDone?' done':'') + '" id="completeBtn">' + (isDone ? "✅ Marked complete — tap to undo" : "Mark day complete") + '</button>'
+        + '</div>';
+    }
+
+    el.innerHTML = html;
+
+    el.querySelectorAll("[data-exkey]").forEach(function(box){
+      box.addEventListener("click", function(){
+        var key = box.getAttribute("data-exkey");
+        state.checks[key] = !state.checks[key];
+        saveState();
+        box.classList.toggle("checked", !!state.checks[key]);
+        box.setAttribute("aria-checked", !!state.checks[key]);
+      });
+    });
+    el.querySelectorAll("[data-nav]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var delta = parseInt(btn.getAttribute("data-nav"), 10);
+        state.selectedDay = Math.min(TOTAL_DAYS, Math.max(1, state.selectedDay + delta));
+        saveState();
+        renderAll();
+      });
+    });
+    var cb = document.getElementById("completeBtn");
+    if(cb){
+      cb.addEventListener("click", function(){
+        var nowDone = !state.completed[day];
+        if(nowDone){
+          state.completed[day] = true;
+          var ds = todayStr();
+          if(state.completionDates.indexOf(ds) === -1) state.completionDates.push(ds);
+          var next = getNextIncompleteDay();
+          if(next) state.selectedDay = next;
+        } else {
+          delete state.completed[day];
+        }
+        saveState();
+        renderAll();
+      });
+    }
+  }
+
+  function renderProgram(){
+    var el = document.getElementById("view-program");
+    var html = '';
+    for(var week=1; week<=9; week++){
+      var phaseIdx = Math.floor((week-1)/3);
+      if((week-1) % 3 === 0){
+        html += '<div class="phase-divider"><h2>' + PHASES[phaseIdx].name + '</h2><p>' + PHASES[phaseIdx].blurb + '</p></div>';
+      }
+      html += '<div class="weekblock"><div class="wh"><h3>Week ' + week + '</h3><span>' + PHASES[phaseIdx].name + '</span></div><div class="chipgrid">';
+      for(var d=0; d<7; d++){
+        var dayNum = (week-1)*7 + d + 1;
+        var entry = SCHEDULE[dayNum-1];
+        var cls = "daychip";
+        if(state.completed[dayNum]) cls += " done";
+        if(entry.type === "REST") cls += " rest";
+        if(dayNum === state.selectedDay) cls += " selected";
+        html += '<div class="' + cls + '" data-day="' + dayNum + '" title="' + TYPE_LABEL[entry.type] + '"><div class="n">' + dayNum + '</div><div class="t">' + CHIP_LABEL[entry.type] + '</div></div>';
+      }
+      html += '</div></div>';
+    }
+    html += '<div class="resetwrap"><button id="resetBtn">Reset all progress</button></div>';
+    el.innerHTML = html;
+
+    el.querySelectorAll("[data-day]").forEach(function(chip){
+      chip.addEventListener("click", function(){
+        state.selectedDay = parseInt(chip.getAttribute("data-day"), 10);
+        saveState();
+        renderStats();
+        renderToday();
+        setTab("today");
+      });
+    });
+    var resetBtn = document.getElementById("resetBtn");
+    if(resetBtn){
+      resetBtn.addEventListener("click", function(){
+        if(window.confirm("Reset all progress? This clears every day you've checked off and every check-in you've logged.")){
+          state = { completed:{}, completionDates:[], selectedDay:1, checks:{}, measurements:[] };
+          saveState();
+          renderAll();
+        }
+      });
+    }
+  }
+
+  function renderAll(){
+    renderStats();
+    renderToday();
+    renderProgram();
+    renderProgressView();
+  }
+
+  function setTab(tab){
+    currentTab = tab;
+    document.querySelectorAll(".tab").forEach(function(btn){
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-tab") === tab ? "true" : "false");
+    });
+    document.getElementById("view-today").hidden = tab !== "today";
+    document.getElementById("view-program").hidden = tab !== "program";
+    document.getElementById("view-progress").hidden = tab !== "progress";
+    window.scrollTo(0,0);
+  }
+
+  document.querySelectorAll(".tab").forEach(function(btn){
+    btn.addEventListener("click", function(){ setTab(btn.getAttribute("data-tab")); });
+  });
+
+  // Insert the info strip once, above the tabs
+  var infoStrip = document.createElement("div");
+  infoStrip.className = "info-strip";
+  infoStrip.innerHTML = "<b>Gear:</b> just your body + 5 / 8 / 10 lb dumbbells a few days a week, sneakers, a little open floor.<br><b>Safety:</b> always warm up first, land soft and controlled, and stop if anything hurts.";
+  document.querySelector("nav.tabs").parentNode.insertBefore(infoStrip, document.querySelector("nav.tabs"));
+
+  renderAll();
+})();
+</script>
+</body>
+</html>
