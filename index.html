@@ -179,6 +179,11 @@
   .hrow .hvals{color:var(--muted);flex:1}
   .hrow .hdel{border:0;background:none;color:var(--muted);cursor:pointer;font-size:18px;padding:2px 6px;line-height:1}
   .hrow .hdel:hover{color:var(--ember)}
+    .asym{border-left:3px solid var(--volt)}
+    .asym.warn{border-left-color:var(--ember)}
+    .asymnum{font-family:Oswald,sans-serif;font-size:34px;line-height:1.1;color:var(--volt);margin:2px 0 4px}
+    .asym.warn .asymnum{color:var(--ember)}
+    .asymnum span{font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:var(--muted);margin-left:8px}
 </style>
 </head>
 <body>
@@ -619,6 +624,24 @@
       }
       html += '</div>';
     });
+
+    // left vs right: a kicker lives on one plant leg, so the two sides drift apart
+    (function(){
+      var L = getMetricSeries("sgBroadL"), R = getMetricSeries("sgBroadR");
+      if(!L.length || !R.length) return;
+      var l = L[L.length-1].value, r = R[R.length-1].value;
+      var big = Math.max(l, r); if(!big) return;
+      var gap = Math.round(Math.abs(l - r) / big * 100);
+      var strong = l > r ? "left" : "right";
+      var weak = l > r ? "right" : "left";
+      html += '<div class="card asym' + (gap > 15 ? ' warn' : '') + '">'
+        + '<div class="phtitle">Left vs Right</div>'
+        + '<div class="asymnum">' + gap + '%<span> gap &middot; ' + strong + ' leg is stronger</span></div>'
+        + '<div class="phsub">' + (gap > 15
+            ? 'Over 15% is worth closing. Add a set on the ' + weak + ' leg in the single-leg work, and test again next check-in.'
+            : 'Under 10% is normal. You plant on one leg every kick, so the two sides always drift a little.')
+        + '</div></div>';
+    })();
 
     if(state.measurements.length > 0){
       html += '<details class="history"><summary>All Check-Ins (' + state.measurements.length + ')</summary>';
