@@ -20,3 +20,16 @@ are in the `METRICS` array just above them.
 
 This repo was split out from `desmond-party` (which is just the birthday
 RSVP sites) to keep workout apps in their own place as more get added.
+
+## Morning reminders
+
+`reminders/<start-monday>.ics` holds 63 daily 7am events, one per program day,
+each with an alarm carrying that day's pump-up line. GitHub Pages is static and
+cannot send a web push, so the nudge rides on the phone's own calendar instead.
+
+There is one file per candidate start Monday because football runs into the
+playoffs and the real start date is not known in advance; the picker on the
+Program tab points at the matching file. The files are generated from the
+`PUMP` / `pumpFor` data inside `index.html`, so the two can never drift — if you
+edit the messages, or want different start dates, regenerate rather than editing
+the `.ics` files by hand.
