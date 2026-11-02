@@ -1247,11 +1247,11 @@ var POSE_ICONS = {
     }).join("");
     html += '<div class="remind">'
       + '<div class="remindhead"><span class="bolt">&#9889;</span>'
-      + '<span><b>Turn on morning reminders</b>'
-      + '<span class="sub">A 7am nudge every day for all ' + TOTAL_DAYS + ' days, in your phone\'s calendar.</span></span></div>'
+      + '<span><b>Turn on daily reminders</b>'
+      + '<span class="sub">Three a day for all ' + TOTAL_DAYS + ' days, in your phone\'s calendar: 7am the plan, 3:30pm a check-in, 7:45pm tomorrow\'s session.</span></span></div>'
       + '<div class="remindctl"><label for="startSel">Start</label>'
       + '<select id="startSel">' + opts + '</select></div>'
-      + '<a class="remindgo" id="remindGo" href="reminders/' + startPick + '.ics">Add the ' + TOTAL_DAYS + ' reminders</a>'
+      + '<a class="remindgo" id="remindGo" href="reminders/' + startPick + '.ics">Add the ' + (TOTAL_DAYS * 3) + ' reminders</a>'
       + '<div class="remindnote" id="remindNote">Day ' + TOTAL_DAYS + ' lands <b>' + lastDayLabel(startPick) + '</b>. '
       + 'Pick the Monday after football actually ends &mdash; if the season goes another week, come back and change it.</div>'
       + '</div>';

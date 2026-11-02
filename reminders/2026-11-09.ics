@@ -4,915 +4,3089 @@ PRODID:-//Desmond Power Program//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Desmond's Power Program
-X-WR-CALDESC:Morning reminders for the 9-week offseason program
+X-WR-CALDESC:Daily plan\, check-in and next-day agenda for the 9-week progr
+ am
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day1@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d1am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261109T070000
 DTEND:20261109T072000
-SUMMARY:Day 1 - Plyo & Power
-DESCRIPTION:Day one. Nine weeks from now you'll be a different athlete. Let
- 's go.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 1 · Plyo & Power · ~10-12 min
+DESCRIPTION:Lower Body Plyo & Power\n2 rounds of 4 moves · ~10-12 min\nWar
+ m-up 3 · main 4 · cool-down 2\n\nToday:\n• Squat jumps — x6\n• Lin
+ e hops — x20 (10 each way)\n• Broad jump — x4\n• Pogo hops — x15
+ \n\nDay one. Nine weeks from now you'll be a different athlete. Let's go.
+ \n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Day one. Nine weeks from now you'll be a different athlete. Let
- 's go.
+DESCRIPTION:Day 1 · Plyo & Power · ~10-12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day2@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d1pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261109T153000
+DTEND:20261109T154500
+SUMMARY:Day 1 of 63 · Did you get it in?
+DESCRIPTION:Week 1 of 9 · Foundation block · 2% of the way through.\n\nIf
+  today’s session is done\, open the app and tick it off. If it isn’t\,
+  there’s still time.\n\nThis is a measure day — log height\, weight\, 
+ broad jump (each leg)\, plank\, 10-yard sprint and your longest field goal
+ .\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 1 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d1eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261109T194500
+DTEND:20261109T200000
+SUMMARY:Tomorrow: Day 2 · Core · ~10 min
+DESCRIPTION:Activation & Core\n2 rounds of 6 moves · ~10 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nTomorrow:\n• Plank hold — 20 sec\n• Dead b
+ ug — x8/side\n• Glute bridge — x12\n• Bird dog — x8/side\n• Si
+ de plank — 15 sec/side\n• Copenhagen plank (knee down) — 15 sec/side
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 2 · Core · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d2am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261110T070000
 DTEND:20261110T072000
-SUMMARY:Day 2 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 2 · Core · ~10 min
+DESCRIPTION:Activation & Core\n2 rounds of 6 moves · ~10 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nToday:\n• Plank hold — 20 sec\n• Dead bug 
+ — x8/side\n• Glute bridge — x12\n• Bird dog — x8/side\n• Side 
+ plank — 15 sec/side\n• Copenhagen plank (knee down) — 15 sec/side\n
+ \nNobody ever saw a plank and got impressed. Everybody sees what it builds
+ .\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 2 · Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day3@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d2pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261110T153000
+DTEND:20261110T154500
+SUMMARY:Day 2 of 63 · Did you get it in?
+DESCRIPTION:Week 1 of 9 · Foundation block · 3% of the way through.\n\nIf
+  today’s session is done\, open the app and tick it off. If it isn’t\,
+  there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 2 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d2eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261110T194500
+DTEND:20261110T200000
+SUMMARY:Tomorrow: Day 3 · Dumbbells · ~12 min
+DESCRIPTION:Dumbbell Strength + Core\n2 rounds of 6 moves · ~12 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nTomorrow:\n• DB goblet squat — x10\n
+ • DB suitcase carry — 20 steps/hand\n• DB floor press — x10\n• D
+ B Romanian deadlift — x10\n• Plank shoulder taps — x10/side\n• Nor
+ dic hamstring lower — x2\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 3 · Dumbbells · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d3am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261111T070000
 DTEND:20261111T072000
-SUMMARY:Day 3 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 3 · Dumbbells · ~12 min
+DESCRIPTION:Dumbbell Strength + Core\n2 rounds of 6 moves · ~12 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nToday:\n• DB goblet squat — x10\n• 
+ DB suitcase carry — 20 steps/hand\n• DB floor press — x10\n• DB Ro
+ manian deadlift — x10\n• Plank shoulder taps — x10/side\n• Nordic 
+ hamstring lower — x2\n\nClean reps beat heavy reps. Every single time.\n
+ \nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 3 · Dumbbells · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day4@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d3pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261111T153000
+DTEND:20261111T154500
+SUMMARY:Day 3 of 63 · Did you get it in?
+DESCRIPTION:Week 1 of 9 · Foundation block · 5% of the way through.\n\nIf
+  today’s session is done\, open the app and tick it off. If it isn’t\,
+  there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 3 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d3eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261111T194500
+DTEND:20261111T200000
+SUMMARY:Tomorrow: Day 4 · Speed & Agility · ~10 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n2 rounds of 5 moves · ~10 mi
+ n\nWarm-up 3 · main 5 · cool-down 2\n\nTomorrow:\n• Quick feet — 15 
+ sec\n• Lateral hops over a line — x16 (8 each way)\n• A-skips — 10
+ /leg\n• 5-yard sprint starts — x4\n• Plant and stick — x3/side\n\n
+ https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 4 · Speed & Agility · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d4am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261112T070000
 DTEND:20261112T072000
-SUMMARY:Day 4 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+SUMMARY:Day 4 · Speed & Agility · ~10 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n2 rounds of 5 moves · ~10 mi
+ n\nWarm-up 3 · main 5 · cool-down 2\n\nToday:\n• Quick feet — 15 sec
+ \n• Lateral hops over a line — x16 (8 each way)\n• A-skips — 10/le
+ g\n• 5-yard sprint starts — x4\n• Plant and stick — x3/side\n\nFir
+ st step wins the rep. Go get it.\n\nhttps://natesteele888.github.io/fitnes
+ s-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 4 · Speed & Agility · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d4pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261112T153000
+DTEND:20261112T154500
+SUMMARY:Day 4 of 63 · Did you get it in?
+DESCRIPTION:Week 1 of 9 · Foundation block · 6% of the way through.\n\nIf
+  today’s session is done\, open the app and tick it off. If it isn’t\,
+  there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 4 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d4eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261112T194500
+DTEND:20261112T200000
+SUMMARY:Tomorrow: Day 5 · Rotational Core · ~10 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n2 rounds of 4 moves · ~10 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nTomorrow:\n• Standing trunk rota
+ tions — x12 each way\n• Dead bug with rotation — x8/side\n• Side p
+ lank reach-under — x8/side\n• Bear crawl hold — 20 sec\n\nhttps://na
  testeele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Tomorrow: Day 5 · Rotational Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day5@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d5am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261113T070000
 DTEND:20261113T072000
-SUMMARY:Day 5 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 5 · Rotational Core · ~10 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n2 rounds of 4 moves · ~10 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nToday:\n• Standing trunk rotatio
+ ns — x12 each way\n• Dead bug with rotation — x8/side\n• Side plan
+ k reach-under — x8/side\n• Bear crawl hold — 20 sec\n\nPower starts 
+ at the hips. Turn and let it rip.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
+DESCRIPTION:Day 5 · Rotational Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day6@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d5pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261113T153000
+DTEND:20261113T154500
+SUMMARY:Day 5 of 63 · Did you get it in?
+DESCRIPTION:Week 1 of 9 · Foundation block · 8% of the way through.\n\nIf
+  today’s session is done\, open the app and tick it off. If it isn’t\,
+  there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 5 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d5eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261113T194500
+DTEND:20261113T200000
+SUMMARY:Tomorrow: Day 6 · Full-Body · ~12-14 min
+DESCRIPTION:Full-Body Power Circuit\n2 rounds of 5 moves · ~12-14 min\nWar
+ m-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x8\n• 
+ DB goblet squat — x10\n• Plank hold — 25 sec\n• Broad jump — x4
+ \n• Mountain climbers — x16 (8/side)\n\nhttps://natesteele888.github.i
+ o/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 6 · Full-Body · ~12-14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d6am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261114T070000
 DTEND:20261114T072000
-SUMMARY:Day 6 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 6 · Full-Body · ~12-14 min
+DESCRIPTION:Full-Body Power Circuit\n2 rounds of 5 moves · ~12-14 min\nWar
+ m-up 3 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x8\n• DB 
+ goblet squat — x10\n• Plank hold — 25 sec\n• Broad jump — x4\n
+ • Mountain climbers — x16 (8/side)\n\nEverything together today. Show 
+ yourself what you've built.\n\nhttps://natesteele888.github.io/fitness-hub
+ /
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
+DESCRIPTION:Day 6 · Full-Body · ~12-14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day7@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d6pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261114T153000
+DTEND:20261114T154500
+SUMMARY:Day 6 of 63 · Did you get it in?
+DESCRIPTION:Week 1 of 9 · Foundation block · 10% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 6 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d6eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261114T194500
+DTEND:20261114T200000
+SUMMARY:Tomorrow: Day 7 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 7 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d7am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261115T070000
 DTEND:20261115T072000
-SUMMARY:Day 7 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 7 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
+DESCRIPTION:Day 7 · Rest
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day8@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d7pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261115T153000
+DTEND:20261115T154500
+SUMMARY:Day 7 of 63 · Rest earned
+DESCRIPTION:Week 1 of 9 · Foundation block · 11% of the way through.\n\nN
+ othing to log today. Rest is the work.\n\nhttps://natesteele888.github.io/
+ fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 7 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d7eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261115T194500
+DTEND:20261115T200000
+SUMMARY:Tomorrow: Day 8 · Plyo & Power · ~10-12 min
+DESCRIPTION:Lower Body Plyo & Power\n2 rounds of 4 moves · ~10-12 min\nWar
+ m-up 3 · main 4 · cool-down 2\n\nTomorrow:\n• Squat jumps — x6\n• 
+ Line hops — x20 (10 each way)\n• Broad jump — x4\n• Pogo hops — 
+ x15\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 8 · Plyo & Power · ~10-12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d8am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261116T070000
 DTEND:20261116T072000
-SUMMARY:Day 8 - Plyo & Power
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 8 · Plyo & Power · ~10-12 min
+DESCRIPTION:Lower Body Plyo & Power\n2 rounds of 4 moves · ~10-12 min\nWar
+ m-up 3 · main 4 · cool-down 2\n\nToday:\n• Squat jumps — x6\n• Lin
+ e hops — x20 (10 each way)\n• Broad jump — x4\n• Pogo hops — x15
+ \n\nNobody's watching you jump at 7am. That's exactly why it counts.\n\nht
+ tps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .
+DESCRIPTION:Day 8 · Plyo & Power · ~10-12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day9@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d8pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261116T153000
+DTEND:20261116T154500
+SUMMARY:Day 8 of 63 · Did you get it in?
+DESCRIPTION:Week 2 of 9 · Foundation block · 13% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 8 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d8eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261116T194500
+DTEND:20261116T200000
+SUMMARY:Tomorrow: Day 9 · Core · ~10 min
+DESCRIPTION:Activation & Core\n2 rounds of 6 moves · ~10 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nTomorrow:\n• Plank hold — 20 sec\n• Dead b
+ ug — x8/side\n• Glute bridge — x12\n• Bird dog — x8/side\n• Si
+ de plank — 15 sec/side\n• Copenhagen plank (knee down) — 15 sec/side
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 9 · Core · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d9am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261117T070000
 DTEND:20261117T072000
-SUMMARY:Day 9 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 9 · Core · ~10 min
+DESCRIPTION:Activation & Core\n2 rounds of 6 moves · ~10 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nToday:\n• Plank hold — 20 sec\n• Dead bug 
+ — x8/side\n• Glute bridge — x12\n• Bird dog — x8/side\n• Side 
+ plank — 15 sec/side\n• Copenhagen plank (knee down) — 15 sec/side\n
+ \nNobody ever saw a plank and got impressed. Everybody sees what it builds
+ .\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 9 · Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day10@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d9pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261117T153000
+DTEND:20261117T154500
+SUMMARY:Day 9 of 63 · Did you get it in?
+DESCRIPTION:Week 2 of 9 · Foundation block · 14% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 9 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d9eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261117T194500
+DTEND:20261117T200000
+SUMMARY:Tomorrow: Day 10 · Dumbbells · ~12 min
+DESCRIPTION:Dumbbell Strength + Core\n2 rounds of 6 moves · ~12 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nTomorrow:\n• DB goblet squat — x10\n
+ • DB suitcase carry — 20 steps/hand\n• DB floor press — x10\n• D
+ B Romanian deadlift — x10\n• Plank shoulder taps — x10/side\n• Nor
+ dic hamstring lower — x2\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 10 · Dumbbells · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d10am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261118T070000
 DTEND:20261118T072000
-SUMMARY:Day 10 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 10 · Dumbbells · ~12 min
+DESCRIPTION:Dumbbell Strength + Core\n2 rounds of 6 moves · ~12 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nToday:\n• DB goblet squat — x10\n• 
+ DB suitcase carry — 20 steps/hand\n• DB floor press — x10\n• DB Ro
+ manian deadlift — x10\n• Plank shoulder taps — x10/side\n• Nordic 
+ hamstring lower — x2\n\nClean reps beat heavy reps. Every single time.\n
+ \nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 10 · Dumbbells · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day11@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d10pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261118T153000
+DTEND:20261118T154500
+SUMMARY:Day 10 of 63 · Did you get it in?
+DESCRIPTION:Week 2 of 9 · Foundation block · 16% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 10 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d10eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261118T194500
+DTEND:20261118T200000
+SUMMARY:Tomorrow: Day 11 · Speed & Agility · ~10 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n2 rounds of 5 moves · ~10 mi
+ n\nWarm-up 3 · main 5 · cool-down 2\n\nTomorrow:\n• Quick feet — 15 
+ sec\n• Lateral hops over a line — x16 (8 each way)\n• A-skips — 10
+ /leg\n• 5-yard sprint starts — x4\n• Plant and stick — x3/side\n\n
+ https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 11 · Speed & Agility · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d11am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261119T070000
 DTEND:20261119T072000
-SUMMARY:Day 11 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+SUMMARY:Day 11 · Speed & Agility · ~10 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n2 rounds of 5 moves · ~10 mi
+ n\nWarm-up 3 · main 5 · cool-down 2\n\nToday:\n• Quick feet — 15 sec
+ \n• Lateral hops over a line — x16 (8 each way)\n• A-skips — 10/le
+ g\n• 5-yard sprint starts — x4\n• Plant and stick — x3/side\n\nFir
+ st step wins the rep. Go get it.\n\nhttps://natesteele888.github.io/fitnes
+ s-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 11 · Speed & Agility · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d11pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261119T153000
+DTEND:20261119T154500
+SUMMARY:Day 11 of 63 · Did you get it in?
+DESCRIPTION:Week 2 of 9 · Foundation block · 17% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 11 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d11eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261119T194500
+DTEND:20261119T200000
+SUMMARY:Tomorrow: Day 12 · Rotational Core · ~10 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n2 rounds of 4 moves · ~10 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nTomorrow:\n• Standing trunk rota
+ tions — x12 each way\n• Dead bug with rotation — x8/side\n• Side p
+ lank reach-under — x8/side\n• Bear crawl hold — 20 sec\n\nhttps://na
  testeele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Tomorrow: Day 12 · Rotational Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day12@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d12am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261120T070000
 DTEND:20261120T072000
-SUMMARY:Day 12 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 12 · Rotational Core · ~10 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n2 rounds of 4 moves · ~10 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nToday:\n• Standing trunk rotatio
+ ns — x12 each way\n• Dead bug with rotation — x8/side\n• Side plan
+ k reach-under — x8/side\n• Bear crawl hold — 20 sec\n\nPower starts 
+ at the hips. Turn and let it rip.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
+DESCRIPTION:Day 12 · Rotational Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day13@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d12pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261120T153000
+DTEND:20261120T154500
+SUMMARY:Day 12 of 63 · Did you get it in?
+DESCRIPTION:Week 2 of 9 · Foundation block · 19% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 12 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d12eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261120T194500
+DTEND:20261120T200000
+SUMMARY:Tomorrow: Day 13 · Full-Body · ~12-14 min
+DESCRIPTION:Full-Body Power Circuit\n2 rounds of 5 moves · ~12-14 min\nWar
+ m-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x8\n• 
+ DB goblet squat — x10\n• Plank hold — 25 sec\n• Broad jump — x4
+ \n• Mountain climbers — x16 (8/side)\n\nhttps://natesteele888.github.i
+ o/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 13 · Full-Body · ~12-14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d13am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261121T070000
 DTEND:20261121T072000
-SUMMARY:Day 13 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 13 · Full-Body · ~12-14 min
+DESCRIPTION:Full-Body Power Circuit\n2 rounds of 5 moves · ~12-14 min\nWar
+ m-up 3 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x8\n• DB 
+ goblet squat — x10\n• Plank hold — 25 sec\n• Broad jump — x4\n
+ • Mountain climbers — x16 (8/side)\n\nEverything together today. Show 
+ yourself what you've built.\n\nhttps://natesteele888.github.io/fitness-hub
+ /
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
+DESCRIPTION:Day 13 · Full-Body · ~12-14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day14@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d13pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261121T153000
+DTEND:20261121T154500
+SUMMARY:Day 13 of 63 · Did you get it in?
+DESCRIPTION:Week 2 of 9 · Foundation block · 21% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 13 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d13eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261121T194500
+DTEND:20261121T200000
+SUMMARY:Tomorrow: Day 14 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 14 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d14am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261122T070000
 DTEND:20261122T072000
-SUMMARY:Day 14 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 14 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
+DESCRIPTION:Day 14 · Rest
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day15@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d14pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261122T153000
+DTEND:20261122T154500
+SUMMARY:Day 14 of 63 · Rest earned
+DESCRIPTION:Week 2 of 9 · Foundation block · 22% of the way through.\n\nN
+ othing to log today. Rest is the work.\n\nhttps://natesteele888.github.io/
+ fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 14 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d14eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261122T194500
+DTEND:20261122T200000
+SUMMARY:Tomorrow: Day 15 · Plyo & Power · ~10-12 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~10-12 min\nWar
+ m-up 3 · main 4 · cool-down 2\n\nTomorrow:\n• Squat jumps — x6\n• 
+ Line hops — x20 (10 each way)\n• Broad jump — x4\n• Pogo hops — 
+ x15\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 15 · Plyo & Power · ~10-12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d15am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261123T070000
 DTEND:20261123T072000
-SUMMARY:Day 15 - Plyo & Power
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 15 · Plyo & Power · ~10-12 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~10-12 min\nWar
+ m-up 3 · main 4 · cool-down 2\n\nToday:\n• Squat jumps — x6\n• Lin
+ e hops — x20 (10 each way)\n• Broad jump — x4\n• Pogo hops — x15
+ \n\nNobody's watching you jump at 7am. That's exactly why it counts.\n\nht
+ tps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .
+DESCRIPTION:Day 15 · Plyo & Power · ~10-12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day16@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d15pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261123T153000
+DTEND:20261123T154500
+SUMMARY:Day 15 of 63 · Did you get it in?
+DESCRIPTION:Week 3 of 9 · Foundation block · 24% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 15 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d15eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261123T194500
+DTEND:20261123T200000
+SUMMARY:Tomorrow: Day 16 · Core · ~10 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~10 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nTomorrow:\n• Plank hold — 20 sec\n• Dead b
+ ug — x8/side\n• Glute bridge — x12\n• Bird dog — x8/side\n• Si
+ de plank — 15 sec/side\n• Copenhagen plank (knee down) — 15 sec/side
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 16 · Core · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d16am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261124T070000
 DTEND:20261124T072000
-SUMMARY:Day 16 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 16 · Core · ~10 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~10 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nToday:\n• Plank hold — 20 sec\n• Dead bug 
+ — x8/side\n• Glute bridge — x12\n• Bird dog — x8/side\n• Side 
+ plank — 15 sec/side\n• Copenhagen plank (knee down) — 15 sec/side\n
+ \nNobody ever saw a plank and got impressed. Everybody sees what it builds
+ .\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 16 · Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day17@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d16pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261124T153000
+DTEND:20261124T154500
+SUMMARY:Day 16 of 63 · Did you get it in?
+DESCRIPTION:Week 3 of 9 · Foundation block · 25% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 16 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d16eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261124T194500
+DTEND:20261124T200000
+SUMMARY:Tomorrow: Day 17 · Dumbbells · ~12 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~12 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nTomorrow:\n• DB goblet squat — x10\n
+ • DB suitcase carry — 20 steps/hand\n• DB floor press — x10\n• D
+ B Romanian deadlift — x10\n• Plank shoulder taps — x10/side\n• Nor
+ dic hamstring lower — x2\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 17 · Dumbbells · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d17am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261125T070000
 DTEND:20261125T072000
-SUMMARY:Day 17 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 17 · Dumbbells · ~12 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~12 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nToday:\n• DB goblet squat — x10\n• 
+ DB suitcase carry — 20 steps/hand\n• DB floor press — x10\n• DB Ro
+ manian deadlift — x10\n• Plank shoulder taps — x10/side\n• Nordic 
+ hamstring lower — x2\n\nClean reps beat heavy reps. Every single time.\n
+ \nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 17 · Dumbbells · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day18@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d17pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261125T153000
+DTEND:20261125T154500
+SUMMARY:Day 17 of 63 · Did you get it in?
+DESCRIPTION:Week 3 of 9 · Foundation block · 27% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 17 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d17eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261125T194500
+DTEND:20261125T200000
+SUMMARY:Tomorrow: Day 18 · Speed & Agility · ~10 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~10 mi
+ n\nWarm-up 3 · main 5 · cool-down 2\n\nTomorrow:\n• Quick feet — 15 
+ sec\n• Lateral hops over a line — x16 (8 each way)\n• A-skips — 10
+ /leg\n• 5-yard sprint starts — x4\n• Plant and stick — x3/side\n\n
+ https://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 18 · Speed & Agility · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d18am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261126T070000
 DTEND:20261126T072000
-SUMMARY:Day 18 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
+SUMMARY:Day 18 · Speed & Agility · ~10 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~10 mi
+ n\nWarm-up 3 · main 5 · cool-down 2\n\nToday:\n• Quick feet — 15 sec
+ \n• Lateral hops over a line — x16 (8 each way)\n• A-skips — 10/le
+ g\n• 5-yard sprint starts — x4\n• Plant and stick — x3/side\n\nFir
+ st step wins the rep. Go get it.\n\nhttps://natesteele888.github.io/fitnes
+ s-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 18 · Speed & Agility · ~10 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d18pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261126T153000
+DTEND:20261126T154500
+SUMMARY:Day 18 of 63 · Did you get it in?
+DESCRIPTION:Week 3 of 9 · Foundation block · 29% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 18 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d18eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261126T194500
+DTEND:20261126T200000
+SUMMARY:Tomorrow: Day 19 · Rotational Core · ~10 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~10 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nTomorrow:\n• Standing trunk rota
+ tions — x12 each way\n• Dead bug with rotation — x8/side\n• Side p
+ lank reach-under — x8/side\n• Bear crawl hold — 20 sec\n\nhttps://na
  testeele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Tomorrow: Day 19 · Rotational Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day19@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d19am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261127T070000
 DTEND:20261127T072000
-SUMMARY:Day 19 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 19 · Rotational Core · ~10 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~10 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nToday:\n• Standing trunk rotatio
+ ns — x12 each way\n• Dead bug with rotation — x8/side\n• Side plan
+ k reach-under — x8/side\n• Bear crawl hold — 20 sec\n\nPower starts 
+ at the hips. Turn and let it rip.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
+DESCRIPTION:Day 19 · Rotational Core · ~10 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day20@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d19pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261127T153000
+DTEND:20261127T154500
+SUMMARY:Day 19 of 63 · Did you get it in?
+DESCRIPTION:Week 3 of 9 · Foundation block · 30% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 19 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d19eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261127T194500
+DTEND:20261127T200000
+SUMMARY:Tomorrow: Day 20 · Full-Body · ~12-14 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~12-14 min\nWar
+ m-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x8\n• 
+ DB goblet squat — x10\n• Plank hold — 25 sec\n• Broad jump — x4
+ \n• Mountain climbers — x16 (8/side)\n\nhttps://natesteele888.github.i
+ o/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 20 · Full-Body · ~12-14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d20am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261128T070000
 DTEND:20261128T072000
-SUMMARY:Day 20 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 20 · Full-Body · ~12-14 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~12-14 min\nWar
+ m-up 3 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x8\n• DB 
+ goblet squat — x10\n• Plank hold — 25 sec\n• Broad jump — x4\n
+ • Mountain climbers — x16 (8/side)\n\nEverything together today. Show 
+ yourself what you've built.\n\nhttps://natesteele888.github.io/fitness-hub
+ /
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
+DESCRIPTION:Day 20 · Full-Body · ~12-14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day21@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d20pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261128T153000
+DTEND:20261128T154500
+SUMMARY:Day 20 of 63 · Did you get it in?
+DESCRIPTION:Week 3 of 9 · Foundation block · 32% of the way through.\n\nI
+ f today’s session is done\, open the app and tick it off. If it isn’t
+ \, there’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 20 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d20eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261128T194500
+DTEND:20261128T200000
+SUMMARY:Tomorrow: Day 21 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 21 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d21am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261129T070000
 DTEND:20261129T072000
-SUMMARY:Day 21 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 21 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
+DESCRIPTION:Day 21 · Rest
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day22@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d21pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261129T153000
+DTEND:20261129T154500
+SUMMARY:Day 21 of 63 · Rest earned
+DESCRIPTION:Week 3 of 9 · Foundation block · 33% of the way through.\n\nN
+ othing to log today. Rest is the work.\n\nhttps://natesteele888.github.io/
+ fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 21 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d21eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261129T194500
+DTEND:20261129T200000
+SUMMARY:Tomorrow: Day 22 · Plyo & Power · ~12 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~12 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nTomorrow:\n• Squat jumps (continuous) 
+ — x8\n• Skater hops — x8/side\n• Broad jump — x5\n• Single-leg
+  pogo hops — x10/leg\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 22 · Plyo & Power · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d22am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261130T070000
 DTEND:20261130T072000
-SUMMARY:Day 22 - Plyo & Power
-DESCRIPTION:Week 4. The Build block starts now and nobody has quit. Check i
- n your numbers.\n\nOpen the app: https://natesteele888.github.io/fitness-h
- ub/
+SUMMARY:Day 22 · Plyo & Power · ~12 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~12 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nToday:\n• Squat jumps (continuous) — x
+ 8\n• Skater hops — x8/side\n• Broad jump — x5\n• Single-leg pogo
+  hops — x10/leg\n\nWeek 4. The Build block starts now and nobody has qui
+ t. Check in your numbers.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Week 4. The Build block starts now and nobody has quit. Check i
- n your numbers.
+DESCRIPTION:Day 22 · Plyo & Power · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day23@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d22pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261130T153000
+DTEND:20261130T154500
+SUMMARY:Day 22 of 63 · Did you get it in?
+DESCRIPTION:Week 4 of 9 · Build block · 35% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nThis is a measure day — log height\, weight\, broa
+ d jump (each leg)\, plank\, 10-yard sprint and your longest field goal.\n
+ \nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 22 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d22eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261130T194500
+DTEND:20261130T200000
+SUMMARY:Tomorrow: Day 23 · Core · ~12 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~12 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nTomorrow:\n• Plank hold — 30 sec\n• Side p
+ lank with reach — x10/side\n• Hollow body hold — 15 sec\n• Bird do
+ g with 2-sec pause — x8/side\n• Superman hold — 20 sec\n• Copenhag
+ en plank — 20 sec/side\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 23 · Core · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d23am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261201T070000
 DTEND:20261201T072000
-SUMMARY:Day 23 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 23 · Core · ~12 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~12 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nToday:\n• Plank hold — 30 sec\n• Side plan
+ k with reach — x10/side\n• Hollow body hold — 15 sec\n• Bird dog w
+ ith 2-sec pause — x8/side\n• Superman hold — 20 sec\n• Copenhagen 
+ plank — 20 sec/side\n\nNobody ever saw a plank and got impressed. Everyb
+ ody sees what it builds.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 23 · Core · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day24@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d23pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261201T153000
+DTEND:20261201T154500
+SUMMARY:Day 23 of 63 · Did you get it in?
+DESCRIPTION:Week 4 of 9 · Build block · 37% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 23 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d23eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261201T194500
+DTEND:20261201T200000
+SUMMARY:Tomorrow: Day 24 · Dumbbells · ~14 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~14 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nTomorrow:\n• DB goblet squat — x10\n
+ • DB reverse lunge — x8/leg\n• DB overhead press — x10\n• DB Rom
+ anian deadlift — x10\n• Side plank rotation — x8/side\n• Nordic ha
+ mstring lower — x3\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 24 · Dumbbells · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d24am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261202T070000
 DTEND:20261202T072000
-SUMMARY:Day 24 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 24 · Dumbbells · ~14 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~14 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nToday:\n• DB goblet squat — x10\n• 
+ DB reverse lunge — x8/leg\n• DB overhead press — x10\n• DB Romania
+ n deadlift — x10\n• Side plank rotation — x8/side\n• Nordic hamstr
+ ing lower — x3\n\nClean reps beat heavy reps. Every single time.\n\nhttp
+ s://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 24 · Dumbbells · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day25@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d24pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261202T153000
+DTEND:20261202T154500
+SUMMARY:Day 24 of 63 · Did you get it in?
+DESCRIPTION:Week 4 of 9 · Build block · 38% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 24 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d24eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261202T194500
+DTEND:20261202T200000
+SUMMARY:Tomorrow: Day 25 · Speed & Agility · ~12 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~12 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Lateral bounds —
+  x10/side\n• Shuttle shuffle — x4 (5 steps each way)\n• Tuck jumps 
+ — x6\n• 10-yard sprint starts — x4\n• Plant-leg bound — x4/side
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 25 · Speed & Agility · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d25am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261203T070000
 DTEND:20261203T072000
-SUMMARY:Day 25 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
- testeele888.github.io/fitness-hub/
+SUMMARY:Day 25 · Speed & Agility · ~12 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~12 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nToday:\n• Lateral bounds — x1
+ 0/side\n• Shuttle shuffle — x4 (5 steps each way)\n• Tuck jumps — 
+ x6\n• 10-yard sprint starts — x4\n• Plant-leg bound — x4/side\n\nF
+ irst step wins the rep. Go get it.\n\nhttps://natesteele888.github.io/fitn
+ ess-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Day 25 · Speed & Agility · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day26@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d25pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261203T153000
+DTEND:20261203T154500
+SUMMARY:Day 25 of 63 · Did you get it in?
+DESCRIPTION:Week 4 of 9 · Build block · 40% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 25 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d25eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261203T194500
+DTEND:20261203T200000
+SUMMARY:Tomorrow: Day 26 · Rotational Core · ~12 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~12 min
+ \nWarm-up 3 · main 4 · cool-down 2\n\nTomorrow:\n• Standing DB rotatio
+ n — x10 each way\n• Side plank with rotation — x10/side\n• Mountai
+ n climbers — x20\n• Plank up-downs — x10\n\nhttps://natesteele888.gi
+ thub.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 26 · Rotational Core · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d26am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261204T070000
 DTEND:20261204T072000
-SUMMARY:Day 26 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 26 · Rotational Core · ~12 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~12 min
+ \nWarm-up 3 · main 4 · cool-down 2\n\nToday:\n• Standing DB rotation 
+ — x10 each way\n• Side plank with rotation — x10/side\n• Mountain 
+ climbers — x20\n• Plank up-downs — x10\n\nPower starts at the hips. 
+ Turn and let it rip.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
+DESCRIPTION:Day 26 · Rotational Core · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day27@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d26pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261204T153000
+DTEND:20261204T154500
+SUMMARY:Day 26 of 63 · Did you get it in?
+DESCRIPTION:Week 4 of 9 · Build block · 41% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 26 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d26eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261204T194500
+DTEND:20261204T200000
+SUMMARY:Tomorrow: Day 27 · Full-Body · ~14 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~14 min\nWarm-u
+ p 3 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x10\n• DB
+  reverse lunge — x8/leg\n• Skater hops — x8/side\n• Plank hold —
+  30 sec\n• Mountain climbers — x20\n\nhttps://natesteele888.github.io/
+ fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 27 · Full-Body · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d27am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261205T070000
 DTEND:20261205T072000
-SUMMARY:Day 27 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 27 · Full-Body · ~14 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~14 min\nWarm-u
+ p 3 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x10\n• DB re
+ verse lunge — x8/leg\n• Skater hops — x8/side\n• Plank hold — 30
+  sec\n• Mountain climbers — x20\n\nEverything together today. Show you
+ rself what you've built.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
+DESCRIPTION:Day 27 · Full-Body · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day28@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d27pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261205T153000
+DTEND:20261205T154500
+SUMMARY:Day 27 of 63 · Did you get it in?
+DESCRIPTION:Week 4 of 9 · Build block · 43% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 27 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d27eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261205T194500
+DTEND:20261205T200000
+SUMMARY:Tomorrow: Day 28 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 28 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d28am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261206T070000
 DTEND:20261206T072000
-SUMMARY:Day 28 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 28 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
+DESCRIPTION:Day 28 · Rest
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day29@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d28pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261206T153000
+DTEND:20261206T154500
+SUMMARY:Day 28 of 63 · Rest earned
+DESCRIPTION:Week 4 of 9 · Build block · 44% of the way through.\n\nNothin
+ g to log today. Rest is the work.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 28 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d28eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261206T194500
+DTEND:20261206T200000
+SUMMARY:Tomorrow: Day 29 · Plyo & Power · ~12 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~12 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nTomorrow:\n• Squat jumps (continuous) 
+ — x8\n• Skater hops — x8/side\n• Broad jump — x5\n• Single-leg
+  pogo hops — x10/leg\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 29 · Plyo & Power · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d29am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261207T070000
 DTEND:20261207T072000
-SUMMARY:Day 29 - Plyo & Power
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 29 · Plyo & Power · ~12 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~12 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nToday:\n• Squat jumps (continuous) — x
+ 8\n• Skater hops — x8/side\n• Broad jump — x5\n• Single-leg pogo
+  hops — x10/leg\n\nNobody's watching you jump at 7am. That's exactly why
+  it counts.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .
+DESCRIPTION:Day 29 · Plyo & Power · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day30@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d29pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261207T153000
+DTEND:20261207T154500
+SUMMARY:Day 29 of 63 · Did you get it in?
+DESCRIPTION:Week 5 of 9 · Build block · 46% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 29 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d29eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261207T194500
+DTEND:20261207T200000
+SUMMARY:Tomorrow: Day 30 · Core · ~12 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~12 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nTomorrow:\n• Plank hold — 30 sec\n• Side p
+ lank with reach — x10/side\n• Hollow body hold — 15 sec\n• Bird do
+ g with 2-sec pause — x8/side\n• Superman hold — 20 sec\n• Copenhag
+ en plank — 20 sec/side\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 30 · Core · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d30am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261208T070000
 DTEND:20261208T072000
-SUMMARY:Day 30 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 30 · Core · ~12 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~12 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nToday:\n• Plank hold — 30 sec\n• Side plan
+ k with reach — x10/side\n• Hollow body hold — 15 sec\n• Bird dog w
+ ith 2-sec pause — x8/side\n• Superman hold — 20 sec\n• Copenhagen 
+ plank — 20 sec/side\n\nNobody ever saw a plank and got impressed. Everyb
+ ody sees what it builds.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 30 · Core · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day31@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d30pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261208T153000
+DTEND:20261208T154500
+SUMMARY:Day 30 of 63 · Did you get it in?
+DESCRIPTION:Week 5 of 9 · Build block · 48% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 30 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d30eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261208T194500
+DTEND:20261208T200000
+SUMMARY:Tomorrow: Day 31 · Dumbbells · ~14 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~14 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nTomorrow:\n• DB goblet squat — x10\n
+ • DB reverse lunge — x8/leg\n• DB overhead press — x10\n• DB Rom
+ anian deadlift — x10\n• Side plank rotation — x8/side\n• Nordic ha
+ mstring lower — x3\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 31 · Dumbbells · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d31am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261209T070000
 DTEND:20261209T072000
-SUMMARY:Day 31 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 31 · Dumbbells · ~14 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~14 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nToday:\n• DB goblet squat — x10\n• 
+ DB reverse lunge — x8/leg\n• DB overhead press — x10\n• DB Romania
+ n deadlift — x10\n• Side plank rotation — x8/side\n• Nordic hamstr
+ ing lower — x3\n\nClean reps beat heavy reps. Every single time.\n\nhttp
+ s://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 31 · Dumbbells · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day32@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d31pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261209T153000
+DTEND:20261209T154500
+SUMMARY:Day 31 of 63 · Did you get it in?
+DESCRIPTION:Week 5 of 9 · Build block · 49% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 31 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d31eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261209T194500
+DTEND:20261209T200000
+SUMMARY:Tomorrow: Day 32 · Speed & Agility · ~12 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~12 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Lateral bounds —
+  x10/side\n• Shuttle shuffle — x4 (5 steps each way)\n• Tuck jumps 
+ — x6\n• 10-yard sprint starts — x4\n• Plant-leg bound — x4/side
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 32 · Speed & Agility · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d32am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261210T070000
 DTEND:20261210T072000
-SUMMARY:Day 32 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
- testeele888.github.io/fitness-hub/
+SUMMARY:Day 32 · Speed & Agility · ~12 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~12 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nToday:\n• Lateral bounds — x1
+ 0/side\n• Shuttle shuffle — x4 (5 steps each way)\n• Tuck jumps — 
+ x6\n• 10-yard sprint starts — x4\n• Plant-leg bound — x4/side\n\nF
+ irst step wins the rep. Go get it.\n\nhttps://natesteele888.github.io/fitn
+ ess-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Day 32 · Speed & Agility · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day33@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d32pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261210T153000
+DTEND:20261210T154500
+SUMMARY:Day 32 of 63 · Did you get it in?
+DESCRIPTION:Week 5 of 9 · Build block · 51% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 32 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d32eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261210T194500
+DTEND:20261210T200000
+SUMMARY:Tomorrow: Day 33 · Rotational Core · ~12 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~12 min
+ \nWarm-up 3 · main 4 · cool-down 2\n\nTomorrow:\n• Standing DB rotatio
+ n — x10 each way\n• Side plank with rotation — x10/side\n• Mountai
+ n climbers — x20\n• Plank up-downs — x10\n\nhttps://natesteele888.gi
+ thub.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 33 · Rotational Core · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d33am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261211T070000
 DTEND:20261211T072000
-SUMMARY:Day 33 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 33 · Rotational Core · ~12 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~12 min
+ \nWarm-up 3 · main 4 · cool-down 2\n\nToday:\n• Standing DB rotation 
+ — x10 each way\n• Side plank with rotation — x10/side\n• Mountain 
+ climbers — x20\n• Plank up-downs — x10\n\nPower starts at the hips. 
+ Turn and let it rip.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
+DESCRIPTION:Day 33 · Rotational Core · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day34@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d33pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261211T153000
+DTEND:20261211T154500
+SUMMARY:Day 33 of 63 · Did you get it in?
+DESCRIPTION:Week 5 of 9 · Build block · 52% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 33 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d33eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261211T194500
+DTEND:20261211T200000
+SUMMARY:Tomorrow: Day 34 · Full-Body · ~14 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~14 min\nWarm-u
+ p 3 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x10\n• DB
+  reverse lunge — x8/leg\n• Skater hops — x8/side\n• Plank hold —
+  30 sec\n• Mountain climbers — x20\n\nhttps://natesteele888.github.io/
+ fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 34 · Full-Body · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d34am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261212T070000
 DTEND:20261212T072000
-SUMMARY:Day 34 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 34 · Full-Body · ~14 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~14 min\nWarm-u
+ p 3 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x10\n• DB re
+ verse lunge — x8/leg\n• Skater hops — x8/side\n• Plank hold — 30
+  sec\n• Mountain climbers — x20\n\nEverything together today. Show you
+ rself what you've built.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
+DESCRIPTION:Day 34 · Full-Body · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day35@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d34pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261212T153000
+DTEND:20261212T154500
+SUMMARY:Day 34 of 63 · Did you get it in?
+DESCRIPTION:Week 5 of 9 · Build block · 54% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 34 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d34eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261212T194500
+DTEND:20261212T200000
+SUMMARY:Tomorrow: Day 35 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 35 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d35am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261213T070000
 DTEND:20261213T072000
-SUMMARY:Day 35 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 35 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
+DESCRIPTION:Day 35 · Rest
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day36@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d35pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261213T153000
+DTEND:20261213T154500
+SUMMARY:Day 35 of 63 · Rest earned
+DESCRIPTION:Week 5 of 9 · Build block · 56% of the way through.\n\nNothin
+ g to log today. Rest is the work.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 35 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d35eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261213T194500
+DTEND:20261213T200000
+SUMMARY:Tomorrow: Day 36 · Plyo & Power · ~12 min
+DESCRIPTION:Lower Body Plyo & Power\n4 rounds of 4 moves · ~12 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nTomorrow:\n• Squat jumps (continuous) 
+ — x8\n• Skater hops — x8/side\n• Broad jump — x5\n• Single-leg
+  pogo hops — x10/leg\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 36 · Plyo & Power · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d36am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261214T070000
 DTEND:20261214T072000
-SUMMARY:Day 36 - Plyo & Power
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 36 · Plyo & Power · ~12 min
+DESCRIPTION:Lower Body Plyo & Power\n4 rounds of 4 moves · ~12 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nToday:\n• Squat jumps (continuous) — x
+ 8\n• Skater hops — x8/side\n• Broad jump — x5\n• Single-leg pogo
+  hops — x10/leg\n\nNobody's watching you jump at 7am. That's exactly why
+  it counts.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .
+DESCRIPTION:Day 36 · Plyo & Power · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day37@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d36pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261214T153000
+DTEND:20261214T154500
+SUMMARY:Day 36 of 63 · Did you get it in?
+DESCRIPTION:Week 6 of 9 · Build block · 57% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 36 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d36eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261214T194500
+DTEND:20261214T200000
+SUMMARY:Tomorrow: Day 37 · Core · ~12 min
+DESCRIPTION:Activation & Core\n4 rounds of 6 moves · ~12 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nTomorrow:\n• Plank hold — 30 sec\n• Side p
+ lank with reach — x10/side\n• Hollow body hold — 15 sec\n• Bird do
+ g with 2-sec pause — x8/side\n• Superman hold — 20 sec\n• Copenhag
+ en plank — 20 sec/side\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 37 · Core · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d37am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261215T070000
 DTEND:20261215T072000
-SUMMARY:Day 37 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 37 · Core · ~12 min
+DESCRIPTION:Activation & Core\n4 rounds of 6 moves · ~12 min\nWarm-up 3 ·
+  main 6 · cool-down 2\n\nToday:\n• Plank hold — 30 sec\n• Side plan
+ k with reach — x10/side\n• Hollow body hold — 15 sec\n• Bird dog w
+ ith 2-sec pause — x8/side\n• Superman hold — 20 sec\n• Copenhagen 
+ plank — 20 sec/side\n\nNobody ever saw a plank and got impressed. Everyb
+ ody sees what it builds.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 37 · Core · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day38@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d37pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261215T153000
+DTEND:20261215T154500
+SUMMARY:Day 37 of 63 · Did you get it in?
+DESCRIPTION:Week 6 of 9 · Build block · 59% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 37 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d37eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261215T194500
+DTEND:20261215T200000
+SUMMARY:Tomorrow: Day 38 · Dumbbells · ~14 min
+DESCRIPTION:Dumbbell Strength + Core\n4 rounds of 6 moves · ~14 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nTomorrow:\n• DB goblet squat — x10\n
+ • DB reverse lunge — x8/leg\n• DB overhead press — x10\n• DB Rom
+ anian deadlift — x10\n• Side plank rotation — x8/side\n• Nordic ha
+ mstring lower — x3\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 38 · Dumbbells · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d38am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261216T070000
 DTEND:20261216T072000
-SUMMARY:Day 38 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 38 · Dumbbells · ~14 min
+DESCRIPTION:Dumbbell Strength + Core\n4 rounds of 6 moves · ~14 min\nWarm-
+ up 2 · main 6 · cool-down 2\n\nToday:\n• DB goblet squat — x10\n• 
+ DB reverse lunge — x8/leg\n• DB overhead press — x10\n• DB Romania
+ n deadlift — x10\n• Side plank rotation — x8/side\n• Nordic hamstr
+ ing lower — x3\n\nClean reps beat heavy reps. Every single time.\n\nhttp
+ s://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 38 · Dumbbells · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day39@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d38pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261216T153000
+DTEND:20261216T154500
+SUMMARY:Day 38 of 63 · Did you get it in?
+DESCRIPTION:Week 6 of 9 · Build block · 60% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 38 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d38eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261216T194500
+DTEND:20261216T200000
+SUMMARY:Tomorrow: Day 39 · Speed & Agility · ~12 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n4 rounds of 5 moves · ~12 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Lateral bounds —
+  x10/side\n• Shuttle shuffle — x4 (5 steps each way)\n• Tuck jumps 
+ — x6\n• 10-yard sprint starts — x4\n• Plant-leg bound — x4/side
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 39 · Speed & Agility · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d39am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261217T070000
 DTEND:20261217T072000
-SUMMARY:Day 39 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
- testeele888.github.io/fitness-hub/
+SUMMARY:Day 39 · Speed & Agility · ~12 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n4 rounds of 5 moves · ~12 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nToday:\n• Lateral bounds — x1
+ 0/side\n• Shuttle shuffle — x4 (5 steps each way)\n• Tuck jumps — 
+ x6\n• 10-yard sprint starts — x4\n• Plant-leg bound — x4/side\n\nF
+ irst step wins the rep. Go get it.\n\nhttps://natesteele888.github.io/fitn
+ ess-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Day 39 · Speed & Agility · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day40@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d39pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261217T153000
+DTEND:20261217T154500
+SUMMARY:Day 39 of 63 · Did you get it in?
+DESCRIPTION:Week 6 of 9 · Build block · 62% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 39 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d39eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261217T194500
+DTEND:20261217T200000
+SUMMARY:Tomorrow: Day 40 · Rotational Core · ~12 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n4 rounds of 4 moves · ~12 min
+ \nWarm-up 3 · main 4 · cool-down 2\n\nTomorrow:\n• Standing DB rotatio
+ n — x10 each way\n• Side plank with rotation — x10/side\n• Mountai
+ n climbers — x20\n• Plank up-downs — x10\n\nhttps://natesteele888.gi
+ thub.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 40 · Rotational Core · ~12 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d40am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261218T070000
 DTEND:20261218T072000
-SUMMARY:Day 40 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 40 · Rotational Core · ~12 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n4 rounds of 4 moves · ~12 min
+ \nWarm-up 3 · main 4 · cool-down 2\n\nToday:\n• Standing DB rotation 
+ — x10 each way\n• Side plank with rotation — x10/side\n• Mountain 
+ climbers — x20\n• Plank up-downs — x10\n\nPower starts at the hips. 
+ Turn and let it rip.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
+DESCRIPTION:Day 40 · Rotational Core · ~12 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day41@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d40pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261218T153000
+DTEND:20261218T154500
+SUMMARY:Day 40 of 63 · Did you get it in?
+DESCRIPTION:Week 6 of 9 · Build block · 63% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 40 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d40eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261218T194500
+DTEND:20261218T200000
+SUMMARY:Tomorrow: Day 41 · Full-Body · ~14 min
+DESCRIPTION:Full-Body Power Circuit\n4 rounds of 5 moves · ~14 min\nWarm-u
+ p 3 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x10\n• DB
+  reverse lunge — x8/leg\n• Skater hops — x8/side\n• Plank hold —
+  30 sec\n• Mountain climbers — x20\n\nhttps://natesteele888.github.io/
+ fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 41 · Full-Body · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d41am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261219T070000
 DTEND:20261219T072000
-SUMMARY:Day 41 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 41 · Full-Body · ~14 min
+DESCRIPTION:Full-Body Power Circuit\n4 rounds of 5 moves · ~14 min\nWarm-u
+ p 3 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x10\n• DB re
+ verse lunge — x8/leg\n• Skater hops — x8/side\n• Plank hold — 30
+  sec\n• Mountain climbers — x20\n\nEverything together today. Show you
+ rself what you've built.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
+DESCRIPTION:Day 41 · Full-Body · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day42@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d41pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261219T153000
+DTEND:20261219T154500
+SUMMARY:Day 41 of 63 · Did you get it in?
+DESCRIPTION:Week 6 of 9 · Build block · 65% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 41 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d41eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261219T194500
+DTEND:20261219T200000
+SUMMARY:Tomorrow: Day 42 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 42 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d42am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261220T070000
 DTEND:20261220T072000
-SUMMARY:Day 42 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 42 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
+DESCRIPTION:Day 42 · Rest
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day43@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d42pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261220T153000
+DTEND:20261220T154500
+SUMMARY:Day 42 of 63 · Rest earned
+DESCRIPTION:Week 6 of 9 · Build block · 67% of the way through.\n\nNothin
+ g to log today. Rest is the work.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 42 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d42eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261220T194500
+DTEND:20261220T200000
+SUMMARY:Tomorrow: Day 43 · Plyo & Power · ~14 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~14 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nTomorrow:\n• Continuous squat jumps — 
+ x10\n• Single-leg broad jump — x4/leg\n• Lateral bounds — x10/side
+ \n• Repeated broad jumps — x3 in a row\n\nhttps://natesteele888.github
+ .io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 43 · Plyo & Power · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d43am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261221T070000
 DTEND:20261221T072000
-SUMMARY:Day 43 - Plyo & Power
-DESCRIPTION:Week 7. Power block. Everything gets faster from here.\n\nOpen 
- the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 43 · Plyo & Power · ~14 min
+DESCRIPTION:Lower Body Plyo & Power\n3 rounds of 4 moves · ~14 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nToday:\n• Continuous squat jumps — x10
+ \n• Single-leg broad jump — x4/leg\n• Lateral bounds — x10/side\n
+ • Repeated broad jumps — x3 in a row\n\nWeek 7. Power block. Everythin
+ g gets faster from here.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Week 7. Power block. Everything gets faster from here.
+DESCRIPTION:Day 43 · Plyo & Power · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day44@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d43pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261221T153000
+DTEND:20261221T154500
+SUMMARY:Day 43 of 63 · Did you get it in?
+DESCRIPTION:Week 7 of 9 · Power block · 68% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nThis is a measure day — log height\, weight\, broa
+ d jump (each leg)\, plank\, 10-yard sprint and your longest field goal.\n
+ \nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 43 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d43eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261221T194500
+DTEND:20261221T200000
+SUMMARY:Tomorrow: Day 44 · Core · ~14 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~14 min\nWarm-up 3 ·
+  main 6 · cool-down 1\n\nTomorrow:\n• Plank hold — 40 sec\n• Hollow
+  body rocks — x10\n• Side plank with leg lift — x8/side\n• Bird do
+ g — x10/side\n• Superman hold with flutter — 20 sec\n• Copenhagen 
+ plank — 30 sec/side\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 44 · Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d44am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261222T070000
 DTEND:20261222T072000
-SUMMARY:Day 44 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 44 · Core · ~14 min
+DESCRIPTION:Activation & Core\n3 rounds of 6 moves · ~14 min\nWarm-up 3 ·
+  main 6 · cool-down 1\n\nToday:\n• Plank hold — 40 sec\n• Hollow bo
+ dy rocks — x10\n• Side plank with leg lift — x8/side\n• Bird dog 
+ — x10/side\n• Superman hold with flutter — 20 sec\n• Copenhagen pl
+ ank — 30 sec/side\n\nNobody ever saw a plank and got impressed. Everybod
+ y sees what it builds.\n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
+DESCRIPTION:Day 44 · Core · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day45@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d44pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261222T153000
+DTEND:20261222T154500
+SUMMARY:Day 44 of 63 · Did you get it in?
+DESCRIPTION:Week 7 of 9 · Power block · 70% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 44 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d44eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261222T194500
+DTEND:20261222T200000
+SUMMARY:Tomorrow: Day 45 · Dumbbells · ~15 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~15 min\nWarm-
+ up 2 · main 6 · cool-down 1\n\nTomorrow:\n• DB goblet squat w/ 2-sec p
+ ause — x12\n• DB walking lunge — x8/leg\n• DB push press — x8\n
+ • DB single-arm row — x10/arm\n• Plank shoulder taps — x16\n• No
+ rdic hamstring lower — x3\n\nhttps://natesteele888.github.io/fitness-hub
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 45 · Dumbbells · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d45am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261223T070000
 DTEND:20261223T072000
-SUMMARY:Day 45 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
+SUMMARY:Day 45 · Dumbbells · ~15 min
+DESCRIPTION:Dumbbell Strength + Core\n3 rounds of 6 moves · ~15 min\nWarm-
+ up 2 · main 6 · cool-down 1\n\nToday:\n• DB goblet squat w/ 2-sec paus
+ e — x12\n• DB walking lunge — x8/leg\n• DB push press — x8\n• 
+ DB single-arm row — x10/arm\n• Plank shoulder taps — x16\n• Nordic
+  hamstring lower — x3\n\nClean reps beat heavy reps. Every single time.
+ \n\nhttps://natesteele888.github.io/fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
+DESCRIPTION:Day 45 · Dumbbells · ~15 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day46@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d45pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261223T153000
+DTEND:20261223T154500
+SUMMARY:Day 45 of 63 · Did you get it in?
+DESCRIPTION:Week 7 of 9 · Power block · 71% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 45 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d45eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261223T194500
+DTEND:20261223T200000
+SUMMARY:Tomorrow: Day 46 · Speed & Agility · ~14 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~14 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Reactive hops — 
+ 15 sec\n• 180° jumps — x6\n• Shuttle sprints — x5 (5 steps each w
+ ay)\n• 10-15 yard sprint starts — x5\n• Pelvic block finish — x4/s
+ ide\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 46 · Speed & Agility · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d46am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261224T070000
 DTEND:20261224T072000
-SUMMARY:Day 46 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
- testeele888.github.io/fitness-hub/
+SUMMARY:Day 46 · Speed & Agility · ~14 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n3 rounds of 5 moves · ~14 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nToday:\n• Reactive hops — 15 
+ sec\n• 180° jumps — x6\n• Shuttle sprints — x5 (5 steps each way)
+ \n• 10-15 yard sprint starts — x5\n• Pelvic block finish — x4/side
+ \n\nFirst step wins the rep. Go get it.\n\nhttps://natesteele888.github.io
+ /fitness-hub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
+DESCRIPTION:Day 46 · Speed & Agility · ~14 min
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:dpp-2026-11-09-day47@natesteele888.github.io
-DTSTAMP:20261031T120000Z
+UID:dpp-2026-11-09-d46pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261224T153000
+DTEND:20261224T154500
+SUMMARY:Day 46 of 63 · Did you get it in?
+DESCRIPTION:Week 7 of 9 · Power block · 73% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 46 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d46eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261224T194500
+DTEND:20261224T200000
+SUMMARY:Tomorrow: Day 47 · Rotational Core · ~14 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~14 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nTomorrow:\n• Standing DB rotatio
+ nal throw pattern — x8/side\n• DB woodchop — x10/side\n• Side plan
+ k with rotation — x10/side\n• Plank up-downs — x12\n\nhttps://natest
+ eele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 47 · Rotational Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d47am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
 DTSTART:20261225T070000
 DTEND:20261225T072000
-SUMMARY:Day 47 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day48@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20261226T070000
-DTEND:20261226T072000
-SUMMARY:Day 48 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day49@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20261227T070000
-DTEND:20261227T072000
-SUMMARY:Day 49 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day50@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20261228T070000
-DTEND:20261228T072000
-SUMMARY:Day 50 - Plyo & Power
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day51@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20261229T070000
-DTEND:20261229T072000
-SUMMARY:Day 51 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day52@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20261230T070000
-DTEND:20261230T072000
-SUMMARY:Day 52 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day53@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20261231T070000
-DTEND:20261231T072000
-SUMMARY:Day 53 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
- testeele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day54@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270101T070000
-DTEND:20270101T072000
-SUMMARY:Day 54 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day55@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270102T070000
-DTEND:20270102T072000
-SUMMARY:Day 55 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day56@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270103T070000
-DTEND:20270103T072000
-SUMMARY:Day 56 - Rest
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Rest is not a day off. It's the day your body builds what you e
- arned.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day57@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270104T070000
-DTEND:20270104T072000
-SUMMARY:Day 57 - Plyo & Power
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Nobody's watching you jump at 7am. That's exactly why it counts
- .
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day58@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270105T070000
-DTEND:20270105T072000
-SUMMARY:Day 58 - Core
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.\n\nOpen the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Nobody ever saw a plank and got impressed. Everybody sees what 
- it builds.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day59@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270106T070000
-DTEND:20270106T072000
-SUMMARY:Day 59 - Dumbbells
-DESCRIPTION:Clean reps beat heavy reps. Every single time.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Clean reps beat heavy reps. Every single time.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day60@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270107T070000
-DTEND:20270107T072000
-SUMMARY:Day 60 - Speed & Agility
-DESCRIPTION:First step wins the rep. Go get it.\n\nOpen the app: https://na
- testeele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:First step wins the rep. Go get it.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day61@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270108T070000
-DTEND:20270108T072000
-SUMMARY:Day 61 - Rotational Core
-DESCRIPTION:Power starts at the hips. Turn and let it rip.\n\nOpen the app:
-  https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Power starts at the hips. Turn and let it rip.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day62@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270109T070000
-DTEND:20270109T072000
-SUMMARY:Day 62 - Full-Body
-DESCRIPTION:Everything together today. Show yourself what you've built.\n\n
- Open the app: https://natesteele888.github.io/fitness-hub/
-BEGIN:VALARM
-ACTION:DISPLAY
-TRIGGER:PT0M
-DESCRIPTION:Everything together today. Show yourself what you've built.
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:dpp-2026-11-09-day63@natesteele888.github.io
-DTSTAMP:20261031T120000Z
-DTSTART:20270110T070000
-DTEND:20270110T072000
-SUMMARY:Day 63 - Rest
-DESCRIPTION:Last day. Nine weeks\, nobody watching\, and you did every one.
-  Go measure it.\n\nOpen the app: https://natesteele888.github.io/fitness-h
+SUMMARY:Day 47 · Rotational Core · ~14 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n3 rounds of 4 moves · ~14 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nToday:\n• Standing DB rotational
+  throw pattern — x8/side\n• DB woodchop — x10/side\n• Side plank w
+ ith rotation — x10/side\n• Plank up-downs — x12\n\nPower starts at t
+ he hips. Turn and let it rip.\n\nhttps://natesteele888.github.io/fitness-h
  ub/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:PT0M
-DESCRIPTION:Last day. Nine weeks\, nobody watching\, and you did every one.
-  Go measure it.
+DESCRIPTION:Day 47 · Rotational Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d47pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261225T153000
+DTEND:20261225T154500
+SUMMARY:Day 47 of 63 · Did you get it in?
+DESCRIPTION:Week 7 of 9 · Power block · 75% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 47 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d47eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261225T194500
+DTEND:20261225T200000
+SUMMARY:Tomorrow: Day 48 · Full-Body · ~15 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~15 min\nWarm-u
+ p 1 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x10\n• DB
+  walking lunge — x8/leg\n• Lateral bounds — x8/side\n• Plank hold 
+ — 40 sec\n• Broad jump — x5\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 48 · Full-Body · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d48am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261226T070000
+DTEND:20261226T072000
+SUMMARY:Day 48 · Full-Body · ~15 min
+DESCRIPTION:Full-Body Power Circuit\n3 rounds of 5 moves · ~15 min\nWarm-u
+ p 1 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x10\n• DB wa
+ lking lunge — x8/leg\n• Lateral bounds — x8/side\n• Plank hold —
+  40 sec\n• Broad jump — x5\n\nEverything together today. Show yourself
+  what you've built.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 48 · Full-Body · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d48pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261226T153000
+DTEND:20261226T154500
+SUMMARY:Day 48 of 63 · Did you get it in?
+DESCRIPTION:Week 7 of 9 · Power block · 76% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 48 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d48eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261226T194500
+DTEND:20261226T200000
+SUMMARY:Tomorrow: Day 49 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 49 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d49am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261227T070000
+DTEND:20261227T072000
+SUMMARY:Day 49 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 49 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d49pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261227T153000
+DTEND:20261227T154500
+SUMMARY:Day 49 of 63 · Rest earned
+DESCRIPTION:Week 7 of 9 · Power block · 78% of the way through.\n\nNothin
+ g to log today. Rest is the work.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 49 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d49eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261227T194500
+DTEND:20261227T200000
+SUMMARY:Tomorrow: Day 50 · Plyo & Power · ~14 min
+DESCRIPTION:Lower Body Plyo & Power\n4 rounds of 4 moves · ~14 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nTomorrow:\n• Continuous squat jumps — 
+ x10\n• Single-leg broad jump — x4/leg\n• Lateral bounds — x10/side
+ \n• Repeated broad jumps — x3 in a row\n\nhttps://natesteele888.github
+ .io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 50 · Plyo & Power · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d50am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261228T070000
+DTEND:20261228T072000
+SUMMARY:Day 50 · Plyo & Power · ~14 min
+DESCRIPTION:Lower Body Plyo & Power\n4 rounds of 4 moves · ~14 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nToday:\n• Continuous squat jumps — x10
+ \n• Single-leg broad jump — x4/leg\n• Lateral bounds — x10/side\n
+ • Repeated broad jumps — x3 in a row\n\nNobody's watching you jump at 
+ 7am. That's exactly why it counts.\n\nhttps://natesteele888.github.io/fitn
+ ess-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 50 · Plyo & Power · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d50pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261228T153000
+DTEND:20261228T154500
+SUMMARY:Day 50 of 63 · Did you get it in?
+DESCRIPTION:Week 8 of 9 · Power block · 79% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 50 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d50eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261228T194500
+DTEND:20261228T200000
+SUMMARY:Tomorrow: Day 51 · Core · ~14 min
+DESCRIPTION:Activation & Core\n4 rounds of 6 moves · ~14 min\nWarm-up 3 ·
+  main 6 · cool-down 1\n\nTomorrow:\n• Plank hold — 40 sec\n• Hollow
+  body rocks — x10\n• Side plank with leg lift — x8/side\n• Bird do
+ g — x10/side\n• Superman hold with flutter — 20 sec\n• Copenhagen 
+ plank — 30 sec/side\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 51 · Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d51am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261229T070000
+DTEND:20261229T072000
+SUMMARY:Day 51 · Core · ~14 min
+DESCRIPTION:Activation & Core\n4 rounds of 6 moves · ~14 min\nWarm-up 3 ·
+  main 6 · cool-down 1\n\nToday:\n• Plank hold — 40 sec\n• Hollow bo
+ dy rocks — x10\n• Side plank with leg lift — x8/side\n• Bird dog 
+ — x10/side\n• Superman hold with flutter — 20 sec\n• Copenhagen pl
+ ank — 30 sec/side\n\nNobody ever saw a plank and got impressed. Everybod
+ y sees what it builds.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 51 · Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d51pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261229T153000
+DTEND:20261229T154500
+SUMMARY:Day 51 of 63 · Did you get it in?
+DESCRIPTION:Week 8 of 9 · Power block · 81% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 51 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d51eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261229T194500
+DTEND:20261229T200000
+SUMMARY:Tomorrow: Day 52 · Dumbbells · ~15 min
+DESCRIPTION:Dumbbell Strength + Core\n4 rounds of 6 moves · ~15 min\nWarm-
+ up 2 · main 6 · cool-down 1\n\nTomorrow:\n• DB goblet squat w/ 2-sec p
+ ause — x12\n• DB walking lunge — x8/leg\n• DB push press — x8\n
+ • DB single-arm row — x10/arm\n• Plank shoulder taps — x16\n• No
+ rdic hamstring lower — x3\n\nhttps://natesteele888.github.io/fitness-hub
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 52 · Dumbbells · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d52am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261230T070000
+DTEND:20261230T072000
+SUMMARY:Day 52 · Dumbbells · ~15 min
+DESCRIPTION:Dumbbell Strength + Core\n4 rounds of 6 moves · ~15 min\nWarm-
+ up 2 · main 6 · cool-down 1\n\nToday:\n• DB goblet squat w/ 2-sec paus
+ e — x12\n• DB walking lunge — x8/leg\n• DB push press — x8\n• 
+ DB single-arm row — x10/arm\n• Plank shoulder taps — x16\n• Nordic
+  hamstring lower — x3\n\nClean reps beat heavy reps. Every single time.
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 52 · Dumbbells · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d52pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261230T153000
+DTEND:20261230T154500
+SUMMARY:Day 52 of 63 · Did you get it in?
+DESCRIPTION:Week 8 of 9 · Power block · 83% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 52 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d52eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261230T194500
+DTEND:20261230T200000
+SUMMARY:Tomorrow: Day 53 · Speed & Agility · ~14 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n4 rounds of 5 moves · ~14 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Reactive hops — 
+ 15 sec\n• 180° jumps — x6\n• Shuttle sprints — x5 (5 steps each w
+ ay)\n• 10-15 yard sprint starts — x5\n• Pelvic block finish — x4/s
+ ide\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 53 · Speed & Agility · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d53am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261231T070000
+DTEND:20261231T072000
+SUMMARY:Day 53 · Speed & Agility · ~14 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n4 rounds of 5 moves · ~14 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nToday:\n• Reactive hops — 15 
+ sec\n• 180° jumps — x6\n• Shuttle sprints — x5 (5 steps each way)
+ \n• 10-15 yard sprint starts — x5\n• Pelvic block finish — x4/side
+ \n\nFirst step wins the rep. Go get it.\n\nhttps://natesteele888.github.io
+ /fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 53 · Speed & Agility · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d53pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261231T153000
+DTEND:20261231T154500
+SUMMARY:Day 53 of 63 · Did you get it in?
+DESCRIPTION:Week 8 of 9 · Power block · 84% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 53 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d53eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20261231T194500
+DTEND:20261231T200000
+SUMMARY:Tomorrow: Day 54 · Rotational Core · ~14 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n4 rounds of 4 moves · ~14 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nTomorrow:\n• Standing DB rotatio
+ nal throw pattern — x8/side\n• DB woodchop — x10/side\n• Side plan
+ k with rotation — x10/side\n• Plank up-downs — x12\n\nhttps://natest
+ eele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 54 · Rotational Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d54am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270101T070000
+DTEND:20270101T072000
+SUMMARY:Day 54 · Rotational Core · ~14 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n4 rounds of 4 moves · ~14 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nToday:\n• Standing DB rotational
+  throw pattern — x8/side\n• DB woodchop — x10/side\n• Side plank w
+ ith rotation — x10/side\n• Plank up-downs — x12\n\nPower starts at t
+ he hips. Turn and let it rip.\n\nhttps://natesteele888.github.io/fitness-h
+ ub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 54 · Rotational Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d54pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270101T153000
+DTEND:20270101T154500
+SUMMARY:Day 54 of 63 · Did you get it in?
+DESCRIPTION:Week 8 of 9 · Power block · 86% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 54 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d54eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270101T194500
+DTEND:20270101T200000
+SUMMARY:Tomorrow: Day 55 · Full-Body · ~15 min
+DESCRIPTION:Full-Body Power Circuit\n4 rounds of 5 moves · ~15 min\nWarm-u
+ p 1 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x10\n• DB
+  walking lunge — x8/leg\n• Lateral bounds — x8/side\n• Plank hold 
+ — 40 sec\n• Broad jump — x5\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 55 · Full-Body · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d55am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270102T070000
+DTEND:20270102T072000
+SUMMARY:Day 55 · Full-Body · ~15 min
+DESCRIPTION:Full-Body Power Circuit\n4 rounds of 5 moves · ~15 min\nWarm-u
+ p 1 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x10\n• DB wa
+ lking lunge — x8/leg\n• Lateral bounds — x8/side\n• Plank hold —
+  40 sec\n• Broad jump — x5\n\nEverything together today. Show yourself
+  what you've built.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 55 · Full-Body · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d55pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270102T153000
+DTEND:20270102T154500
+SUMMARY:Day 55 of 63 · Did you get it in?
+DESCRIPTION:Week 8 of 9 · Power block · 87% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 55 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d55eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270102T194500
+DTEND:20270102T200000
+SUMMARY:Tomorrow: Day 56 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 56 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d56am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270103T070000
+DTEND:20270103T072000
+SUMMARY:Day 56 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nRest is not a day off. It's
+  the day your body builds what you earned.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 56 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d56pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270103T153000
+DTEND:20270103T154500
+SUMMARY:Day 56 of 63 · Rest earned
+DESCRIPTION:Week 8 of 9 · Power block · 89% of the way through.\n\nNothin
+ g to log today. Rest is the work.\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 56 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d56eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270103T194500
+DTEND:20270103T200000
+SUMMARY:Tomorrow: Day 57 · Plyo & Power · ~14 min
+DESCRIPTION:Lower Body Plyo & Power\n4 rounds of 4 moves · ~14 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nTomorrow:\n• Continuous squat jumps — 
+ x10\n• Single-leg broad jump — x4/leg\n• Lateral bounds — x10/side
+ \n• Repeated broad jumps — x3 in a row\n\nhttps://natesteele888.github
+ .io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 57 · Plyo & Power · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d57am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270104T070000
+DTEND:20270104T072000
+SUMMARY:Day 57 · Plyo & Power · ~14 min
+DESCRIPTION:Lower Body Plyo & Power\n4 rounds of 4 moves · ~14 min\nWarm-u
+ p 3 · main 4 · cool-down 1\n\nToday:\n• Continuous squat jumps — x10
+ \n• Single-leg broad jump — x4/leg\n• Lateral bounds — x10/side\n
+ • Repeated broad jumps — x3 in a row\n\nNobody's watching you jump at 
+ 7am. That's exactly why it counts.\n\nhttps://natesteele888.github.io/fitn
+ ess-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 57 · Plyo & Power · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d57pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270104T153000
+DTEND:20270104T154500
+SUMMARY:Day 57 of 63 · Did you get it in?
+DESCRIPTION:Week 9 of 9 · Power block · 90% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 57 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d57eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270104T194500
+DTEND:20270104T200000
+SUMMARY:Tomorrow: Day 58 · Core · ~14 min
+DESCRIPTION:Activation & Core\n4 rounds of 6 moves · ~14 min\nWarm-up 3 ·
+  main 6 · cool-down 1\n\nTomorrow:\n• Plank hold — 40 sec\n• Hollow
+  body rocks — x10\n• Side plank with leg lift — x8/side\n• Bird do
+ g — x10/side\n• Superman hold with flutter — 20 sec\n• Copenhagen 
+ plank — 30 sec/side\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 58 · Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d58am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270105T070000
+DTEND:20270105T072000
+SUMMARY:Day 58 · Core · ~14 min
+DESCRIPTION:Activation & Core\n4 rounds of 6 moves · ~14 min\nWarm-up 3 ·
+  main 6 · cool-down 1\n\nToday:\n• Plank hold — 40 sec\n• Hollow bo
+ dy rocks — x10\n• Side plank with leg lift — x8/side\n• Bird dog 
+ — x10/side\n• Superman hold with flutter — 20 sec\n• Copenhagen pl
+ ank — 30 sec/side\n\nNobody ever saw a plank and got impressed. Everybod
+ y sees what it builds.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 58 · Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d58pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270105T153000
+DTEND:20270105T154500
+SUMMARY:Day 58 of 63 · Did you get it in?
+DESCRIPTION:Week 9 of 9 · Power block · 92% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 58 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d58eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270105T194500
+DTEND:20270105T200000
+SUMMARY:Tomorrow: Day 59 · Dumbbells · ~15 min
+DESCRIPTION:Dumbbell Strength + Core\n4 rounds of 6 moves · ~15 min\nWarm-
+ up 2 · main 6 · cool-down 1\n\nTomorrow:\n• DB goblet squat w/ 2-sec p
+ ause — x12\n• DB walking lunge — x8/leg\n• DB push press — x8\n
+ • DB single-arm row — x10/arm\n• Plank shoulder taps — x16\n• No
+ rdic hamstring lower — x3\n\nhttps://natesteele888.github.io/fitness-hub
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 59 · Dumbbells · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d59am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270106T070000
+DTEND:20270106T072000
+SUMMARY:Day 59 · Dumbbells · ~15 min
+DESCRIPTION:Dumbbell Strength + Core\n4 rounds of 6 moves · ~15 min\nWarm-
+ up 2 · main 6 · cool-down 1\n\nToday:\n• DB goblet squat w/ 2-sec paus
+ e — x12\n• DB walking lunge — x8/leg\n• DB push press — x8\n• 
+ DB single-arm row — x10/arm\n• Plank shoulder taps — x16\n• Nordic
+  hamstring lower — x3\n\nClean reps beat heavy reps. Every single time.
+ \n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 59 · Dumbbells · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d59pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270106T153000
+DTEND:20270106T154500
+SUMMARY:Day 59 of 63 · Did you get it in?
+DESCRIPTION:Week 9 of 9 · Power block · 94% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 59 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d59eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270106T194500
+DTEND:20270106T200000
+SUMMARY:Tomorrow: Day 60 · Speed & Agility · ~14 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n4 rounds of 5 moves · ~14 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nTomorrow:\n• Reactive hops — 
+ 15 sec\n• 180° jumps — x6\n• Shuttle sprints — x5 (5 steps each w
+ ay)\n• 10-15 yard sprint starts — x5\n• Pelvic block finish — x4/s
+ ide\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 60 · Speed & Agility · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d60am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270107T070000
+DTEND:20270107T072000
+SUMMARY:Day 60 · Speed & Agility · ~14 min
+DESCRIPTION:Speed\, Agility & Reactive Power\n4 rounds of 5 moves · ~14 mi
+ n\nWarm-up 3 · main 5 · cool-down 1\n\nToday:\n• Reactive hops — 15 
+ sec\n• 180° jumps — x6\n• Shuttle sprints — x5 (5 steps each way)
+ \n• 10-15 yard sprint starts — x5\n• Pelvic block finish — x4/side
+ \n\nFirst step wins the rep. Go get it.\n\nhttps://natesteele888.github.io
+ /fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 60 · Speed & Agility · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d60pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270107T153000
+DTEND:20270107T154500
+SUMMARY:Day 60 of 63 · Did you get it in?
+DESCRIPTION:Week 9 of 9 · Power block · 95% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 60 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d60eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270107T194500
+DTEND:20270107T200000
+SUMMARY:Tomorrow: Day 61 · Rotational Core · ~14 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n4 rounds of 4 moves · ~14 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nTomorrow:\n• Standing DB rotatio
+ nal throw pattern — x8/side\n• DB woodchop — x10/side\n• Side plan
+ k with rotation — x10/side\n• Plank up-downs — x12\n\nhttps://natest
+ eele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 61 · Rotational Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d61am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270108T070000
+DTEND:20270108T072000
+SUMMARY:Day 61 · Rotational Core · ~14 min
+DESCRIPTION:Rotational Core & Anti-Rotation\n4 rounds of 4 moves · ~14 min
+ \nWarm-up 2 · main 4 · cool-down 1\n\nToday:\n• Standing DB rotational
+  throw pattern — x8/side\n• DB woodchop — x10/side\n• Side plank w
+ ith rotation — x10/side\n• Plank up-downs — x12\n\nPower starts at t
+ he hips. Turn and let it rip.\n\nhttps://natesteele888.github.io/fitness-h
+ ub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 61 · Rotational Core · ~14 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d61pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270108T153000
+DTEND:20270108T154500
+SUMMARY:Day 61 of 63 · Did you get it in?
+DESCRIPTION:Week 9 of 9 · Power block · 97% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 61 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d61eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270108T194500
+DTEND:20270108T200000
+SUMMARY:Tomorrow: Day 62 · Full-Body · ~15 min
+DESCRIPTION:Full-Body Power Circuit\n4 rounds of 5 moves · ~15 min\nWarm-u
+ p 1 · main 5 · cool-down 1\n\nTomorrow:\n• Squat jumps — x10\n• DB
+  walking lunge — x8/leg\n• Lateral bounds — x8/side\n• Plank hold 
+ — 40 sec\n• Broad jump — x5\n\nhttps://natesteele888.github.io/fitne
+ ss-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 62 · Full-Body · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d62am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270109T070000
+DTEND:20270109T072000
+SUMMARY:Day 62 · Full-Body · ~15 min
+DESCRIPTION:Full-Body Power Circuit\n4 rounds of 5 moves · ~15 min\nWarm-u
+ p 1 · main 5 · cool-down 1\n\nToday:\n• Squat jumps — x10\n• DB wa
+ lking lunge — x8/leg\n• Lateral bounds — x8/side\n• Plank hold —
+  40 sec\n• Broad jump — x5\n\nEverything together today. Show yourself
+  what you've built.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 62 · Full-Body · ~15 min
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d62pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270109T153000
+DTEND:20270109T154500
+SUMMARY:Day 62 of 63 · Did you get it in?
+DESCRIPTION:Week 9 of 9 · Power block · 98% of the way through.\n\nIf tod
+ ay’s session is done\, open the app and tick it off. If it isn’t\, the
+ re’s still time.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 62 of 63 · Did you get it in?
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d62eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270109T194500
+DTEND:20270109T200000
+SUMMARY:Tomorrow: Day 63 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nhttps://natesteele888.githu
+ b.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Tomorrow: Day 63 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d63am@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270110T070000
+DTEND:20270110T072000
+SUMMARY:Day 63 · Rest
+DESCRIPTION:Rest day. Stretch\, sleep\, eat.\n\nLast day. Nine weeks\, nobo
+ dy watching\, and you did every one. Go measure it.\n\nhttps://natesteele8
+ 88.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 63 · Rest
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d63pm@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270110T153000
+DTEND:20270110T154500
+SUMMARY:Day 63 of 63 · Rest earned
+DESCRIPTION:Week 9 of 9 · Power block · 100% of the way through.\n\nNothi
+ ng to log today. Rest is the work.\n\nThis is a measure day — log height
+ \, weight\, broad jump (each leg)\, plank\, 10-yard sprint and your longes
+ t field goal.\n\nhttps://natesteele888.github.io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Day 63 of 63 · Rest earned
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dpp-2026-11-09-d63eve@natesteele888.github.io
+DTSTAMP:20261102T120000Z
+DTSTART:20270110T194500
+DTEND:20270110T200000
+SUMMARY:Last day done — go measure everything
+DESCRIPTION:Nine weeks\, nobody watching\, and you did every one. Log your 
+ final numbers and compare them to day one.\n\nhttps://natesteele888.github
+ .io/fitness-hub/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Last day done — go measure everything
 END:VALARM
 END:VEVENT
 END:VCALENDAR
