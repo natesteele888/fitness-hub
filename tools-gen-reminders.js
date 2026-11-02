@@ -44,6 +44,9 @@ const api = new Function(program + '\n' + schedule + '\n' + pump +
 const { PHASES, TYPE_LABEL, SCHEDULE, TOTAL_DAYS, pumpFor } = api;
 if (SCHEDULE.length !== 63) throw new Error('expected 63 scheduled days, got ' + SCHEDULE.length);
 
+// No child's name in anything served from here: these .ics files are public
+// at /fitness-hub/reminders/, so naming him in X-WR-CALNAME would undo the
+// scrub that took his name out of the page title and the manifest.
 const APP = 'https://natesteele888.github.io/fitness-hub/';
 const MEASURE_DAYS = { 1: true, 22: true, 43: true, 63: true };
 
@@ -101,9 +104,9 @@ function stamp(d) {
 }
 
 function build(startIso) {
-  const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Desmond Power Program//EN',
+  const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Power Program//EN',
              'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
-             "X-WR-CALNAME:Desmond's Power Program",
+             'X-WR-CALNAME:Power Program',
              fold('X-WR-CALDESC:Daily plan\\, check-in and next-day agenda for the 9-week program')];
 
   function event(uid, when, mins, summary, body) {

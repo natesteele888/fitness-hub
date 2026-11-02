@@ -1,9 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Desmond Power Program//EN
+PRODID:-//Power Program//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Desmond's Power Program
+X-WR-CALNAME:Power Program
 X-WR-CALDESC:Daily plan\, check-in and next-day agenda for the 9-week progr
  am
 BEGIN:VEVENT
