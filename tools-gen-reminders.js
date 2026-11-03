@@ -109,11 +109,14 @@ function build(startIso) {
              'X-WR-CALNAME:Power Program',
              fold('X-WR-CALDESC:Daily plan\\, check-in and next-day agenda for the 9-week program')];
 
-  function event(uid, when, mins, summary, body) {
+  // seq 1 marks a revision of an event that was already published under this
+  // UID, so a calendar updates it in place instead of keeping both copies.
+  function event(uid, when, mins, summary, body, seq) {
     const e = new Date(when); e.setMinutes(e.getMinutes() + mins);
     L.push('BEGIN:VEVENT');
     L.push('UID:dpp-' + startIso + '-' + uid + '@natesteele888.github.io');
-    L.push('DTSTAMP:20261102T120000Z');
+    L.push('SEQUENCE:' + (seq || 0));
+    L.push('DTSTAMP:20261103T120000Z');
     L.push('DTSTART:' + stamp(when));
     L.push('DTEND:' + stamp(e));
     L.push(fold('SUMMARY:' + esc(summary)));
@@ -132,9 +135,12 @@ function build(startIso) {
     const phase = PHASES[e.phase].name;
     const pct = Math.round(e.day / TOTAL_DAYS * 100);
 
-    // 07:00 -- the day's plan, then the line that gets him out the door
-    event('d' + e.day + 'am', at(i, 7, 0), 20, headline(e),
-      plan(e) + mainList(e, 'Today') + '\n\n' + pumpFor(e.day, e.type));
+    // 07:00 -- the day's plan, then the line that gets him out the door.
+    // UID stays 'day<N>', what the one-a-day version published, so a phone
+    // that already has those events UPDATES them rather than ending up with
+    // two 7am alerts a day. The 15:30 and 19:45 events are genuinely new.
+    event('day' + e.day, at(i, 7, 0), 20, headline(e),
+      plan(e) + mainList(e, 'Today') + '\n\n' + pumpFor(e.day, e.type), 1);
 
     // 15:30 -- where he is, and a prod to log it. Deliberately a question:
     // this file was written weeks ago and cannot know what he's ticked off.

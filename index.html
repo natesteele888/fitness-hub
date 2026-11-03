@@ -1018,10 +1018,17 @@ var POSE_ICONS = {
   // Start Mondays he can pick from, each with a matching file in reminders/.
   // Football runs into the playoffs, so the start date is his call, not a fixed one.
   var START_MONDAYS = ["2026-11-02","2026-11-09","2026-11-16","2026-11-23","2026-11-30","2026-12-07"];
-  var DEFAULT_MONDAY = "2026-11-09";
+  var DEFAULT_MONDAY = "2026-11-02";   // the Monday he actually started
   function mondayLabel(iso){
     var d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString(undefined, { weekday:"short", month:"short", day:"numeric" });
+  }
+  // Set once so the picker and its change handler can't say different things.
+  function remindNoteHtml(iso){
+    var note = 'Day ' + TOTAL_DAYS + ' lands <b>' + lastDayLabel(iso) + '</b>.';
+    if(iso === DEFAULT_MONDAY) note += ' That\'s the Monday you started.';
+    return note + ' Already added an older set? Adding these replaces the 7am ones '
+      + 'and adds the afternoon and evening ones &mdash; you won\'t get doubles.';
   }
   function lastDayLabel(iso){
     var d = new Date(iso + "T00:00:00");
@@ -1252,8 +1259,7 @@ var POSE_ICONS = {
       + '<div class="remindctl"><label for="startSel">Start</label>'
       + '<select id="startSel">' + opts + '</select></div>'
       + '<a class="remindgo" id="remindGo" href="reminders/' + startPick + '.ics">Add the ' + (TOTAL_DAYS * 3) + ' reminders</a>'
-      + '<div class="remindnote" id="remindNote">Day ' + TOTAL_DAYS + ' lands <b>' + lastDayLabel(startPick) + '</b>. '
-      + 'Pick the Monday after football actually ends &mdash; if the season goes another week, come back and change it.</div>'
+      + '<div class="remindnote" id="remindNote">' + remindNoteHtml(startPick) + '</div>'
       + '</div>';
 
     el.innerHTML = html;
@@ -1274,9 +1280,7 @@ var POSE_ICONS = {
         state.startMonday = iso;
         saveState();
         document.getElementById("remindGo").setAttribute("href", "reminders/" + iso + ".ics");
-        document.getElementById("remindNote").innerHTML = 'Day ' + TOTAL_DAYS + ' lands <b>'
-          + lastDayLabel(iso) + '</b>. Pick the Monday after football actually ends &mdash; '
-          + 'if the season goes another week, come back and change it.';
+        document.getElementById("remindNote").innerHTML = remindNoteHtml(iso);
       });
     }
     var resetBtn = document.getElementById("resetBtn");
