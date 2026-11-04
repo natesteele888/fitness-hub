@@ -207,6 +207,8 @@
   }
   .modal-icon{width:84px;height:84px;margin:0 auto 10px}
   .modal-icon svg{width:100%;height:100%;display:block}
+  .modal-icon.has-photo{width:100%;height:170px;border-radius:14px;overflow:hidden;background:var(--surface2)}
+  .modal-icon.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
   .modal-focus{
     text-align:center;color:var(--volt);font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;
     text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;
@@ -220,9 +222,18 @@
   .modal-safety b{display:block;color:var(--ember);font-family:'Oswald',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:3px}
   .modal-video-btn{
     display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:52px;
-    border-radius:14px;border:2px solid var(--volt);color:var(--volt);text-decoration:none;
+    border-radius:14px;border:2px solid var(--volt);color:var(--volt);text-decoration:none;background:none;
     font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.02em;
+    cursor:pointer;
   }
+  .modal-video-btn[hidden]{display:none}
+
+  .video-lightbox{
+    background:#000;border-radius:16px;max-width:720px;width:100%;position:relative;overflow:hidden;
+  }
+  .video-frame{position:relative;width:100%;padding-top:56.25%}
+  .video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block}
+  .video-lightbox .modal-close{background:rgba(0,0,0,.6);border-color:rgba(255,255,255,.3);color:#fff;z-index:2}
 
   .pump{background:linear-gradient(135deg,rgba(198,255,61,.14),rgba(255,107,61,.10));border:1px solid rgba(198,255,61,.35);border-radius:14px;padding:13px 15px;margin-bottom:14px;font-family:Oswald,sans-serif;font-size:17px;line-height:1.35;color:var(--text);letter-spacing:.01em}
   .remind{background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:13px 15px;color:var(--text);font-size:15px;margin-top:14px}
@@ -265,7 +276,13 @@
     <h3 class="modal-name" id="exName"></h3>
     <div class="modal-how" id="exHow"></div>
     <div class="modal-safety"><b>Watch For</b><span id="exSafety"></span></div>
-    <a class="modal-video-btn" id="exVideo" target="_blank" rel="noopener noreferrer">Search a Video Demo &#8599;</a>
+    <button class="modal-video-btn" id="exVideo" type="button" hidden>Watch Video</button>
+  </div>
+</div>
+<div class="modal-overlay" id="videoOverlay" hidden>
+  <div class="video-lightbox" role="dialog" aria-modal="true" aria-label="Exercise video">
+    <button class="modal-close" id="videoClose" aria-label="Close video">&times;</button>
+    <div class="video-frame" id="videoFrame"></div>
   </div>
 </div>
 
@@ -326,7 +343,7 @@ var POSE_ICONS = {
   var EXLIB = {
     "march-jog": { name:"Jog or March in Place", focus:"Warm-Up", icon:"speed", how:"Jog lightly in place or march with high-ish knees, swinging your arms naturally. This is just to get your heart rate up and blood flowing before anything harder.", safety:"Easy effort only \u2014 you should be able to talk normally the whole time.", video:"Jog or March in Place" },
     "bw-squat": { name:"Bodyweight Squat", focus:"Lower Body Power", icon:"squat", how:"Stand with feet shoulder-width apart. Push your hips back and bend your knees like you're sitting into a chair, keeping your chest up and heels on the floor. Stand back up by pushing the floor away.", safety:"Knees track over your toes, not caving in. Go as low as you can with good form.", video:"Bodyweight Squat" },
-    "pogo-hop": { name:"Pogo Hop", focus:"Lower Body Power", icon:"jump-vertical", how:"Stand tall and hop in place using mostly your ankles, not your knees \u2014 think of a pogo stick. Keep hops small, quick, and light, barely leaving the ground each time.", safety:"Stay on the balls of your feet. If it's a single-leg version, hold a wall for balance at first.", video:"Pogo Hop" },
+    "pogo-hop": { name:"Pogo Hop", focus:"Lower Body Power", icon:"jump-vertical", photo:"assets/exercise-photos/pogo-hop.webp", photoFallback:"assets/exercise-photos/pogo-hop-still.jpg", how:"Stand tall and hop in place using mostly your ankles, not your knees \u2014 think of a pogo stick. Keep hops small, quick, and light, barely leaving the ground each time.", safety:"Stay on the balls of your feet. If it's a single-leg version, hold a wall for balance at first.", video:"Pogo Hop" },
     "squat-jump": { name:"Squat Jump", focus:"Lower Body Power", icon:"jump-vertical", how:"Drop into a quick squat, then explode straight up as high as you can, swinging your arms up for extra lift. Land soft with bent knees, like you're catching yourself.", safety:"Land quietly \u2014 if you hear a loud slap or thud, you're landing stiff. Bend your knees on landing every time.", video:"Squat Jump" },
     "line-hop": { name:"Line Hop", focus:"Lower Body Power", icon:"jump-horizontal", how:"Put a shoe or piece of tape on the floor as your \"line.\" Hop side to side over it with both feet together, staying light and quick.", safety:"Small, fast hops \u2014 this is about quickness, not height.", video:"Line Hop" },
     "broad-jump": { name:"Broad Jump", focus:"Lower Body Power", icon:"jump-horizontal", how:"Stand with feet hip-width apart, swing your arms back, bend your knees, then jump forward as far as you can, swinging your arms forward as you go. Land on both feet and stick it.", safety:"Land with bent knees and hold the landing for a second before you reset. Give yourself room to land safely.", video:"Broad Jump" },
@@ -365,7 +382,7 @@ var POSE_ICONS = {
     "lateral-shuffle": { name:"Lateral Shuffle", focus:"Speed & Agility", icon:"shuttle-lateral", how:"Get in a low athletic stance and shuffle sideways without crossing your feet, staying low and quick.", safety:"Keep your feet from touching together, and don't bounce up tall between steps.", video:"Lateral Shuffle" },
     "quick-feet": { name:"Quick Feet", focus:"Speed & Agility", icon:"speed", how:"Run in place with very fast, very small steps, staying light on your toes like the ground is hot.", safety:"Quick and light, not big stomping steps.", video:"Quick Feet" },
     "lateral-hop": { name:"Lateral Hop Over a Line", focus:"Speed & Agility", icon:"shuttle-lateral", how:"Same idea as a line hop, but with more purpose on speed \u2014 hop side to side over a line or shoe as fast as you can with both feet together.", safety:"Stay light and quick, minimal time on the ground.", video:"Lateral Hop Over a Line" },
-    "a-skip": { name:"A-Skip", focus:"Speed & Agility", icon:"speed", how:"A skipping motion where you drive one knee up high while popping off your other foot, pumping your arms opposite to your legs, moving forward.", safety:"Focus on driving the knee up and forward, not just hopping in place.", video:"A-Skip" },
+    "a-skip": { name:"A-Skip", focus:"Speed & Agility", icon:"speed", photo:"assets/exercise-photos/a-skip.webp", how:"A skipping motion where you drive one knee up high while popping off your other foot, pumping your arms opposite to your legs, moving forward.", safety:"Focus on driving the knee up and forward, not just hopping in place.", video:"A-Skip" },
     "sprint-start": { name:"Sprint Start", focus:"Speed & Agility", icon:"speed", how:"From a standing or staggered stance, explode forward and sprint the given distance at full effort, then walk back to recover before the next one.", safety:"Full effort on the sprint, full recovery walking back \u2014 don't rush into the next one gassed.", video:"acceleration sprint drill" },
     "plant-stick": { name:"Plant and Stick", focus:"Injury Prevention", icon:"plant-stick", how:"Take a few steps, then plant your front foot firmly out ahead of you and freeze there, balanced and braced, without kicking through. This trains the braking and stability your plant leg needs.", safety:"Freeze and hold \u2014 this drill is about control, not about following through with a kick.", video:"plant leg stability drill" },
     "torso-twist": { name:"Torso Twist", focus:"Mobility & Warm-Up", icon:"mobility", how:"Stand with arms out and gently rotate your torso side to side, letting your arms swing naturally with the motion.", safety:"Keep it loose and controlled, not a forceful whip.", video:"Torso Twist" },
@@ -393,6 +410,16 @@ var POSE_ICONS = {
     "pelvic-block": { name:"Pelvic Block Finish", focus:"Rotational Power", icon:"plant-stick", how:"Plant your front leg out long and firm while your opposite arm blocks across your body, finishing the motion strong and balanced \u2014 this mimics the finish position of a powerful kick.", safety:"Your plant leg should be straight and locked in place at the finish, not collapsing.", video:"Pelvic Block Finish" },
     "db-woodchop": { name:"DB Woodchop", focus:"Rotational Power", icon:"rotate", how:"Hold a dumbbell with both hands and swing it diagonally from high on one side down to low on the other side, rotating your torso with the motion, then reverse.", safety:"Control the weight the whole way \u2014 this is a controlled rotation, not a wild swing.", video:"cable woodchop exercise" },
   };
+
+  // Real, specific YouTube video IDs for in-app playback (replaces the old
+  // "open a YouTube search in a new tab" behavior). Exercises without a
+  // verified video here just hide the Watch Video button rather than
+  // falling back to opening something outside the app.
+  var EXERCISE_VIDEO_IDS = {
+  };
+  for (var _exKey in EXERCISE_VIDEO_IDS) {
+    if (EXLIB[_exKey]) EXLIB[_exKey].videoId = EXERCISE_VIDEO_IDS[_exKey];
+  }
 
   var EX_ALIASES = {
     "Jog or march in place": "march-jog",
@@ -508,12 +535,33 @@ var POSE_ICONS = {
   function openExerciseModal(name){
     var info = exInfoFor(name);
     if(!info) return;
-    document.getElementById("exIconWrap").innerHTML = POSE_ICONS[info.icon] || "";
+    var iconWrap = document.getElementById("exIconWrap");
+    if(info.photo){
+      iconWrap.classList.add("has-photo");
+      iconWrap.innerHTML = "";
+      var img = document.createElement("img");
+      if(info.photoFallback){
+        img.onerror = function(){ this.onerror = null; this.src = info.photoFallback; };
+      }
+      img.src = info.photo;
+      img.alt = info.name;
+      iconWrap.appendChild(img);
+    } else {
+      iconWrap.classList.remove("has-photo");
+      iconWrap.innerHTML = POSE_ICONS[info.icon] || "";
+    }
     document.getElementById("exFocus").textContent = info.focus;
     document.getElementById("exName").textContent = info.name;
     document.getElementById("exHow").textContent = info.how;
     document.getElementById("exSafety").textContent = info.safety;
-    document.getElementById("exVideo").href = "https://www.youtube.com/results?search_query=" + encodeURIComponent(info.video + " exercise form");
+    var videoBtn = document.getElementById("exVideo");
+    if(info.videoId){
+      videoBtn.hidden = false;
+      videoBtn.onclick = function(){ openVideoLightbox(info.videoId, info.name); };
+    } else {
+      videoBtn.hidden = true;
+      videoBtn.onclick = null;
+    }
     document.getElementById("exOverlay").hidden = false;
     document.body.style.overflow = "hidden";
   }
@@ -521,6 +569,24 @@ var POSE_ICONS = {
   function closeExerciseModal(){
     document.getElementById("exOverlay").hidden = true;
     document.body.style.overflow = "";
+  }
+
+  function openVideoLightbox(videoId, title){
+    var frame = document.getElementById("videoFrame");
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
+    iframe.title = title;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    iframe.loading = "lazy";
+    frame.innerHTML = "";
+    frame.appendChild(iframe);
+    document.getElementById("videoOverlay").hidden = false;
+  }
+
+  function closeVideoLightbox(){
+    document.getElementById("videoOverlay").hidden = true;
+    document.getElementById("videoFrame").innerHTML = "";
   }
 
   var WORKOUTS = {
@@ -1321,8 +1387,14 @@ var POSE_ICONS = {
   document.getElementById("exOverlay").addEventListener("click", function(e){
     if(e.target.id === "exOverlay") closeExerciseModal();
   });
+  document.getElementById("videoClose").addEventListener("click", closeVideoLightbox);
+  document.getElementById("videoOverlay").addEventListener("click", function(e){
+    if(e.target.id === "videoOverlay") closeVideoLightbox();
+  });
   document.addEventListener("keydown", function(e){
-    if(e.key === "Escape") closeExerciseModal();
+    if(e.key !== "Escape") return;
+    if(!document.getElementById("videoOverlay").hidden) closeVideoLightbox();
+    else closeExerciseModal();
   });
 
   // Insert the info strip once, above the tabs
