@@ -145,6 +145,10 @@
   .phase-divider h2{font-size:20px;color:var(--text);text-transform:uppercase}
   .phase-divider p{font-size:14px;color:var(--muted);margin-top:4px}
 
+  .backup-box{width:100%;min-height:80px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface2);color:var(--text);font-size:12px;font-family:monospace;padding:10px;resize:vertical;box-sizing:border-box}
+  .backup-box[hidden]{display:none}
+  .backup-note{font-size:12.5px;color:var(--muted);margin-top:8px}
+  .backup-note[hidden]{display:none}
   .resetwrap{text-align:center;margin-top:26px}
   .resetwrap button{
     border:0;background:none;color:var(--muted);text-decoration:underline;font-size:13.5px;cursor:pointer;font-family:inherit;
@@ -1311,6 +1315,19 @@ var POSE_ICONS = {
       }
       html += '</div></div>';
     }
+    html += '<div class="card">'
+      + '<div class="phtitle">Backup Progress</div>'
+      + '<div class="phsub">An installed phone app can sometimes lose its saved data on its own. After a workout or check-in, tap Show Backup Code, copy the text, and save it somewhere (Notes, a message to yourself) so progress can be restored if that happens.</div>'
+      + '<button class="modal-video-btn" id="showBackupBtn" type="button" style="margin-bottom:10px">Show Backup Code</button>'
+      + '<textarea id="backupCodeBox" class="backup-box" readonly hidden></textarea>'
+      + '<div id="backupCopyNote" class="backup-note" hidden></div>'
+      + '<button class="modal-video-btn" id="showRestoreBtn" type="button" style="margin-top:14px;margin-bottom:10px">Restore From Backup Code</button>'
+      + '<div id="restoreWrap" hidden>'
+        + '<textarea id="restoreCodeBox" class="backup-box" placeholder="Paste your backup code here"></textarea>'
+        + '<button class="modal-video-btn" id="restoreNowBtn" type="button" style="margin-top:10px">Restore Now</button>'
+        + '<div id="restoreNote" class="backup-note"></div>'
+      + '</div>'
+      + '</div>';
     html += '<div class="resetwrap"><button id="resetBtn">Reset all progress</button></div>';
     var startPick = state.startMonday || DEFAULT_MONDAY;
     if(START_MONDAYS.indexOf(startPick) < 0) startPick = DEFAULT_MONDAY;
@@ -1359,6 +1376,75 @@ var POSE_ICONS = {
         }
       });
     }
+    var showBackupBtn = document.getElementById("showBackupBtn");
+    var backupCodeBox = document.getElementById("backupCodeBox");
+    var backupCopyNote = document.getElementById("backupCopyNote");
+    if(showBackupBtn){
+      showBackupBtn.addEventListener("click", function(){
+        var alreadyShown = !backupCodeBox.hidden;
+        if(alreadyShown){
+          backupCodeBox.hidden = true;
+          backupCopyNote.hidden = true;
+          showBackupBtn.textContent = "Show Backup Code";
+          return;
+        }
+        backupCodeBox.value = backupCode();
+        backupCodeBox.hidden = false;
+        backupCopyNote.hidden = false;
+        backupCopyNote.textContent = "Tap the text above, select all, and copy it.";
+        showBackupBtn.textContent = "Hide Backup Code";
+        backupCodeBox.focus();
+        backupCodeBox.select();
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(backupCodeBox.value).then(function(){
+            backupCopyNote.textContent = "Copied to your clipboard — paste it somewhere safe. (Or select the text above yourself.)";
+          }).catch(function(){});
+        }
+      });
+    }
+    var showRestoreBtn = document.getElementById("showRestoreBtn");
+    var restoreWrap = document.getElementById("restoreWrap");
+    if(showRestoreBtn){
+      showRestoreBtn.addEventListener("click", function(){
+        var alreadyShown = !restoreWrap.hidden;
+        restoreWrap.hidden = alreadyShown;
+        showRestoreBtn.textContent = alreadyShown ? "Restore From Backup Code" : "Hide Restore";
+      });
+    }
+    var restoreNowBtn = document.getElementById("restoreNowBtn");
+    if(restoreNowBtn){
+      restoreNowBtn.addEventListener("click", function(){
+        var code = document.getElementById("restoreCodeBox").value;
+        var note = document.getElementById("restoreNote");
+        if(!code.trim()){ note.textContent = "Paste a backup code first."; return; }
+        if(restoreFromCode(code)){
+          note.textContent = "Progress restored.";
+          renderAll();
+        } else {
+          note.textContent = "That doesn't look like a valid backup code.";
+        }
+      });
+    }
+  }
+
+  function backupCode(){
+    return btoa(encodeURIComponent(JSON.stringify(state)));
+  }
+  function restoreFromCode(code){
+    try{
+      var parsed = JSON.parse(decodeURIComponent(atob(code.trim())));
+      if(!parsed || typeof parsed !== "object") return false;
+      state = parsed;
+      if(!state.completed) state.completed = {};
+      if(!state.completionDates) state.completionDates = [];
+      if(!state.checks) state.checks = {};
+      if(!state.measurements) state.measurements = [];
+      if(!state.selectedDay) state.selectedDay = getNextIncompleteDay() || 1;
+      saveState();
+      return true;
+    }catch(e){
+      return false;
+    }
   }
 
   function renderAll(){
@@ -1402,6 +1488,13 @@ var POSE_ICONS = {
   infoStrip.className = "info-strip";
   infoStrip.innerHTML = "<b>Gear:</b> just your body + 5 / 8 / 10 lb dumbbells a few days a week, sneakers, a little open floor.<br><b>Safety:</b> always warm up first, land soft and controlled, and stop if anything hurts.";
   document.querySelector("nav.tabs").parentNode.insertBefore(infoStrip, document.querySelector("nav.tabs"));
+
+  // Ask the browser not to evict this app's saved progress under storage
+  // pressure. Best-effort only -- iOS in particular doesn't always honor it,
+  // which is also why the Backup Progress button exists (Progress tab).
+  if(navigator.storage && navigator.storage.persist){
+    navigator.storage.persist().catch(function(){});
+  }
 
   renderAll();
 })();
