@@ -1122,9 +1122,158 @@ var POSE_ICONS = {
     }catch(e){}
     return { completed:{}, completionDates:[], selectedDay:1, checks:{}, measurements:[] };
   }
-  function saveState(){
+  function saveState(event, meta){
     try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){}
+    syncPush(event, meta);
   }
+
+  // ---------- Progress sync ----------
+  // Mirrors progress to a Google Sheet through an Apps Script web app
+  // (apps-script.gs in this repo), so a parent can see sessions as they
+  // happen instead of asking, and so an installed iOS app that drops its
+  // localStorage can heal itself. Inert until SYNC_URL is filled in;
+  // everything below is local-first, so the app works the same offline.
+  var SYNC_URL   = "";                      // the Apps Script /exec URL
+  var SYNC_TOKEN = "pp-7Qm4xL9vKd2Rb8Nt";   // public by construction, not a secret
+  var syncTimer = null, syncStatus = "idle", syncAt = null, syncRestored = 0;
+
+  function syncOn(){ return !!SYNC_URL; }
+
+  // Derived facts travel with the state so the backend never has to carry a
+  // second copy of the program and drift from this file.
+  function syncSummary(meta){
+    var next = getNextIncompleteDay();
+    var day = next || TOTAL_DAYS;
+    var row = SCHEDULE[day - 1] || {};
+    var count = Object.keys(state.completed).length;
+    return {
+      day: day, total: TOTAL_DAYS,
+      type: TYPE_LABEL[row.type] || "",
+      week: row.week || null, weeks: 9,
+      phase: (PHASES[row.phase] || {}).name || "",
+      pct: Math.round(count / TOTAL_DAYS * 100),
+      streak: computeStreak(),
+      completedCount: count,
+      todayDone: state.completionDates.indexOf(todayStr()) !== -1,
+      // The day just finished, which is NOT the same as the day now up next.
+      doneDay: (meta && meta.doneDay) || null,
+      doneType: (meta && meta.doneDay && TYPE_LABEL[(SCHEDULE[meta.doneDay - 1] || {}).type]) || ""
+    };
+  }
+
+  function syncPush(event, meta){
+    if(!syncOn()) return;
+    if(syncTimer) clearTimeout(syncTimer);
+    var ev = event || "save";
+    syncTimer = setTimeout(function(){ syncSend(ev, meta); }, 1200);
+  }
+
+  function syncSend(event, meta){
+    if(!syncOn()) return;
+    var body = JSON.stringify({
+      token: SYNC_TOKEN, event: event, state: state, summary: syncSummary(meta)
+    });
+    var opts = {
+      method: "POST",
+      cache: "no-store",
+      // text/plain keeps this a simple request, so the browser skips the
+      // preflight Apps Script will not answer. The script reads the raw body.
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: body
+    };
+    // keepalive lets a last push survive the app being closed, but it caps the
+    // body at 64KB, so only use it while the payload is comfortably small.
+    if(body.length < 50000) opts.keepalive = true;
+    fetch(SYNC_URL, opts).then(function(r){
+      return r.json().catch(function(){ return { ok:true }; });
+    }).then(function(res){
+      syncMark(res && res.ok === false ? "fail" : "ok");
+    }).catch(function(){ syncMark("fail"); });
+  }
+
+  // Heal a wiped phone: only take the cloud copy when it is strictly ahead,
+  // so a deliberate un-tick here is never undone by a stale copy there.
+  function syncMerge(cloud){
+    if(!cloud || typeof cloud !== "object") return 0;
+    var cloudDone = Object.keys(cloud.completed || {}).filter(function(k){
+      return !!cloud.completed[k];
+    });
+    var localCount = Object.keys(state.completed).length;
+    if(cloudDone.length <= localCount) return 0;
+
+    var gained = 0;
+    cloudDone.forEach(function(k){
+      if(!state.completed[k]){ state.completed[k] = true; gained++; }
+    });
+    (cloud.completionDates || []).forEach(function(ds){
+      if(state.completionDates.indexOf(ds) === -1) state.completionDates.push(ds);
+    });
+    Object.keys(cloud.checks || {}).forEach(function(k){
+      if(cloud.checks[k]) state.checks[k] = true;
+    });
+    var byDate = {};
+    state.measurements.forEach(function(m){ if(m && m.date) byDate[m.date] = m; });
+    (cloud.measurements || []).forEach(function(m){
+      if(m && m.date && !byDate[m.date]) byDate[m.date] = m;
+    });
+    state.measurements = Object.keys(byDate).sort().map(function(d){ return byDate[d]; });
+    state.selectedDay = getNextIncompleteDay() || TOTAL_DAYS;
+    return gained;
+  }
+
+  function syncPull(){
+    if(!syncOn()) return Promise.resolve(0);
+    return fetch(SYNC_URL + "?token=" + encodeURIComponent(SYNC_TOKEN), { cache: "no-store" })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(!res || !res.ok) throw new Error("not ok");
+        var gained = syncMerge(res.state);
+        if(gained > 0){
+          syncRestored = gained;
+          try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){}
+          renderAll();
+        }
+        syncMark("ok");
+        return gained;
+      })
+      .catch(function(){ syncMark("fail"); return 0; });
+  }
+
+  function syncMark(status){
+    syncStatus = status;
+    if(status === "ok") syncAt = new Date();
+    syncRefreshLine();
+  }
+
+  function syncNote(){
+    if(!syncOn()) return "Not set up yet, so progress is saved on this phone only.";
+    if(syncStatus === "fail") return "Could not reach the sync server just now. Progress is still safe on this phone and will go up on the next change.";
+    var line = "On. Finishing a day sends it up, and a parent gets an email.";
+    if(syncRestored > 0) line = "Restored " + syncRestored + (syncRestored === 1 ? " day" : " days") + " from the cloud copy. " + line;
+    if(syncAt) line += " Last sent " + syncAt.toLocaleTimeString(undefined, { hour:"numeric", minute:"2-digit" }) + ".";
+    return line;
+  }
+
+  function syncRefreshLine(){
+    var el = document.getElementById("syncSub");
+    if(el) el.textContent = syncNote();
+  }
+
+  function syncBoot(){
+    if(!syncOn()) return;
+    syncPull().then(function(){ syncSend("open"); });
+  }
+
+  document.addEventListener("click", function(e){
+    var btn = e.target && e.target.closest ? e.target.closest("#syncNowBtn") : null;
+    if(!btn) return;
+    btn.disabled = true;
+    btn.textContent = "Checking\u2026";
+    syncPull().then(function(){
+      btn.disabled = false;
+      btn.textContent = "Check for updates";
+    });
+  });
   var state = loadState();
   if(!state.completed) state.completed = {};
   if(!state.completionDates) state.completionDates = [];
@@ -1289,7 +1438,7 @@ var POSE_ICONS = {
         } else {
           delete state.completed[day];
         }
-        saveState();
+        saveState(nowDone ? "complete" : "undo", { doneDay: day });
         renderAll();
       });
     }
@@ -1315,6 +1464,11 @@ var POSE_ICONS = {
       }
       html += '</div></div>';
     }
+    html += '<div class="card">'
+      + '<div class="phtitle">Progress Sync</div>'
+      + '<div class="phsub" id="syncSub">' + syncNote() + '</div>'
+      + (syncOn() ? '<button class="modal-video-btn" id="syncNowBtn" type="button">Check for updates</button>' : '')
+      + '</div>';
     html += '<div class="card">'
       + '<div class="phtitle">Backup Progress</div>'
       + '<div class="phsub">An installed phone app can sometimes lose its saved data on its own. After a workout or check-in, tap Show Backup Code, copy the text, and save it somewhere (Notes, a message to yourself) so progress can be restored if that happens.</div>'
@@ -1497,6 +1651,7 @@ var POSE_ICONS = {
   }
 
   renderAll();
+  syncBoot();
 })();
 </script>
 <script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
