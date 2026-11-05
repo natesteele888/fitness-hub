@@ -695,9 +695,14 @@ var POSE_ICONS = {
 
   function playInline(wrap, videoId, title){
     var iframe = document.createElement("iframe");
-    // playsinline keeps iOS from yanking it fullscreen the moment it starts.
+    // No autoplay=1. Browsers block autoplaying an unmuted cross-origin video
+    // even straight after a tap, and a blocked autoplay leaves the player a
+    // black rectangle -- the same "shows you nothing" failure this replaced.
+    // Without it the player draws its own thumbnail and play button, so the
+    // demo is one more tap but always visible. playsinline keeps iOS from
+    // yanking it fullscreen.
     iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId)
-      + "?autoplay=1&rel=0&playsinline=1&modestbranding=1";
+      + "?rel=0&playsinline=1&modestbranding=1";
     iframe.title = title + " demo video";
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframe.allowFullscreen = true;
