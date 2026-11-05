@@ -206,13 +206,26 @@
     max-height:85vh;overflow-y:auto;position:relative;
   }
   .modal-close{
+    /* above the video poster, which sits later in the DOM and otherwise
+       paints over it and swallows the tap that closes the card */
+    z-index:3;
     position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
     border:1.5px solid var(--line);background:var(--surface2);color:var(--muted);font-size:18px;cursor:pointer;
   }
   .modal-icon{width:84px;height:84px;margin:0 auto 10px}
   .modal-icon svg{width:100%;height:100%;display:block}
   .modal-icon.has-photo{width:100%;height:170px;border-radius:14px;overflow:hidden;background:var(--surface2)}
-  .modal-icon.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  /* contain, not cover: a tall photo cropped to a 170px strip showed a torso
+     and nothing of the movement. */
+  .modal-icon.has-photo img{width:100%;height:100%;object-fit:contain;display:block}
+  /* Video poster. padding-top rather than aspect-ratio so old iOS keeps 16:9. */
+  .modal-icon.has-video{width:100%;height:0;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000;position:relative}
+  .modal-icon.has-video > *{position:absolute;top:0;left:0;width:100%;height:100%}
+  .modal-icon.has-video img{object-fit:cover;display:block}
+  .modal-icon.has-video iframe{border:0;display:block}
+  .modal-icon .playbtn{display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.30);border:0;padding:0;cursor:pointer;transition:background .15s}
+  .modal-icon .playbtn:hover,.modal-icon .playbtn:focus-visible{background:rgba(0,0,0,.12)}
+  .modal-icon .playbtn svg{width:64px;height:64px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.65))}
   .modal-focus{
     text-align:center;color:var(--volt);font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;
     text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;
@@ -420,6 +433,70 @@ var POSE_ICONS = {
   // verified video here just hide the Watch Video button rather than
   // falling back to opening something outside the app.
   var EXERCISE_VIDEO_IDS = {
+    "march-jog": "YTOV_S3rzIU",          // Exercise Demonstration: Marching & Jogging in Place (0:58)
+    "bw-squat": "P-yaD24bUE8",           // Bodyweight Squat Tutorial - Proper Form and Technique (0:47)
+    "pogo-hop": "c2LBofIzUqs",           // How To Do Pogo Hops | Exercise Demonstration Video and Gui (0:33)
+    "squat-jump": "tZSYZdtbONc",         // How to do a Squat Jump | Proper Form & Technique | NASM (0:19)
+    "line-hop": "MuPAc9YTg-8",           // Lateral Line Hops (0:11)
+    "broad-jump": "7Du1KbwCdUk",         // How To Do A BROAD JUMP | Exercise Demonstration Video and  (0:46)
+    "single-leg-broad-jump": "xh-yBnbtxp4", // Exercise Demo: Single Leg Broad Jump (0:29)
+    "cat-cow": "1Y0YjXS9sKI",            // How to Do a Cat Cow Stretch: A Guide from Physical Therapi (1:03)
+    "hip-circle": "qkrJXGVj_OQ",         // Warm-up Exercise - Hip Circles (0:36)
+    "glute-bridge": "L9KZfxT654Y",       // Glute Bridge Tutorial - Proper Form and Technique (0:26)
+    "plank": "mwlp75MS6Rg",              // How to do a Plank | Proper Form & Technique | NASM (0:15)
+    "dead-bug": "g5XKMzr5gUs",           // Deadbug Tutorial - Proper Form and Technique (0:41)
+    "bird-dog": "ZdAHe9_HeEw",           // How to do a Bird Dog | Proper Form & Technique | NASM (0:26)
+    "side-plank": "iNbH7_edNI8",         // Side Plank Tutorial - Proper Form and Technique (0:30)
+    "copenhagen": "bU8aazv5voo",         // Short Lever Copenhagen Plank Tutorial - Proper Form and Te (0:31)
+    "child-pose": "_ZX_zTOBgp8",         // How to do a Child's Pose Stretch | Proper Form & Technique (0:16)
+    "seated-fold": "oJX8EKF3TqM",        // Seated Forward Fold - Beginner Hamstring Stretch (Video Tu (1:29)
+    "arm-circle": "UVMEnIaY8aU",         // Arm Circles Exercise (0:27)
+    "good-morning": "0Syp9iyINZ4",       // Good Mornings Tutorial - Proper Form and Technique (0:44)
+    "db-goblet-squat": "6mf0oa2GGUc",    // Goblet Squat Tutorial - Proper Form and Technique (0:40)
+    "db-suitcase-carry": "3RKKnZhhelE",  // How to Perform A Suitcase Carry (0:19)
+    "db-floor-press": "qHCI9rK7HqM",     // How To Do A DUMBBELL FLOOR PRESS | Exercise Demonstration  (0:47)
+    "db-rdl": "aa57T45iFSE",             // How to do a Dumbbell Romanian Deadlift | Proper Form & Tec (0:31)
+    "plank-shoulder-tap": "eNh_Lf6x6d8", // High Plank Shoulder Tap Exercise Tutorial | Plank Variatio (1:20)
+    "nordic": "mYfTCoOoX74",             // How To Do A PARTNER ASSISTED NORDIC HAMSTRING CURL (1:03)
+    "quad-stretch": "Ztwz8rrDShk",       // How to Stretch the Quadriceps - Standing Quad Stretch (0:32)
+    "calf-stretch": "7SO6QzfBRaE",       // Standing Calf Stretch Technique #shorts (0:09)
+    "hamstring-stretch": "T_l0AyZywjU",  // How to do a hamstring stretch | Bupa Health (0:38)
+    "hip-flexor-stretch": "ktgtEWGhFd8", // How to PROPERLY Perform the Kneeling Hip Flexor Stretch Wi (0:20)
+    "chest-stretch": "8wiZpixdHPU",      // How to Doorway Chest Stretch (0:32)
+    "cobra-stretch": "z21McHHOpAg",      // How to Do: COBRA STRETCH (0:30)
+    "spinal-twist": "r5JuFoNzOU8",       // Seated Spinal Twist Tutorial - Proper Form and Technique (0:32)
+    "shoulder-stretch": "Pg0JvLSfWwM",   // How To Do Cross Body Shoulder Stretch | Stretching Demo (0:45)
+    "high-knees": "VKc58tjEVfs",         // High Knees Running Form Drill Demonstration (0:33)
+    "butt-kicks": "kRR1i9btd_w",         // Butt Kicks Running Form Drill Demonstration (0:28)
+    "lateral-shuffle": "oVhTZUaIW0o",    // Side shuffle (athletic stance) (0:18)
+    "quick-feet": "mP2zippJ4SQ",         // How to Perform the Quick/Fast Feet Running Drill (1:22)
+    "lateral-hop": "pgFFBvJIJC4",        // Lateral Hop Over Line (0:15)
+    "a-skip": "qwcDGGB392g",             // How to Improve Your Running Technique in 60 Seconds | A-Sk (1:16)
+    "sprint-start": "yGvQHOjPufg",       // Split stance sprint starting technique (0:23)
+    "plant-stick": "NdJz_LEXREg",        // How to kick a football with a proper plant foot location (0:35)
+    "torso-twist": "h6XyzlM8m24",        // Torso Twists Tutorial - Proper Form and Technique (0:14)
+    "arm-swing": "dNTzkF2xoco",          // How to do Arm Swings Out and In - Warm Up Exercise - Welle (1:18)
+    "trunk-rotation": "dECwx-ga6Po",     // How To Do A Standing Trunk Rotation (0:25)
+    "bear-crawl": "c65a_hP-eF0",         // Bear Crawl Hold Tutorial (1:11)
+    "jumping-jack": "XR0xeuK5zBU",       // How to do Jumping Jacks exercise - Best Cardio Exercises v (1:26)
+    "mountain-climber": "CQk4MHY2_Tc",   // Mountain Climber Tutorial - Proper Form and Technique (0:29)
+    "walking-lunge": "vYfp2t4XgqQ",      // Walking Lunge Tutorial - Proper Form and Technique (0:24)
+    "leg-swing": "difYoBtZi2s",          // How To Do Leg Swings (0:24)
+    "skater-hop": "QrW-C5WFwcU",         // How To: Skater Hop - Exercise Tutorial (1:11)
+    "hollow-hold": "JnuYfsJ3CKg",        // How to Do a Hollow Body Hold : Gymnastics (0:51)
+    "superman": "LZoWdePF1NQ",           // How To Do A SUPERMAN HOLD | Exercise Demonstration Video a (0:26)
+    "reverse-lunge": "RZKXLMxPF_I",      // Dumbbell Reverse Lunges | How To | Proper Form & Technique (1:07)
+    "db-overhead-press": "Did01dFR3Lk",  // Dumbbell Overhead Press - How To (0:27)
+    "lateral-bound": "soqQy4dzEts",      // How To Lateral Bound (0:09)
+    "shuttle": "fZoJVVuqY3U",            // How To Do The 5-10-5 Shuttle Run Drill | Exercise Demonstr (0:52)
+    "tuck-jump": "-bnJGikRGsM",          // How to do a Tuck Jump | Proper Form & Technique | NASM (0:27)
+    "standing-db-rotation": "2aSszxf2_pk", // How to Do a Standing Dumbbell Rotation (0:40)
+    "plank-updown": "3Wn0-JyAZm8",       // Up and Down Plank Exercise | How to Tutorial by Urbacise (1:23)
+    "db-push-press": "sElIkjcfyNY",      // Dumbbell Push Press - How To (0:24)
+    "db-row": "ZRSGpBUVcNw",             // How To Do Single Arm Dumbbell Rows (0:11)
+    "reactive-hop": "018r2Yi5hmU",       // Reactive Plyometrics - 2 Foot Hops (0:17)
+    "jump-180": "wRmV4I9RFLw",           // 180 Jump Turns Exercise (0:30)
+    "db-woodchop": "Rf-2l8Z40dg",        // How To Do A DUMBBELL WOODCHOPPER | Exercise Demonstration  (0:51)
   };
   for (var _exKey in EXERCISE_VIDEO_IDS) {
     if (EXLIB[_exKey]) EXLIB[_exKey].videoId = EXERCISE_VIDEO_IDS[_exKey];
@@ -540,7 +617,10 @@ var POSE_ICONS = {
     var info = exInfoFor(name);
     if(!info) return;
     var iconWrap = document.getElementById("exIconWrap");
-    if(info.photo){
+    if(info.videoId){
+      showVideoPoster(iconWrap, info);
+    } else if(info.photo){
+      iconWrap.classList.remove("has-video");
       iconWrap.classList.add("has-photo");
       iconWrap.innerHTML = "";
       var img = document.createElement("img");
@@ -551,28 +631,78 @@ var POSE_ICONS = {
       img.alt = info.name;
       iconWrap.appendChild(img);
     } else {
+      // both classes must go: the modal is reused, so a leftover has-video
+      // would stretch the drawn icon across a black 16:9 box.
       iconWrap.classList.remove("has-photo");
+      iconWrap.classList.remove("has-video");
       iconWrap.innerHTML = POSE_ICONS[info.icon] || "";
     }
     document.getElementById("exFocus").textContent = info.focus;
     document.getElementById("exName").textContent = info.name;
     document.getElementById("exHow").textContent = info.how;
     document.getElementById("exSafety").textContent = info.safety;
+    // With the poster in the modal the separate button is redundant; it only
+    // appears for an exercise that somehow has a video but no poster slot.
     var videoBtn = document.getElementById("exVideo");
-    if(info.videoId){
-      videoBtn.hidden = false;
-      videoBtn.onclick = function(){ openVideoLightbox(info.videoId, info.name); };
-    } else {
-      videoBtn.hidden = true;
-      videoBtn.onclick = null;
-    }
+    videoBtn.hidden = true;
+    videoBtn.onclick = null;
     document.getElementById("exOverlay").hidden = false;
     document.body.style.overflow = "hidden";
   }
 
   function closeExerciseModal(){
     document.getElementById("exOverlay").hidden = true;
+    // Drop the iframe, or the video keeps playing (and talking) after closing.
+    document.getElementById("exIconWrap").innerHTML = "";
     document.body.style.overflow = "";
+  }
+
+  var PLAY_SVG = '<svg viewBox="0 0 68 48" aria-hidden="true">'
+    + '<path d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.6a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z" fill="#f00"/>'
+    + '<path d="M27 34L44 24L27 14z" fill="#fff"/></svg>';
+
+  // A thumbnail with a play button. Tapping it swaps in the player in the same
+  // spot, so the demo runs inside the card instead of opening anything.
+  function showVideoPoster(wrap, info){
+    wrap.classList.remove("has-photo");
+    wrap.classList.add("has-video");
+    wrap.innerHTML = "";
+    var poster = document.createElement("img");
+    poster.alt = "";
+    // NOT loading="lazy": the poster is built while the modal is still hidden,
+    // and a lazy image in a display:none container never gets fetched at all.
+    var hq = "https://i.ytimg.com/vi/" + info.videoId + "/hqdefault.jpg";
+    // maxres does not exist for every video, and YouTube does NOT 404 when it
+    // is missing -- it serves a 120x90 grey placeholder, so onerror never
+    // fires and the poster ends up a blurry smear. Judge it by size on load.
+    poster.onload = function(){
+      if(this.naturalWidth <= 120 && this.src.indexOf("maxresdefault") !== -1){
+        this.onload = null;
+        this.src = hq;
+      }
+    };
+    poster.onerror = function(){ this.onerror = null; this.src = hq; };
+    poster.src = "https://i.ytimg.com/vi/" + info.videoId + "/maxresdefault.jpg";
+    wrap.appendChild(poster);
+    var play = document.createElement("button");
+    play.type = "button";
+    play.className = "playbtn";
+    play.setAttribute("aria-label", "Play the " + info.name + " demo");
+    play.innerHTML = PLAY_SVG;
+    play.onclick = function(){ playInline(wrap, info.videoId, info.name); };
+    wrap.appendChild(play);
+  }
+
+  function playInline(wrap, videoId, title){
+    var iframe = document.createElement("iframe");
+    // playsinline keeps iOS from yanking it fullscreen the moment it starts.
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId)
+      + "?autoplay=1&rel=0&playsinline=1&modestbranding=1";
+    iframe.title = title + " demo video";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    wrap.innerHTML = "";
+    wrap.appendChild(iframe);
   }
 
   function openVideoLightbox(videoId, title){
