@@ -20,7 +20,8 @@ anywhere, since there's no way to guarantee a specific link stays live or
 keeps showing the right thing.
 
 Progress and check-ins save to `localStorage` on whatever phone/browser opens
-the page — no login, no server, nothing syncs across devices. To change
+the page — no login needed. An optional Sheet sync (below) can mirror them
+for a parent; without it, nothing leaves the phone. To change
 exercises, reps, phases, or weeks, edit the `WORKOUTS` and `SCHEDULE` data
 near the top of the `<script>` block in `index.html`; the check-in metrics
 are in the `METRICS` array just above them. The exercise cards are driven by
@@ -31,6 +32,22 @@ diagram set; reuse an existing icon key or add a new one there.
 
 This repo was split out from `desmond-party` (which is just the birthday
 RSVP sites) to keep workout apps in their own place as more get added.
+
+## Progress sync (optional)
+
+`apps-script.gs` is a free Google Apps Script backend that copies progress
+into a Google Sheet, emails a parent when a day is done, and lets a wiped
+phone restore itself. Setup steps are at the top of that file. In short:
+run `setup()`, deploy it as a web app, run `showSyncLink()`, then paste the
+logged sync link into the app (Program tab > Progress Sync > Save sync link).
+
+The sync link (the `/exec` URL with a random token after a `#`) is the key
+to the Sheet. It is made at setup, kept in the script's Script Properties
+and on the phone (it rides along in the backup code), and is **never
+written into `index.html` or `apps-script.gs`** — this repo is public. Keep
+the link and backup codes private. To cut off an old link, delete the
+`POWER_SYNC_TOKEN` Script Property, run `setup()` and `showSyncLink()` again,
+and paste the new link.
 
 ## Daily reminders
 
