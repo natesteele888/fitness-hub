@@ -1,5 +1,5 @@
 // Network first, so updates show up right away; falls back to the last saved copy when offline.
-const CACHE = "power-v3";
+const CACHE = "power-v4";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => e.waitUntil(
   caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("power-") && k !== CACHE).map(k => caches.delete(k))))
