@@ -29,6 +29,10 @@
     --ember:#FF6B3D;
   }
   *{box-sizing:border-box}
+  /* nate-brain parts.md `look`: a generic fallback so every tappable
+     element gets a visible keyboard-focus ring, not just .playbtn's
+     own one below. Mouse/touch focus is unaffected. */
+  :focus-visible{outline:2px solid var(--volt);outline-offset:2px}
   body{
     margin:0;background:var(--bg);color:var(--text);
     font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.45;
@@ -267,6 +271,25 @@
   .remindctl select{flex:1 1 auto;min-width:0;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:15px;font-family:inherit}
   .remindgo{display:block;margin-top:11px;text-align:center;background:var(--volt);color:#0A0D12;font-family:Oswald,sans-serif;font-size:15px;letter-spacing:.02em;text-decoration:none;border-radius:10px;padding:11px}
   .remindnote{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.5}
+
+  /* Sync toast -- see showToast()/syncMark() below. ballclub's
+     js/util.js showToast is the pattern this borrows: an active,
+     auto-dismissing popup instead of only a sentence in the Progress
+     Sync panel, which an athlete has no reason to be looking at when a
+     sync actually fails. */
+  .toastHost{
+    position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);
+    z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:center;
+    pointer-events:none;width:100%;padding:0 16px;box-sizing:border-box;
+  }
+  .toast{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:10px 16px;font-size:14px;line-height:1.4;color:var(--text);max-width:420px;text-align:center;
+    opacity:0;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease;
+  }
+  .toastShow{opacity:1;transform:translateY(0)}
+  .toast.toastError{border-color:var(--ember);color:var(--ember)}
+  .toast.toastInfo{border-color:var(--volt);color:var(--volt)}
 </style>
 </head>
 <body>
@@ -1425,9 +1448,39 @@ var POSE_ICONS = {
       .catch(function(){ syncMark("fail"); return 0; });
   }
 
+  // Ported from ballclub's js/util.js showToast. Lazily creates its own
+  // host node, so it needs no markup in the page.
+  function showToast(message, kind){
+    var host = document.getElementById("toastHost");
+    if(!host){
+      host = document.createElement("div");
+      host.id = "toastHost";
+      host.className = "toastHost";
+      document.body.appendChild(host);
+    }
+    var el = document.createElement("div");
+    el.className = "toast " + (kind === "info" ? "toastInfo" : "toastError");
+    el.textContent = message;
+    host.appendChild(el);
+    requestAnimationFrame(function(){ el.classList.add("toastShow"); });
+    setTimeout(function(){
+      el.classList.remove("toastShow");
+      setTimeout(function(){ el.remove(); }, 300);
+    }, 4000);
+  }
+
   function syncMark(status){
+    // Toast only on a real change, not on every debounced sync attempt --
+    // offline, syncSend fires again after each exercise checked off, and
+    // repeating the same toast every ~1.2s would bury the app in popups.
+    var was = syncStatus;
     syncStatus = status;
     if(status === "ok") syncAt = new Date();
+    if(status === "fail" && was !== "fail"){
+      showToast("Could not reach the sync server. Your progress is still saved on this phone.", "error");
+    } else if(status === "ok" && was === "fail"){
+      showToast("Back online — synced.", "info");
+    }
     syncRefreshLine();
   }
 
