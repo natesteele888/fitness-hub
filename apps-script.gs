@@ -9,11 +9,20 @@
  *   1. Go to script.google.com > New project. Name it "Power Program".
  *   2. Delete the stub Code.gs contents and paste this whole file in.
  *   3. Run setup(). Authorise when asked. It creates the Google Sheet,
- *      installs the evening check trigger, and logs the Sheet link.
+ *      installs the evening check trigger, makes a random sync token and
+ *      logs the Sheet link.
  *   4. Deploy > New deployment > Web app.
  *        Execute as: Me          Who has access: Anyone
- *      Copy the /exec URL.
- *   5. Put that URL in index.html's SYNC_URL.
+ *   5. Run showSyncLink(). It logs one line, the sync link: the /exec URL
+ *      with the token after a #. Copy it.
+ *   6. In the app: Program tab > Progress Sync > paste the sync link > Save.
+ *      It is kept on that phone (and inside its backup code), never in
+ *      index.html, so it never lands in the public repo.
+ *
+ * Treat the sync link like a password: anyone who has it can read and
+ * change the progress in the Sheet. To cut off an old link, delete the
+ * POWER_SYNC_TOKEN Script Property, run setup() and showSyncLink() again,
+ * and paste the new link in the app.
  *
  * LATER CHANGES: Deploy > Manage deployments > pencil > Version: New
  * version > Deploy. Saving the editor alone changes nothing live.
@@ -27,12 +36,6 @@
 // if you want the mail to go somewhere other than that account.
 const OWNER_EMAIL_OVERRIDE = '';
 
-// Shared with the app. NOT a secret: the app is a public static page, so
-// whatever the app sends must also live in the page source. It only keeps
-// random passers-by from writing to the endpoint. Never put a real secret
-// here - anything the client needs is public by construction.
-const CLIENT_TOKEN = 'pp-7Qm4xL9vKd2Rb8Nt';
-
 const NOTIFY_ON_COMPLETE = true;   // email the moment a day is marked done
 const QUIET_CHECK_HOUR   = 20;     // evening check, only mails if nothing was logged
 const TZ = 'America/New_York';
@@ -43,6 +46,9 @@ const LOG_SHEET   = 'Log';
 const STATE_SHEET = 'State';
 const PROP_SHEET_ID = 'POWER_SHEET_ID';
 const PROP_OWNER    = 'POWER_OWNER_EMAIL';
+// The sync token is made by setup() and kept only in Script Properties and
+// on the phone. It is never written in this file, because this repo is public.
+const PROP_TOKEN    = 'POWER_SYNC_TOKEN';
 
 // 'Finished day' is the day just completed; 'Up next' is what comes after it.
 // Keeping both means the email can never announce the wrong day number.
@@ -69,13 +75,41 @@ function setup() {
   // is empty there. Capture it now, while setup() runs as you.
   const who = OWNER_EMAIL_OVERRIDE || Session.getEffectiveUser().getEmail();
   if (!who) throw new Error('Could not read your email. Set OWNER_EMAIL_OVERRIDE and run setup() again.');
-  PropertiesService.getScriptProperties().setProperty(PROP_OWNER, who);
+  const props = PropertiesService.getScriptProperties();
+  props.setProperty(PROP_OWNER, who);
+  if (!props.getProperty(PROP_TOKEN)) {
+    props.setProperty(PROP_TOKEN, (Utilities.getUuid() + Utilities.getUuid()).replace(/-/g, ''));
+  }
 
   Logger.log('Notifications will go to: ' + who);
   Logger.log('Sheet: ' + ss.getUrl());
   Logger.log('Evening check installed for ' + QUIET_CHECK_HOUR + ':00 ' + TZ);
-  Logger.log('Now: Deploy > New deployment > Web app (Execute as Me, Access Anyone).');
+  Logger.log('Now: Deploy > New deployment > Web app (Execute as Me, Access Anyone), then run showSyncLink().');
   return ss.getUrl();
+}
+
+/**
+ * RUN AFTER DEPLOYING. Logs the sync link to paste into the app once:
+ * the web app's /exec URL with the token after a #.
+ */
+function showSyncLink() {
+  const token = token_();
+  if (!token) throw new Error('No sync token yet. Run setup() first.');
+  const url = ScriptApp.getService().getUrl();
+  if (!url) throw new Error('Not deployed yet. Deploy > New deployment > Web app first.');
+  const link = url + '#' + token;
+  Logger.log('Sync link (paste into the app, keep it private): ' + link);
+  return link;
+}
+
+function token_() {
+  return PropertiesService.getScriptProperties().getProperty(PROP_TOKEN) || '';
+}
+
+/** Never accept an empty token, so an unset script stays closed. */
+function tokenOk_(given) {
+  const want = token_();
+  return !!want && typeof given === 'string' && given === want;
 }
 
 /** The Sheet this script owns, created on first use. */
@@ -112,7 +146,7 @@ function stateSheet_() { return sheet_(STATE_SHEET, ['Updated', 'State JSON']); 
 function doPost(e) {
   try {
     const body = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    if (body.token !== CLIENT_TOKEN) return json_({ ok: false, error: 'bad token' });
+    if (!tokenOk_(body.token)) return json_({ ok: false, error: 'bad token' });
 
     const s = body.summary || {};
     const event = String(body.event || 'save');
@@ -141,7 +175,7 @@ function doPost(e) {
 /** The app reads its own state back, so a wiped phone heals itself. */
 function doGet(e) {
   const p = (e && e.parameter) || {};
-  if (p.token !== CLIENT_TOKEN) return json_({ ok: false, error: 'bad token' });
+  if (!tokenOk_(p.token)) return json_({ ok: false, error: 'bad token' });
   const sh = stateSheet_();
   if (sh.getLastRow() < 2) return json_({ ok: true, state: null });
   const row = sh.getRange(2, 1, 1, 2).getValues()[0];
