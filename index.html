@@ -226,6 +226,9 @@
   .modal-icon .playbtn{display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.30);border:0;padding:0;cursor:pointer;transition:background .15s}
   .modal-icon .playbtn:hover,.modal-icon .playbtn:focus-visible{background:rgba(0,0,0,.12)}
   .modal-icon .playbtn svg{width:64px;height:64px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.65))}
+  .vid-note{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:16px;box-sizing:border-box;background:#1c1f26;color:#fff;text-align:center;font-size:15px;line-height:1.35}
+  .vid-note small{opacity:.75;font-size:13px}
+  .video-frame .vid-note{position:absolute;inset:0}
   .modal-focus{
     text-align:center;color:var(--volt);font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;
     text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;
@@ -681,7 +684,16 @@ var POSE_ICONS = {
         this.src = hq;
       }
     };
-    poster.onerror = function(){ this.onerror = null; this.src = hq; };
+    // If even hqdefault can't load (no signal), show a plain dark card with
+    // the name instead of a broken-image icon.
+    poster.onerror = function(){
+      if(this.src !== hq){ this.src = hq; return; }
+      this.onerror = null;
+      var plain = document.createElement("div");
+      plain.className = "vid-note";
+      plain.textContent = info.name;
+      if(this.parentNode) this.parentNode.replaceChild(plain, this);
+    };
     poster.src = "https://i.ytimg.com/vi/" + info.videoId + "/maxresdefault.jpg";
     wrap.appendChild(poster);
     var play = document.createElement("button");
@@ -693,7 +705,22 @@ var POSE_ICONS = {
     wrap.appendChild(play);
   }
 
+  // The demos stream from YouTube, so with no signal the player would load
+  // a broken frame. Say so plainly; the written steps stay on screen.
+  function videoOfflineNote(){
+    var note = document.createElement("div");
+    note.className = "vid-note";
+    note.setAttribute("role", "status");
+    note.innerHTML = "Video needs signal.<small>The steps below still work. Try the video again when you're back online.</small>";
+    return note;
+  }
+
   function playInline(wrap, videoId, title){
+    if(navigator.onLine === false){
+      wrap.innerHTML = "";
+      wrap.appendChild(videoOfflineNote());
+      return;
+    }
     var iframe = document.createElement("iframe");
     // No autoplay=1. Browsers block autoplaying an unmuted cross-origin video
     // even straight after a tap, and a blocked autoplay leaves the player a
@@ -712,6 +739,12 @@ var POSE_ICONS = {
 
   function openVideoLightbox(videoId, title){
     var frame = document.getElementById("videoFrame");
+    if(navigator.onLine === false){
+      frame.innerHTML = "";
+      frame.appendChild(videoOfflineNote());
+      document.getElementById("videoOverlay").hidden = false;
+      return;
+    }
     var iframe = document.createElement("iframe");
     iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
     iframe.title = title;
