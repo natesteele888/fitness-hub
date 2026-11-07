@@ -1,6 +1,13 @@
 // Network first, so updates show up right away; falls back to the last saved copy when offline.
-const CACHE = "power-v4";
-self.addEventListener("install", e => self.skipWaiting());
+const CACHE = "power-v5";
+// Save the page itself at install. Without this, the first visit caches nothing
+// (the page loaded before the worker existed), so opening it offline right after
+// installing fails. Each file is added on its own so one miss can't block install.
+const SHELL = ["./", "manifest.json", "/apps/icons/fitness-192.png", "/apps/icons/fitness-512.png"];
+self.addEventListener("install", e => {
+  self.skipWaiting();
+  e.waitUntil(caches.open(CACHE).then(c => Promise.all(SHELL.map(u => c.add(new Request(u, {cache: "reload"})).catch(() => {})))));
+});
 self.addEventListener("activate", e => e.waitUntil(
   caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("power-") && k !== CACHE).map(k => caches.delete(k))))
     .then(() => self.clients.claim())));
