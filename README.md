@@ -1,6 +1,6 @@
 # Fitness Hub
 
-Desmond's workout apps — standalone, mobile-first training tools, each a
+Youth workout apps — standalone, mobile-first training tools, each a
 single self-contained HTML file (no build step, no backend) hosted on
 GitHub Pages.
 
@@ -29,7 +29,7 @@ used in `WORKOUTS` to a library entry) — add a new exercise to `EX_ALIASES`
 and `EXLIB` so its card doesn't come up empty. `POSE_ICONS` holds the shared
 diagram set; reuse an existing icon key or add a new one there.
 
-This repo was split out from `desmond-party` (which is just the birthday
+This repo was split out from the party repo (which is just the birthday
 RSVP sites) to keep workout apps in their own place as more get added.
 
 ## Daily reminders
