@@ -77,7 +77,7 @@
   .daynav{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
   .daynav button{
     border:0;background:none;color:var(--volt);font-family:'Oswald',sans-serif;
-    font-weight:600;font-size:15px;cursor:pointer;padding:6px 8px;text-transform:uppercase;
+    font-weight:600;font-size:15px;cursor:pointer;padding:6px 8px;min-height:36px;text-transform:uppercase;
   }
   .daynav button:disabled{color:var(--line);cursor:default}
 
@@ -195,10 +195,16 @@
     .asymnum span{font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:var(--muted);margin-left:8px}
 
   .ex-info{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:18px;height:18px;border-radius:50%;border:1.5px solid var(--volt);color:var(--volt);
+    /* A real 32x32 tap box. The negative margins keep the row as tall as the
+       18px ring drawn by ::before, so the list doesn't spread out. */
+    display:inline-flex;align-items:center;justify-content:center;position:relative;
+    width:32px;height:32px;border-radius:50%;border:0;color:var(--volt);
     background:none;font-family:Georgia,serif;font-style:italic;font-size:12px;font-weight:700;
-    cursor:pointer;vertical-align:2px;margin-left:5px;padding:0;line-height:1;flex:none;
+    cursor:pointer;vertical-align:2px;margin:-7px -7px -7px -2px;padding:0;line-height:1;flex:none;
+  }
+  .ex-info::before{
+    content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;box-sizing:border-box;
+    transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--volt);
   }
   .modal-overlay{
     position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:flex-end;justify-content:center;
