@@ -681,6 +681,7 @@ var POSE_ICONS = {
     videoBtn.onclick = null;
     document.getElementById("exOverlay").hidden = false;
     document.body.style.overflow = "hidden";
+    syncSheets();
   }
 
   function closeExerciseModal(){
@@ -688,7 +689,31 @@ var POSE_ICONS = {
     // Drop the iframe, or the video keeps playing (and talking) after closing.
     document.getElementById("exIconWrap").innerHTML = "";
     document.body.style.overflow = "";
+    syncSheets();
   }
+
+  // Android's Back gesture should close the open card, not leave the app.
+  // Each open card gets one history entry. A short timer lines the entries up
+  // with what's open, so opening one card right after closing another doesn't
+  // land on the wrong entry.
+  var sheetDepth = 0, sheetTimer = 0;
+  function openSheetCount(){
+    return ["exOverlay","videoOverlay"].filter(function(id){ return !document.getElementById(id).hidden; }).length;
+  }
+  function syncSheets(){
+    clearTimeout(sheetTimer);
+    sheetTimer = setTimeout(function(){
+      var want = openSheetCount();
+      while(sheetDepth < want){ history.pushState({powerSheets: ++sheetDepth}, ""); }
+      if(sheetDepth > want){ history.go(want - sheetDepth); }
+    }, 60);
+  }
+  window.addEventListener("popstate", function(e){
+    var at = (e.state && e.state.powerSheets) || 0;
+    sheetDepth = at;
+    if(openSheetCount() > at && !document.getElementById("videoOverlay").hidden) closeVideoLightbox();
+    if(openSheetCount() > at) closeExerciseModal();
+  });
 
   var PLAY_SVG = '<svg viewBox="0 0 68 48" aria-hidden="true">'
     + '<path d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.6a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z" fill="#f00"/>'
@@ -773,6 +798,7 @@ var POSE_ICONS = {
       frame.innerHTML = "";
       frame.appendChild(videoOfflineNote());
       document.getElementById("videoOverlay").hidden = false;
+      syncSheets();
       return;
     }
     var iframe = document.createElement("iframe");
@@ -784,11 +810,13 @@ var POSE_ICONS = {
     frame.innerHTML = "";
     frame.appendChild(iframe);
     document.getElementById("videoOverlay").hidden = false;
+    syncSheets();
   }
 
   function closeVideoLightbox(){
     document.getElementById("videoOverlay").hidden = true;
     document.getElementById("videoFrame").innerHTML = "";
+    syncSheets();
   }
 
   var WORKOUTS = {
