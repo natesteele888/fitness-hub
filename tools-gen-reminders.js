@@ -19,7 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const REPO = '/Volumes/AutoNuvo_1/fitness-hub';
+const REPO = __dirname; // the script's own folder, so it runs from any copy
 const src = fs.readFileSync(path.join(REPO, 'index.html'), 'utf8');
 
 function grab(startMarker, endMarker, dropEnd) {
@@ -38,9 +38,17 @@ const pump     = grab('  var PUMP = {', '\n  };') + '\n'
                + grab('  var PUMP_MILESTONE = {', '\n  };') + '\n'
                + grab('  function pumpFor(day, type){', '\n  }');
 
-const api = new Function(program + '\n' + schedule + '\n' + pump +
+// The program block now also wires up page code (the Back gesture), so give it
+// a do-nothing browser to run against.
+const noop = () => {};
+const fakeEl = { addEventListener: noop, style: {}, classList: { add: noop, remove: noop, contains: () => false } };
+const fakeWindow = { addEventListener: noop, removeEventListener: noop, location: { hash: '' } };
+const fakeDocument = { addEventListener: noop, getElementById: () => fakeEl, querySelector: () => fakeEl, querySelectorAll: () => [] };
+const fakeHistory = { pushState: noop, replaceState: noop, back: noop, state: null };
+const api = new Function('window', 'document', 'history', 'localStorage', program + '\n' + schedule + '\n' + pump +
   '\nreturn {PHASES:PHASES, DAY_ORDER:DAY_ORDER, TYPE_LABEL:TYPE_LABEL,' +
-  ' SCHEDULE:SCHEDULE, TOTAL_DAYS:TOTAL_DAYS, pumpFor:pumpFor};')();
+  ' SCHEDULE:SCHEDULE, TOTAL_DAYS:TOTAL_DAYS, pumpFor:pumpFor};')(
+  fakeWindow, fakeDocument, fakeHistory, { getItem: () => null, setItem: noop, removeItem: noop });
 const { PHASES, TYPE_LABEL, SCHEDULE, TOTAL_DAYS, pumpFor } = api;
 if (SCHEDULE.length !== 63) throw new Error('expected 63 scheduled days, got ' + SCHEDULE.length);
 
