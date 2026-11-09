@@ -13,6 +13,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Power Program">
 <script src="https://natesteele888.github.io/apps/install.js" defer></script>
+<script src="https://natesteele888.github.io/apps/health.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -1349,7 +1350,7 @@ var POSE_ICONS = {
     return { completed:{}, completionDates:[], selectedDay:1, checks:{}, measurements:[] };
   }
   function saveState(event, meta){
-    try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){}
+    try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){ if(window.nateHealth) window.nateHealth.note("save", "Progress could not be saved"); }
     syncPush(event, meta);
   }
 
@@ -1785,6 +1786,7 @@ var POSE_ICONS = {
         + '<div id="restoreNote" class="backup-note"></div>'
       + '</div>'
       + '</div>';
+    html += '<div class="resetwrap"><button type="button" style="min-height:44px;padding:0 12px" onclick="window.nateHealth&&nateHealth.report()">Something wrong? Send a report</button></div>';
     html += '<div class="resetwrap"><button id="resetBtn">Reset all progress</button></div>';
     var startPick = state.startMonday || DEFAULT_MONDAY;
     if(START_MONDAYS.indexOf(startPick) < 0) startPick = DEFAULT_MONDAY;
