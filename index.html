@@ -1341,10 +1341,23 @@ var POSE_ICONS = {
 
   // ---------- State ----------
 
-  var STORE_KEY = "desmondPower_v1";
+  var STORE_KEY = "powerProgram_v1";
+  // Progress used to be saved under an older "<name>Power_v1" key. Copy it forward once
+  // and leave the old copy on the phone as a fallback.
+  function oldSaveKey(){
+    for(var i = 0; i < localStorage.length; i++){
+      var k = localStorage.key(i);
+      if(/^[a-z]+Power_v1$/.test(k) && k !== STORE_KEY) return k;
+    }
+    return null;
+  }
   function loadState(){
     try{
       var raw = localStorage.getItem(STORE_KEY);
+      if(!raw){
+        var old = oldSaveKey();
+        if(old){ raw = localStorage.getItem(old); if(raw) localStorage.setItem(STORE_KEY, raw); }
+      }
       if(raw) return JSON.parse(raw);
     }catch(e){}
     return { completed:{}, completionDates:[], selectedDay:1, checks:{}, measurements:[] };
