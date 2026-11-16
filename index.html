@@ -1157,16 +1157,20 @@ var POSE_ICONS = {
     var today = todayStr();
     var idx = state.measurements.findIndex(function(m){ return m.date === today; });
     var entry = idx >= 0 ? Object.assign({}, state.measurements[idx]) : { date:today };
+    var filled = 0;
     METRICS.forEach(function(m){
       var input = document.getElementById("m_" + m.key);
       var v = parseNum(input ? input.value : null);
-      if(v !== null) entry[m.key] = v;
+      if(v !== null){ entry[m.key] = v; filled++; }
     });
+    // A tap with every field blank used to log an empty check-in ("—").
+    if(!filled){ showToast("Type at least one number first", "info"); return; }
     entry.day = currentProgramDay();
     if(idx >= 0) state.measurements[idx] = entry; else state.measurements.push(entry);
     state.measurements.sort(function(a,b){ return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
     saveState();
     renderProgressView();
+    showToast("Check-in saved", "info");
   }
 
   function deleteMeasurement(date){
