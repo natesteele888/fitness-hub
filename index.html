@@ -14,6 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="Power Program">
 <script src="https://natesteele888.github.io/apps/install.js" defer></script>
 <script src="https://natesteele888.github.io/apps/health.js" defer></script>
+<script src="https://natesteele888.github.io/apps/watchlink.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -1371,6 +1372,7 @@ var POSE_ICONS = {
   function saveState(event, meta){
     try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){ if(window.nateHealth) window.nateHealth.note("save", "Progress could not be saved"); }
     syncPush(event, meta);
+    watchSoon();
   }
 
   // ---------- Progress sync ----------
@@ -1792,6 +1794,7 @@ var POSE_ICONS = {
           + '<button class="modal-video-btn" id="syncSaveBtn" type="button" style="margin-top:10px">Save sync link</button>'
           + '<div id="syncLinkNote" class="backup-note"></div>')
       + '</div>';
+    if(WL) html += '<div class="card"><div class="phtitle">Watch</div><div id="wlPanel"></div><div class="backup-note" id="wlMsg" role="status">' + wmsg() + '</div></div>';
     html += '<div class="card">'
       + '<div class="phtitle">Backup Progress</div>'
       + '<div class="phsub">An installed phone app can sometimes lose its saved data on its own. After a workout or check-in, tap Show Backup Code, copy the text, and save it somewhere (Notes, a message to yourself) so progress can be restored if that happens.' + (syncOn() ? ' It includes the sync link, so keep it private.' : '') + '</div>'
@@ -1824,6 +1827,10 @@ var POSE_ICONS = {
       + '</div>';
 
     el.innerHTML = html;
+    if(WL && document.getElementById("wlPanel")) WL.panel(document.getElementById("wlPanel"), {
+      intro: "Follow today's workout on a Wear OS watch: open Power Program on the watch. It shows a code. Type it here.",
+      linkedText: "The watch shows today's workout one exercise at a time, with the timers. Exercises and days finished on the watch are checked off here.",
+      btn: "modal-video-btn", btnPri: "modal-video-btn", onLinked: function(){ wstate.last = ""; watchSync(); } });
 
     el.querySelectorAll("[data-day]").forEach(function(chip){
       chip.addEventListener("click", function(){
@@ -1977,8 +1984,76 @@ var POSE_ICONS = {
     navigator.storage.persist().catch(function(){});
   }
 
+  // ---------- The watch ----------
+  // The Steele Family watch app (in natesteele888/apps, watch/family) follows the next day's workout here. This phone
+  // sends that day's exercises through the watch link (apps/watchlink.js, one private link per phone and watch), and
+  // takes back what was finished on the watch: exercise check marks and the day done. Nothing is sent unless a watch is linked.
+  var WL = window.WatchLink, wstate = { soon:0, busy:false, again:false, last:"", msg:"" };
+  function wmsg(){ return wstate ? wstate.msg : ""; }
+  function plain(t){ return String(t || "").replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/&middot;/g, "·").replace(/&[a-z#0-9]+;/gi, "").trim(); }
+  function watchDay(){
+    var day = getNextIncompleteDay() || TOTAL_DAYS, entry = SCHEDULE[day-1];
+    function exs(section, list){ return list.map(function(ex, idx){ return { k: exKey(day, section, idx), name: plain(ex.name).slice(0, 60), reps: plain(ex.reps).slice(0, 40), cue: plain(ex.cue).slice(0, 160) }; }); }
+    var o = { v:1, day:day, total:TOTAL_DAYS, week:entry.week, rest:entry.type === "REST", streak:computeStreak(),
+      done: state.completionDates.indexOf(todayStr()) !== -1, checks:{} };
+    if(o.rest){ o.title = "Rest & Recovery"; o.type = "Rest"; o.time = ""; o.note = plain(RECOVERY_TIPS[(entry.week-1) % RECOVERY_TIPS.length]).slice(0, 200);
+      o.sections = [{ s:"rest", label:"Easy stretch", rounds:1, ex:exs("rest", REST_STRETCHES) }]; }
+    else { var wk = entry.workout; o.title = plain(wk.title); o.type = plain(TYPE_LABEL[entry.type] || entry.type); o.time = plain(wk.time); o.note = plain(wk.note).slice(0, 200);
+      o.sections = [{ s:"warmup", label:"Warm-up", rounds:1, ex:exs("warmup", wk.warmup) },
+        { s:"main", label:"Main set", rounds:wk.roundsByWeek[entry.weekInPhase], ex:exs("main", wk.main) },
+        { s:"cooldown", label:"Cooldown", rounds:1, ex:exs("cooldown", wk.cooldown) }]; }
+    o.sections.forEach(function(sec){ sec.ex.forEach(function(x){ if(state.checks[x.k]) o.checks[x.k] = true; }); });
+    return o;
+  }
+  /* What the watch did: {day, k} checks an exercise, {day, done:1} marks the day done (dated the day it was done). */
+  function takeWatch(entries){
+    var changed = false, finished = null;
+    entries.forEach(function(e){
+      var day = e && e.day;
+      if(typeof day !== "number" || day < 1 || day > TOTAL_DAYS || Math.floor(day) !== day) return;
+      if(typeof e.k === "string" && e.k.indexOf(day + "_") === 0 && e.k.length <= 40){ if(!state.checks[e.k]){ state.checks[e.k] = true; changed = true; } }
+      if(e.done === 1 && !state.completed[day]){
+        state.completed[day] = true; changed = true; finished = day;
+        var ds = todayStrFrom(new Date(typeof e.at === "number" ? e.at : Date.now()));
+        if(state.completionDates.indexOf(ds) === -1) state.completionDates.push(ds);
+      }
+    });
+    if(finished){ var next = getNextIncompleteDay(); if(next) state.selectedDay = next; }
+    return { changed:changed, finished:finished };
+  }
+  function wlOn(){ return !!(WL && WL.linked()); }
+  function watchSoon(){
+    if(!wlOn() || wstate.soon || JSON.stringify(watchDay()) === wstate.last) return;
+    wstate.soon = setTimeout(function(){ wstate.soon = 0; watchSync(); }, 3000);
+  }
+  function watchSync(){
+    if(!wlOn()) return; if(wstate.busy){ wstate.again = true; return; } wstate.busy = true;
+    WL.read().then(function(doc){
+      if(!wlOn()) return;
+      var fresh = WL.fresh(doc, "pp");
+      if(fresh.length){
+        var r = takeWatch(fresh); WL.took("pp", fresh);
+        if(r.changed){ saveState(r.finished ? "complete" : undefined, r.finished ? { doneDay:r.finished, from:"watch" } : undefined); renderAll(); }
+      }
+      var o = watchDay(), k = JSON.stringify(o);
+      if(k === wstate.last) return;
+      return WL.write("pp", Object.assign({ at:Date.now() }, o)).then(function(){ wstate.last = k; });
+    }).then(function(){ wstate.msg = ""; if(wstate.soon){ clearTimeout(wstate.soon); wstate.soon = 0; } }, function(){
+      wstate.msg = navigator.onLine === false ? "No signal right now. The watch catches up when there is signal." : "Could not reach the watch link just now. It tries again by itself.";
+    }).then(function(){
+      wstate.busy = false; var m = document.getElementById("wlMsg"); if(m) m.textContent = wstate.msg;
+      if(wstate.again){ wstate.again = false; watchSync(); }
+    });
+  }
+  if(WL){
+    setInterval(function(){ if(!document.hidden) watchSync(); }, 20000);
+    document.addEventListener("visibilitychange", function(){ if(!document.hidden) watchSync(); });
+    WL.onChange(function(on){ wstate.last = ""; if(on) watchSync(); else renderProgram(); });
+  }
+
   renderAll();
   syncBoot();
+  watchSync();
 })();
 </script>
 <script>if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
