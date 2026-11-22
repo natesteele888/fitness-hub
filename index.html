@@ -98,8 +98,8 @@
   }
   ul.exlist li:last-child{border-bottom:0}
   .exbox{
-    flex:none;width:26px;height:26px;border-radius:8px;border:2.5px solid var(--volt);
-    background:transparent;margin-top:1px;cursor:pointer;display:grid;place-items:center;
+    flex:none;width:32px;height:32px;border-radius:9px;border:2.5px solid var(--volt);
+    background:transparent;margin-top:-2px;cursor:pointer;display:grid;place-items:center;
   }
   .exbox.checked{background:var(--volt)}
   .exbox.checked::after{content:"✓";color:var(--volt-ink);font-weight:800;font-size:16px}
@@ -1655,7 +1655,7 @@ var POSE_ICONS = {
       var info = exInfoFor(ex.name);
       var infoBtn = info ? ' <button class="ex-info" data-exname="' + ex.name + '" aria-label="Learn about ' + ex.name + '">i</button>' : "";
       html += '<li>'
-        + '<div class="exbox' + (checked?' checked':'') + '" data-exkey="' + key + '" role="checkbox" aria-checked="' + checked + '"></div>'
+        + '<div class="exbox' + (checked?' checked':'') + '" data-exkey="' + key + '" role="checkbox" tabindex="0" aria-label="' + ex.name + '" aria-checked="' + checked + '"></div>'
         + '<div class="exmeta">'
         + '<div class="exname">' + ex.name + infoBtn + tag + '<span class="exreps">' + (ex.reps||"") + '</span></div>'
         + (ex.cue ? '<div class="excue">' + ex.cue + '</div>' : '')
@@ -1723,12 +1723,16 @@ var POSE_ICONS = {
     el.innerHTML = html;
 
     el.querySelectorAll("[data-exkey]").forEach(function(box){
-      box.addEventListener("click", function(){
+      function toggle(){
         var key = box.getAttribute("data-exkey");
         state.checks[key] = !state.checks[key];
         saveState();
         box.classList.toggle("checked", !!state.checks[key]);
         box.setAttribute("aria-checked", !!state.checks[key]);
+      }
+      box.addEventListener("click", toggle);
+      box.addEventListener("keydown", function(e){
+        if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(); }
       });
     });
     el.querySelectorAll("[data-exname]").forEach(function(btn){
